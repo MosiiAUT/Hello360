@@ -1,17 +1,17 @@
 // This file contains the boilerplate to execute your React app.
 // If you want to modify your application's content, start in "index.js"
 
-import {ReactInstance, Location, Module} from 'react-360-web';
+import {ReactInstance, Location, Module, Surface} from 'react-360-web';
 import SimpleRaycaster from "simple-raycaster";
 
 function init(bundle, parent, options = {}) {
-    const myLocation = new Location([0, 0, 0]);
 
     class MyModule extends Module {
         constructor() {
             super('MyModule');
         }
 
+        //Bewegt die komplette Location wo alles gemountet ist, kann somit in index.js aufgerufen werden
         setWorld(x, y, z) {
             myLocation.setWorldPosition(x, y, z);
         }
@@ -31,14 +31,18 @@ function init(bundle, parent, options = {}) {
 
     // Render your app content to the default cylinder surface
     r360.renderToSurface(
-        r360.createRoot('Hello360'),
+        r360.createRoot('UI'),
         r360.getDefaultSurface()
     );
 
+
+    const myLocation = new Location([0, 0, 0]);
+
     r360.renderToLocation(
-        r360.createRoot('ChairOne'),
+        r360.createRoot('Models'),
         myLocation,
     );
+
 
     // Load the initial environment
     r360.compositor.setBackground(r360.getAssetURL('360_world.jpg'));
