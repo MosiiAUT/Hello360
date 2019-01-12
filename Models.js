@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Animated, asset, StyleSheet, View} from 'react-360';
+import {Animated, asset, StyleSheet, PointLight, AmbientLight, View} from 'react-360';
 import Entity from 'Entity';
 import {connect} from './ClickManager';
 
@@ -11,13 +11,20 @@ class Models extends React.Component {
             case -1:
                 return (
                     <View>
+                        <PointLight intensity={0.5}/>
+                        <AmbientLight intensity={0.2}/>
                         <ChairOne/>
+                        <Scene/>
+                        <Stone/>
                     </View>
                 );
             case 1:
                 return (
                     <View>
+                        <PointLight intensity={0.5}/>
+                        <AmbientLight intensity={0.2}/>
                         <ChairTwo/>
+                        <Shrimp/>
                     </View>
                 );
             default:
@@ -30,6 +37,29 @@ class ChairOne extends React.Component {
     render() {
         return (
             <Entity style={styles.chair} source={{obj: asset('chair.obj')}}/>
+        );
+    }
+}
+class Scene extends React.Component {
+    render() {
+        return (
+            <Entity lit={true} style={styles.scene} source={{obj: asset('scenecolor.obj'), mtl: asset('scenecolor.mtl')}}/>
+        );
+    }
+}
+
+class Stone extends React.Component {
+    render() {
+        return (
+            <Entity lit={true} style={styles.scene} source={{obj: asset('stone.obj'), mtl: asset('stone.mtl')}}/>
+        );
+    }
+}
+
+class Shrimp extends React.Component {
+    render() {
+        return (
+            <Entity style={styles.scene} source={{obj: asset('shrimp.obj')}} lit={true}/>
         );
     }
 }
@@ -64,6 +94,9 @@ const styles = StyleSheet.create({
     },
     chairTwo: {
         transform: [{translate: [5, 0, -10]}, {rotateY: 150}]
+    },
+    scene: {
+        transform: [{translate: [0, -5, 0]}]
     },
 });
 
