@@ -4,3 +4,9 @@
 *.js.meta
 node_modules/
 build/
+build.zip
+.idea/a-project.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/workspace.xml
