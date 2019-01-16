@@ -14,63 +14,25 @@ import {connect, setCurrent} from './ClickManager';
 const {MyModule} = NativeModules;
 
 
-class UIPanel extends React.Component {
-    state = {
-        toggle: true,
-    };
-
-    _toggleBool = () => {
-        this.setState({toggle: !this.state.toggle});
-    };
-
-
-    render() {
-
-        return (
-            <View style={styles.panel}>
-                <MyGaze/>
-            </View>
-        )
-    }
-}
-
-class MyButton extends React.Component {
-    state = {
-        count: 0,
-    };
-
-    /*
-    // This method increments our count, triggering a re-render
-    _incrementCount = () => {
-        this.setState({count: this.state.count + 1});
-    };
-    */
-
-    render() {
-        return (
-            <VrButton
-                style={styles.greetingBox}
-                onClick={() => {
-                    MyModule.setWorld(0, 0, -10);
-                    //this.props.onClick();
-                }}
-            >
-                <Text style={styles.greeting}>
-                    {`Count: ${this.state.count}`}
-                </Text>
-            </VrButton>
-        );
-    }
-}
-
-/*
 export class MyGaze extends React.Component {
-    state = {
-        gazed: false,
-        station: 1,
-    };
+
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            gazed: false
+
+        };
+        this.station = 0;
+        this.message = "ere";
+        //this.handleClick = this.handleClick.bind(this);
+    }
+
 
     setGazed = () => {
+
+        console.log("end of time");
+        MyModule.deleteTitlescreen;
         this.setState({gazed: true});
         //MyModule.setWorld(15, 0, -10);
         setCurrent(this.state.station);
@@ -79,27 +41,35 @@ export class MyGaze extends React.Component {
                 station: this.state.station * -1
             }
         );
+
+
     };
 
     render() {
         const {gazed} = this.state;
+
+        console.log("prop gaze text : " + this.props.gazeText);
+
+        let message = this.props.gazeText;
+        let waitingtime = this.props.timey;
+
         return (
             <GazeButton
-                duration={3000}
+                duration={waitingtime}
                 onClick={() => {
                     this.setGazed();
                     //this.props.onClick();
                 }}
                 render={(remainingTime, isGazed) => (
                     <View style={styles.greetingBox}>
-                        <Text style={styles.greeting}>
-                            {gazed ? "You have gazed me" : isGazed ? remainingTime : "Gaze me"}
+                        <Text style={{width: 300}}>
+                            {gazed ? "You have gazed me" : isGazed ? "Alrighty!" : message}
                         </Text>
                     </View>
                 )}
             />
         )
-    };*/
+    };
 }
 
 
@@ -107,7 +77,7 @@ const styles = StyleSheet.create({
     panel: {
         // Fill the entire surface
         width: 1000,
-        height: 600,
+        height: 800,
         backgroundColor: 'rgba(255, 255, 255, 0.4)',
         justifyContent: 'center',
         alignItems: 'center',
@@ -116,6 +86,8 @@ const styles = StyleSheet.create({
         transform: [{rotateY: 180}]
     },
     greetingBox: {
+
+
         padding: 20,
         backgroundColor: '#000000',
         borderColor: '#639dda',
@@ -126,6 +98,4 @@ const styles = StyleSheet.create({
     },
 });
 
-//const ConnectedUIPanel = connect(UIPanel);
 
-//export default ConnectedUIPanel;
