@@ -20,28 +20,33 @@ const {MyModule} = NativeModules;
 
 export class Titlescreen extends React.Component {
 
-state = {
+    state = {
         toggle: true,
     };
 
 //handleClick = this.handleClick.bind(this);
 
 
-
-/*function handleClick(){
-    this.setState({toggle: !this.state.toggle});
-    console.log("titlescreenclick");
-    MyModule.deleteTitlescreen();
-}*/
+    /*function handleClick(){
+        this.setState({toggle: !this.state.toggle});
+        console.log("titlescreenclick");
+        MyModule.deleteTitlescreen();
+    }*/
 
 
     render() {
 
         return (
-            <View style={{width: 1000, height: 400, backgroundColor: 'rgba(255, 255, 255, 0.0)', justifyContent:'center', alignItems: 'center'}}>
-                <MyGaze  gazeText ="Start Swimming Matey!" timey={1000}/>
+            <View style={{
+                width: 1000,
+                height: 400,
+                backgroundColor: 'rgba(255, 255, 255, 0.0)',
+                justifyContent: 'center',
+                alignItems: 'center'
+            }}>
+                <MyGaze gazeText="Start Swimming Matey!" timey={1000}/>
 
-                <MyGaze gazeText ="Stop Exploring"  timey={1000}/>
+                <MyGaze gazeText="Stop Exploring" timey={1000}/>
 
             </View>
         )
@@ -61,7 +66,7 @@ const styles = StyleSheet.create({
     left: {
         transform: [{rotateY: 180}]
     },
-   
+
 });
 
 

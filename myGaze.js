@@ -9,7 +9,7 @@ import {
 } from 'react-360';
 
 import GazeButton from "react-360-gaze-button";
-import {connect, setCurrent} from './ClickManager';
+import {setStation} from './ClickManager';
 
 const {MyModule} = NativeModules;
 
@@ -32,10 +32,10 @@ export class MyGaze extends React.Component {
     setGazed = () => {
 
         console.log("end of time");
-        MyModule.deleteTitlescreen;
+        //MyModule.deleteTitlescreen;
         this.setState({gazed: true});
         //MyModule.setWorld(15, 0, -10);
-        setCurrent(this.state.station);
+        setStation(this.state.station);
         this.setState({
                 gazed: false,
                 station: this.state.station * -1
