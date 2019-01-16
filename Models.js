@@ -7,7 +7,7 @@ const AnimatedEntity = Animated.createAnimatedComponent(Entity);
 
 class Models extends React.Component {
     render() {
-        switch (this.props.current) {
+        switch (this.props.station) {
             case -1:
                 return (
                     <View>
@@ -21,7 +21,7 @@ class Models extends React.Component {
                     <View>
                         <PointLight intensity={0.5}/>
                         <AmbientLight intensity={0.2}/>
-                        <ChairTwo/>
+                        <ChairTwo isWatched={this.props.isWatched}/>
                         <Shrimp/>
                     </View>
                 );
@@ -56,23 +56,32 @@ class Shrimp extends React.Component {
 
 class ChairTwo extends React.Component {
     rotation = new Animated.Value(0);
+    translationz = new Animated.Value(-4);
 
     loopAnimation() {
         this.rotation.setValue(0);
-        //Animated.timing(this.rotation, {toValue: 360, duration: 20000}).start(() => this.loopAnimation());
-        Animated.timing(this.rotation, {toValue: 360, duration: 20000}).start();
+        this.translationz.setValue(-4);
+
+        if(this.props.isWatched == true){
+            console.log("hello");
+            Animated.timing(this.rotation, {toValue: 360, duration: 20000}).start();
+        }
+
+        Animated.timing(this.translationz, {toValue: -8, duration: 10000}).start();
     }
 
-
     componentDidMount() {
-        //setInterval(this._incrementCount, 1000);
+        console.log(this.props.isWatched);
+        this.loopAnimation();
+    }
 
-        //uncomment me    this.loopAnimation();
+    componentWillUnmount(){
+        console.log("unmount");
     }
 
     render() {
         return (
-            <AnimatedEntity style={[styles.chairTwo/*, {transform: [{rotateY: this.rotation}]}*/]}
+            <AnimatedEntity style={[{transform: [{translateZ: this.translationz},{translate: [0, 0, -4]},{rotateY: this.rotation}]}]}
                             source={{obj: asset('chair.obj')}}/>
         );
     }
@@ -80,10 +89,10 @@ class ChairTwo extends React.Component {
 
 const styles = StyleSheet.create({
     chair: {
-        transform: [{translate: [-5, 0, -10]}, {rotateY: 210}],
+        transform: [{translate: [-5, 0, -4]}, {rotateY: 0}]
     },
     chairTwo: {
-        transform: [{translate: [5, 0, -10]}, {rotateY: 150}],
+        transform: [{translate: [5, 0, -10]}, {rotateY: 150}]
     },
     scene: {
         transform: [{translate: [0, -5, 0]}],

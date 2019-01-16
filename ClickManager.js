@@ -9,7 +9,8 @@ import * as React from 'react';
  * ensure all of our elements are synchronized.
  */
 const State = {
-    current: -1,
+    station: -1,
+    isWatched: false,
 };
 
 const listeners = new Set();
@@ -20,20 +21,27 @@ function updateComponents() {
     }
 }
 
-export function setCurrent(value) {
-    State.current = value;
+export function setStation(value) {
+    State.station = value;
+    updateComponents();
+}
+
+export function setWatched(value) {
+    State.isWatched = value;
     updateComponents();
 }
 
 export function connect(Component) {
     return class Wrapper extends React.Component {
         state = {
-            current: State.current,
+            station: State.station,
+            isWatched: State.isWatched,
         };
 
         _listener = () => {
             this.setState({
-                current: State.current,
+                station: State.station,
+                isWatched: State.isWatched,
             });
         };
 
@@ -51,7 +59,8 @@ export function connect(Component) {
             return (
                 <Component
                     {...this.props}
-                    current={this.state.current}
+                    station={this.state.station}
+                    isWatched={this.state.isWatched}
                 />
             );
         }

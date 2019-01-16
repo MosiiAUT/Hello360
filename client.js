@@ -15,6 +15,14 @@ function init(bundle, parent, options = {}) {
         setWorld(x, y, z) {
             myLocation.setWorldPosition(x, y, z);
         }
+
+        moveWatchButton(yaw, pitch, roll){
+            watchButtonSurface.setAngle(
+                yaw,
+                pitch,
+                roll
+            );
+        }
     }
 
     const r360 = new ReactInstance(bundle, parent, {
@@ -29,11 +37,6 @@ function init(bundle, parent, options = {}) {
 
     });
 
-    // Render your app content to the default cylinder surface
-    r360.renderToSurface(
-        r360.createRoot('UI'),
-        r360.getDefaultSurface()
-    );
 
 
     const myLocation = new Location([0, 0, 0]);
@@ -41,6 +44,28 @@ function init(bundle, parent, options = {}) {
     r360.renderToLocation(
         r360.createRoot('Models'),
         myLocation,
+    );
+
+    // Render your app content to the default cylinder surface
+    r360.renderToSurface(
+        r360.createRoot('UI'),
+        r360.getDefaultSurface()
+    );
+
+    const watchButtonSurface = new Surface(
+        200,
+        200,
+        Surface.SurfaceShape.Flat,
+    );
+
+    r360.renderToSurface(
+        r360.createRoot('WatchButton'),
+        watchButtonSurface,
+    );
+
+    watchButtonSurface.setAngle(
+        -Math.PI / 2,
+        0,
     );
 
 
