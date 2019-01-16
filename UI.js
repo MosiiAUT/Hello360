@@ -63,7 +63,8 @@ class MyButton extends React.Component {
     }
 }
 
-class MyGaze extends React.Component {
+/*
+export class MyGaze extends React.Component {
     state = {
         gazed: false,
         station: 1,
@@ -98,7 +99,7 @@ class MyGaze extends React.Component {
                 )}
             />
         )
-    };
+    };*/
 }
 
 
@@ -126,6 +127,6 @@ const styles = StyleSheet.create({
     },
 });
 
-const ConnectedUIPanel = connect(UIPanel);
+//const ConnectedUIPanel = connect(UIPanel);
 
-export default ConnectedUIPanel;
+//export default ConnectedUIPanel;

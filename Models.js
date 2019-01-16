@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Animated, asset, StyleSheet, View} from 'react-360';
+import {Animated, asset, StyleSheet, PointLight, AmbientLight, View} from 'react-360';
 import Entity from 'Entity';
 import {connect} from './ClickManager';
 
@@ -11,13 +11,19 @@ class Models extends React.Component {
             case -1:
                 return (
                     <View>
-                        <ChairOne/>
+                        <PointLight intensity={0.5}/>
+                        <AmbientLight intensity={0.3}/>
+                        <Scene/>
                     </View>
                 );
             case 1:
                 return (
                     <View>
+                        <PointLight intensity={0.5}/>
+                        <AmbientLight intensity={0.2}/>
                         <ChairTwo isWatched={this.props.isWatched}/>
+                        <Shrimp/>
+
                     </View>
                 );
             default:
@@ -30,6 +36,21 @@ class ChairOne extends React.Component {
     render() {
         return (
             <Entity style={styles.chair} source={{obj: asset('chair.obj')}}/>
+        );
+    }
+}
+class Scene extends React.Component {
+    render() {
+        return (
+            <Entity lit={true} style={[styles.brown, styles.transformation]} source={{obj: asset('scene.obj')}}/>
+        );
+    }
+}
+
+class Shrimp extends React.Component {
+    render() {
+        return (
+            <Entity style={styles.scene} source={{obj: asset('shrimp.obj')}} lit={true}/>
         );
     }
 }
@@ -74,6 +95,15 @@ const styles = StyleSheet.create({
     chairTwo: {
         transform: [{translate: [5, 0, -10]}, {rotateY: 150}]
     },
+    scene: {
+        transform: [{translate: [0, -5, 0]}],
+    },
+    brown: {
+        color: '#69380e',
+    },
+    transformation: {
+        transform: [{translate: [0, -12, -3]}],
+    }
 });
 
 const ConnectedModelsView = connect(Models);
