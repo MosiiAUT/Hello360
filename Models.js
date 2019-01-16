@@ -12,10 +12,8 @@ class Models extends React.Component {
                 return (
                     <View>
                         <PointLight intensity={0.5}/>
-                        <AmbientLight intensity={0.2}/>
-                        <ChairOne/>
+                        <AmbientLight intensity={0.3}/>
                         <Scene/>
-                        <Stone/>
                     </View>
                 );
             case 1:
@@ -43,15 +41,7 @@ class ChairOne extends React.Component {
 class Scene extends React.Component {
     render() {
         return (
-            <Entity lit={true} style={styles.scene} source={{obj: asset('scenecolor.obj'), mtl: asset('scenecolor.mtl')}}/>
-        );
-    }
-}
-
-class Stone extends React.Component {
-    render() {
-        return (
-            <Entity lit={true} style={styles.scene} source={{obj: asset('stone.obj'), mtl: asset('stone.mtl')}}/>
+            <Entity lit={true} style={[styles.brown, styles.transformation]} source={{obj: asset('scene.obj')}}/>
         );
     }
 }
@@ -90,14 +80,20 @@ class ChairTwo extends React.Component {
 
 const styles = StyleSheet.create({
     chair: {
-        transform: [{translate: [-5, 0, -10]}, {rotateY: 210}]
+        transform: [{translate: [-5, 0, -10]}, {rotateY: 210}],
     },
     chairTwo: {
-        transform: [{translate: [5, 0, -10]}, {rotateY: 150}]
+        transform: [{translate: [5, 0, -10]}, {rotateY: 150}],
     },
     scene: {
-        transform: [{translate: [0, -5, 0]}]
+        transform: [{translate: [0, -5, 0]}],
     },
+    brown: {
+        color: '#69380e',
+    },
+    transformation: {
+        transform: [{translate: [0, -12, -3]}],
+    }
 });
 
 const ConnectedModelsView = connect(Models);
