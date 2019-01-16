@@ -9,7 +9,7 @@ import {
 } from 'react-360';
 
 import GazeButton from "react-360-gaze-button";
-import {connect, setCurrent} from './ClickManager';
+import {connect, setStation} from './ClickManager';
 
 const {MyModule} = NativeModules;
 
@@ -72,7 +72,7 @@ class MyGaze extends React.Component {
     setGazed = () => {
         this.setState({gazed: true});
         //MyModule.setWorld(15, 0, -10);
-        setCurrent(this.state.station);
+        setStation(this.state.station);
         this.setState({
                 gazed: false,
                 station: this.state.station * -1
@@ -102,13 +102,14 @@ class MyGaze extends React.Component {
 }
 
 
+
 const styles = StyleSheet.create({
     panel: {
         // Fill the entire surface
         width: 1000,
         height: 600,
         backgroundColor: 'rgba(255, 255, 255, 0.4)',
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
         alignItems: 'center',
     },
     left: {
