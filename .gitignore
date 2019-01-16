@@ -10,3 +10,4 @@ build.zip
 .idea/modules.xml
 .idea/vcs.xml
 .idea/workspace.xml
+static_assets/scene.obj
