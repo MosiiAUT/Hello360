@@ -23,6 +23,7 @@ class Models extends React.Component {
                         <AmbientLight intensity={0.2}/>
                         <ChairTwo isWatched={this.props.isWatched}/>
                         <Shrimp/>
+
                     </View>
                 );
             default:

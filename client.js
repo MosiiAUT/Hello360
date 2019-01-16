@@ -22,6 +22,7 @@ function init(bundle, parent, options = {}) {
         }
 
         moveWatchButton(yaw, pitch, roll) {
+
             watchButtonSurface.setAngle(
                 yaw,
                 pitch,
@@ -43,7 +44,6 @@ function init(bundle, parent, options = {}) {
 
     });
 
-// Render your app content to the default cylinder surface
     r360.renderToSurface(
         r360.createRoot('titlescreen'),
         r360.getDefaultSurface()
