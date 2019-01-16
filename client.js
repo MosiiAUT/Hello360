@@ -16,7 +16,12 @@ function init(bundle, parent, options = {}) {
             myLocation.setWorldPosition(x, y, z);
         }
 
-        moveWatchButton(yaw, pitch, roll){
+        deleteTitlescreen() {
+            console.log('in delete');
+            r360.detatchRoot("titlescreen");
+        }
+
+        moveWatchButton(yaw, pitch, roll) {
             watchButtonSurface.setAngle(
                 yaw,
                 pitch,
@@ -24,6 +29,7 @@ function init(bundle, parent, options = {}) {
             );
         }
     }
+
 
     const r360 = new ReactInstance(bundle, parent, {
         // Add custom options here
@@ -37,6 +43,11 @@ function init(bundle, parent, options = {}) {
 
     });
 
+// Render your app content to the default cylinder surface
+    r360.renderToSurface(
+        r360.createRoot('titlescreen'),
+        r360.getDefaultSurface()
+    );
 
 
     const myLocation = new Location([0, 0, 0]);
@@ -46,7 +57,7 @@ function init(bundle, parent, options = {}) {
         myLocation,
     );
 
-    // Render your app content to the default cylinder surface
+// Render your app content to the default cylinder surface
     r360.renderToSurface(
         r360.createRoot('UI'),
         r360.getDefaultSurface()
@@ -69,7 +80,7 @@ function init(bundle, parent, options = {}) {
     );
 
 
-    // Load the initial environment
+// Load the initial environment
     r360.compositor.setBackground(r360.getAssetURL('360_world.jpg'));
     r360.controls.clearRaycasters();
     r360.controls.addRaycaster(SimpleRaycaster);
