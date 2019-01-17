@@ -43,12 +43,12 @@ function init(bundle, parent, options = {}) {
         ]
 
     });
-
+/*
     r360.renderToSurface(
         r360.createRoot('titlescreen'),
         r360.getDefaultSurface()
     );
-
+*/
     const watchButtonSurface = new Surface(
         200,
         200,
@@ -67,16 +67,16 @@ function init(bundle, parent, options = {}) {
 
     const myLocation = new Location([0, 0, 0]);
 
-    // r360.renderToLocation(
-    //     r360.createRoot('Models'),
-    //     myLocation,
-    // );
+     r360.renderToLocation(
+         r360.createRoot('Models'),
+         myLocation,
+     );
 
-// // Render your app content to the default cylinder surface
-//     r360.renderToSurface(
-//         r360.createRoot('UI'),
-//         r360.getDefaultSurface()
-//     );
+     //Render your app content to the default cylinder surface
+    r360.renderToSurface(
+        r360.createRoot('UI'),
+        r360.getDefaultSurface()
+    );
 
 
 
