@@ -15,14 +15,10 @@ const {MyModule} = NativeModules;
 
 
 class WatchUI extends React.Component {
-    state = {
-        toggle: true,
-    };
-
     render() {
         return (
             <View style={styles.panel}>
-                <WatchButton/>
+                <WatchButton isWatched={this.props.isWatched}/>
             </View>
         )
     }
@@ -35,12 +31,14 @@ class WatchButton extends React.Component {
     };
 
     setGazed = () => {
-        this.setState({gazed: true,});
+        if(this.props.isWatched == false){
+            setWatched(true);
+        }
 
-        setWatched(true);
+        //Setzt die Größe des beschreibungspanels
+        MyModule.openDescription();
 
-        this.setState({gazed: false,});
-
+        //this.setState({gazed: true,});
     };
 
     render() {
@@ -68,15 +66,15 @@ class WatchButton extends React.Component {
 const styles = StyleSheet.create({
     panel: {
         // Fill the entire surface
-        width: 200,
-        height: 200,
+        width: 300,
+        height: 300,
         backgroundColor: 'rgba(255, 255, 255, 0)',
         justifyContent: 'center',
         alignItems: 'center',
     },
     greetingBox: {
-        width: 200,
-        height: 200,
+        width: 300,
+        height: 300,
         borderColor: '#639dda',
         borderWidth: 2,
     },

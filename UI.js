@@ -99,8 +99,8 @@ export class MyGaze extends React.Component {
                 )}
             />
         )
-    };*/
-}
+    };
+}*/
 
 
 

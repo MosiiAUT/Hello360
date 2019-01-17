@@ -16,21 +16,29 @@ function init(bundle, parent, options = {}) {
             myLocation.setWorldPosition(x, y, z);
         }
 
-        deleteTitlescreen() {
-            console.log('in delete');
-            r360.detatchRoot("titlescreen");
-        }
-
         moveWatchButton(yaw, pitch, roll) {
-
             watchButtonSurface.setAngle(
                 yaw,
                 pitch,
                 roll
             );
         }
-    }
 
+        moveDescription(yaw, pitch) {
+            descriptionSurface.setAngle(
+                yaw,
+                pitch,
+            );
+        }
+
+        closeDescription(){
+            descriptionSurface.resize(0,0);
+        }
+
+        openDescription(){
+            descriptionSurface.resize(900,600);
+        }
+    }
 
     const r360 = new ReactInstance(bundle, parent, {
         // Add custom options here
@@ -44,14 +52,31 @@ function init(bundle, parent, options = {}) {
 
     });
 
+    // r360.renderToSurface(
+    //     r360.createRoot('titlescreen'),
+    //     r360.getDefaultSurface()
+    // );
+
+
+    const descriptionSurface = new Surface(
+        0,
+        0,
+        Surface.SurfaceShape.Flat,
+    );
+
     r360.renderToSurface(
-        r360.createRoot('titlescreen'),
-        r360.getDefaultSurface()
+        r360.createRoot('DescriptionUI'),
+        descriptionSurface,
+    );
+
+    descriptionSurface.setAngle(
+        -Math.PI / 4,
+        0,
     );
 
     const watchButtonSurface = new Surface(
-        200,
-        200,
+        300,
+        300,
         Surface.SurfaceShape.Flat,
     );
 
@@ -61,23 +86,22 @@ function init(bundle, parent, options = {}) {
     );
 
     watchButtonSurface.setAngle(
-        -Math.PI / 2,
-        0,
+        -Math.PI / 1.45,
+        -Math.PI / 9,
     );
 
     const myLocation = new Location([0, 0, 0]);
 
-    // r360.renderToLocation(
-    //     r360.createRoot('Models'),
-    //     myLocation,
-    // );
+    r360.renderToLocation(
+        r360.createRoot('Models'),
+        myLocation,
+    );
 
 // // Render your app content to the default cylinder surface
 //     r360.renderToSurface(
 //         r360.createRoot('UI'),
 //         r360.getDefaultSurface()
 //     );
-
 
 
 // Load the initial environment
