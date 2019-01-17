@@ -10,7 +10,6 @@ import {
 import {Environment} from 'react-360';
 
 
-import GazeButton from "react-360-gaze-button";
 import {connect, setCurrent} from './ClickManager';
 import {MyGaze} from './myGaze';
 
@@ -35,7 +34,6 @@ export class Titlescreen extends React.Component {
 
 
     render() {
-
         return (
             <View style={{
                 width: 1000,
@@ -44,9 +42,9 @@ export class Titlescreen extends React.Component {
                 justifyContent: 'center',
                 alignItems: 'center'
             }}>
-                <MyGaze gazeText="Start Swimming Matey!" timey={1000}/>
+                <MyGaze gazeText="Start Swimming Matey!" timey={1000} station={this.props.station}/>
 
-                <MyGaze gazeText="Stop Exploring" timey={1000}/>
+                <MyGaze gazeText="Stop Exploring" timey={1000} station={this.props.station}/>
 
             </View>
         )
