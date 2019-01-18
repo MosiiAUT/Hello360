@@ -5,6 +5,9 @@ import {connect} from './ClickManager';
 
 const AnimatedEntity = Animated.createAnimatedComponent(Entity);
 
+let t_truhe = [-63, 0, -281];
+let t_fass = [-111, 0, -237];
+
 class Models extends React.Component {
     render() {
         let elements;
@@ -30,7 +33,7 @@ class Models extends React.Component {
                 <DirectionalLight intensity={0.4} />
                 <AmbientLight intensity={0.3} />
                 <Terrain/>
-                {/*<Bild/>*/}
+                <Scene/>
                 <Ship/>
                 {/*
                 <Fass/>
@@ -93,7 +96,7 @@ class Fass_w extends React.Component {
                     {translateX: this.translationX},
                     {translateY: this.translationY},
                     {translateZ: this.translationZ},
-                    {translate: [-111, 0, -237]},
+                    {translate: t_fass},
                     {rotateY: this.rotation},
                 ]
             },
@@ -140,59 +143,11 @@ class Truhe_w extends React.Component {
                     {translateX: this.translationX},
                     {translateY: this.translationY},
                     {translateZ: this.translationZ},
-                    {translate: [-63, 0, -281]},
+                    {translate: t_truhe},
                     {rotateY: this.rotation},
                 ]
             },
                 styles.brown]} source={{obj: asset('truhe_watched.obj')}} lit={true}/>
-        );
-    }
-}
-
-class ChairTwo extends React.Component {
-    rotation = new Animated.Value(30);
-    translationX = new Animated.Value(0);
-    translationY = new Animated.Value(0);
-    translationZ = new Animated.Value(0);
-
-    booli = false;
-
-    render() {
-        if (this.props.isWatched == true && this.props.station == 0) {
-            this.rotation.setValue(30);
-            this.translationX.setValue(0);
-            this.translationY.setValue(0);
-            this.translationZ.setValue(0);
-
-            Animated.timing(this.rotation, {toValue: 360, duration: 20000}).start();
-            Animated.timing(this.translationX, {toValue: 2, duration: 5000}).start();
-            Animated.timing(this.translationY, {toValue: 1, duration: 5000}).start();
-            Animated.timing(this.translationZ, {toValue: 2, duration: 5000}).start();
-            this.booli = true;
-
-        } else if (this.props.isWatched == false && this.props.station == 0 && this.booli) {
-            this.rotation.setValue(30);
-            this.translationX.setValue(2);
-            this.translationY.setValue(1);
-            this.translationZ.setValue(2);
-
-            Animated.timing(this.translationX, {toValue: 0, duration: 5000}).start();
-            Animated.timing(this.translationY, {toValue: 0, duration: 5000}).start();
-            Animated.timing(this.translationZ, {toValue: 0, duration: 5000}).start();
-            this.booli = false;
-        }
-
-            return (
-            <AnimatedEntity style={[{
-                transform: [
-                    {translateX: this.translationX},
-                    {translateY: this.translationY},
-                    {translateZ: this.translationZ},
-                    {translate: [-5, 0.5, 0.1]},
-                    {rotateY: this.rotation},
-                    {scale: 0.3}
-                ]
-            }]} source={{obj: asset('chair.obj')}} lit={true}/>
         );
     }
 }
@@ -229,7 +184,7 @@ class Terrain extends React.Component {
     }
 }
 
-class Bild extends React.Component {
+class Scene extends React.Component {
     render() {
         return (
             <Entity style={styles.white} source={{obj: asset('scene.obj')}} lit={true}/>
@@ -354,11 +309,10 @@ const styles = StyleSheet.create({
         color: 'white',
     },
     fass: {
-        transform: [{translate: [-111, 0, -237]}],
-
+        transform: [{translate: t_fass}],
     },
     truhe: {
-        transform: [{translate: [-63, 0, -281]}],
+        transform: [{translate: t_truhe}],
     },
 });
 
