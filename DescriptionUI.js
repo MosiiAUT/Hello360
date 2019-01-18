@@ -43,6 +43,33 @@ class DescriptionUI extends React.Component {
                         </View>
                     </View>
                 );
+            case 1:
+                if(this.props.isWatched)
+                    return (
+                        <View style={styles.panel}>
+                            <UI isWatched={this.props.isWatched}/>
+                            <View>
+                                <Text style={[{fontSize: 38}, styles.text]}>
+                                    Aus der Gedichtsammlung von Plankenwart dem 13. Piratenkönig.
+                                    Eine Liebe in Rosa
+                                </Text>
+                                <Text style={[{fontSize: 26}, styles.text]}>
+                                    Rosa, zart und stets am schwimmen,{"\n"}
+                                    Nur du, ach kannst mein Herz gewinnen.{"\n"}
+                                    Im Wasser ziehst du deine Runden{"\n"}
+                                    In meinem Herzen tiefe Wunden{"\n"}
+                                    Deine Schwarzen Äuglein, so tot und doch doch so allerliebst,{"\n"}
+                                    Mein Herz wundert wo du nur verbliebst{"\n"}
+                                    Seit 5 Jahren schon kein Blick von dir{"\n"}
+                                    Du bist wie ausgestorben hier{"\n"}
+                                    Ausgestorben wie mein Herz{"\n"}
+                                    Am liebsten aß ich dich mit Heidensterz{"\n"}
+                                    Auch gegrillt kann ich dich lieben{"\n"}
+                                    Ach Shrimps wo seid ihr nur geblieben?{"\n"}
+                                </Text>
+                            </View>
+                        </View>
+                    );
             default:
                 return null;
         }
