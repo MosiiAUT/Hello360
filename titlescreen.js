@@ -1,10 +1,7 @@
 import React from 'react';
 import {
-    AppRegistry,
     StyleSheet,
-    Text,
     View,
-    VrButton,
     NativeModules,
 } from 'react-360';
 import {Environment} from 'react-360';

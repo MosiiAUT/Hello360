@@ -7,40 +7,37 @@ const AnimatedEntity = Animated.createAnimatedComponent(Entity);
 
 class Models extends React.Component {
     render() {
+        let elements;
+
         switch (this.props.station) {
-            case -1:
-                return (
-                    <View>
-                        <PointLight intensity={0.5}/>
-                        <AmbientLight intensity={0.3}/>
-                        <Terrain/>
-                        <Bild/>
-                        <Fass isWatched={this.props.isWatched} station={this.props.station}/>
-                        <Ship/>
-                        <Geschirr/>
-                        <GPflanze/>
-                        <Koralle/>
-                        <Lilapflanze/>
-                        <Pflanze/>
-                        <Rosakoralle/>
-                        <Schuh/>
-                        <Stein/>
-                        <Truhe/>
-                        {/*<ChairTwo isWatched={this.props.isWatched} station={this.props.station}/>*/}
-                    </View>
-                );
+            case 0:
+                elements = <ChairTwo isWatched={this.props.isWatched} station={this.props.station} lit={true}/>;
+                break;
             case 1:
-                return (
-                    <View>
-                        <PointLight intensity={0.5}/>
-                        <AmbientLight intensity={0.2}/>
-                        <ChairOne/>
-                        <Shrimp/>
-                    </View>
-                );
-            default:
-                return null;
+                elements = null;
         }
+
+        return(
+            <View>
+                <PointLight intensity={0.5}/>
+                <AmbientLight intensity={0.3}/>
+                <Terrain/>
+                <Bild/>
+                {/*<Fass isWatched={this.props.isWatched} station={this.props.station}/>*/}
+                <Ship/>
+                <Geschirr/>
+                <GPflanze/>
+                <Koralle/>
+                <Lilapflanze/>
+                <Pflanze/>
+                <Rosakoralle/>
+                <Schuh/>
+                <Stein/>
+                <Truhe/>
+                {elements}
+            </View>
+        );
+
     }
 }
 
@@ -63,7 +60,7 @@ class Scene extends React.Component {
 class Ship extends React.Component {
     render() {
         return (
-            <Entity lit={true} style={[styles.brown, styles.transformation]} source={{obj: asset('ship.obj')}}/>
+            <Entity lit={true} style={[styles.brown, styles.transformation, {transform:[{scale: 2}]}]} source={{obj: asset('ship.obj')}}/>
         );
     }
 }
@@ -104,7 +101,7 @@ class Fass extends React.Component {
         this.translationY.setValue(0);
         this.translationZ.setValue(0);
 
-        if (this.props.isWatched == true && this.props.station == -1) {
+        if (this.props.isWatched == true && this.props.station == 0) {
             console.log("hhelo");
             // Animated.timing(this.rotation, {toValue: 390, duration: 20000}).start();
             Animated.timing(this.translationX, {toValue: 200, duration: 10000}).start();
@@ -128,25 +125,38 @@ class Fass extends React.Component {
 }
 
 class ChairTwo extends React.Component {
-    rotation = new Animated.Value(0);
+    rotation = new Animated.Value(30);
     translationX = new Animated.Value(0);
     translationY = new Animated.Value(0);
     translationZ = new Animated.Value(0);
 
-    render() {
-        this.rotation.setValue(30);
-        this.translationX.setValue(0);
-        this.translationY.setValue(0);
-        this.translationZ.setValue(0);
+    booli = false;
 
-        if (this.props.isWatched == true && this.props.station == -1) {
-            Animated.timing(this.rotation, {toValue: 0, duration: 20000}).start();
-            Animated.timing(this.translationX, {toValue: 2, duration: 10000}).start();
+    render() {
+        if (this.props.isWatched == true && this.props.station == 0) {
+            this.rotation.setValue(30);
+            this.translationX.setValue(0);
+            this.translationY.setValue(0);
+            this.translationZ.setValue(0);
+
+            Animated.timing(this.rotation, {toValue: 360, duration: 20000}).start();
+            Animated.timing(this.translationX, {toValue: 2, duration: 5000}).start();
             Animated.timing(this.translationY, {toValue: 1, duration: 5000}).start();
-            Animated.timing(this.translationZ, {toValue: 2, duration: 10000}).start();
+            Animated.timing(this.translationZ, {toValue: 2, duration: 5000}).start();
+            this.booli = true;
+
+        } else if (this.props.isWatched == false && this.props.station == 0 && this.booli) {
+            this.translationX.setValue(2);
+            this.translationY.setValue(1);
+            this.translationZ.setValue(2);
+
+            Animated.timing(this.translationX, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.translationY, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.translationZ, {toValue: 0, duration: 5000}).start();
+            this.booli = false;
         }
 
-        return (
+            return (
             <AnimatedEntity style={[{
                 transform: [
                     {translateX: this.translationX},

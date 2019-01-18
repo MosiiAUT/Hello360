@@ -74,6 +74,26 @@ function init(bundle, parent, options = {}) {
         0,
     );
 
+
+
+    const teleportSurface = new Surface(
+        200,
+        200,
+        Surface.SurfaceShape.Flat,
+    );
+
+    r360.renderToSurface(
+        r360.createRoot('TeleportUI'),
+        teleportSurface,
+    );
+
+    teleportSurface.setAngle(
+        Math.PI / 4,
+        0,
+    );
+
+
+
     const watchButtonSurface = new Surface(
         300,
         300,
@@ -96,12 +116,6 @@ function init(bundle, parent, options = {}) {
         r360.createRoot('Models'),
         myLocation,
     );
-
-// // Render your app content to the default cylinder surface
-//     r360.renderToSurface(
-//         r360.createRoot('UI'),
-//         r360.getDefaultSurface()
-//     );
 
 
 // Load the initial environment

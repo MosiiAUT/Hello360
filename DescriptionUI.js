@@ -1,11 +1,10 @@
 import React from 'react';
 import {
-    AppRegistry,
     StyleSheet,
     Text,
     View,
-    VrButton,
-    NativeModules, Animated,
+    NativeModules,
+    Animated,
 } from 'react-360';
 
 import GazeButton from "react-360-gaze-button";
@@ -17,18 +16,17 @@ const {MyModule} = NativeModules;
 class DescriptionUI extends React.Component {
     render() {
         switch (this.props.station) {
-            case -1:
+            case 0:
                 if(this.props.isWatched)
                 return (
                     <View style={styles.panel}>
                         <UI isWatched={this.props.isWatched}/>
-                        <View style={styles.text}>
-                            <Text style={{fontSize: 38}}>
-                                Aus der Gedichtsammlung von Plankenwart dem 13, Piratenkönig.
+                        <View>
+                            <Text style={[{fontSize: 38}, styles.text]}>
+                                Aus der Gedichtsammlung von Plankenwart dem 13. Piratenkönig.
                                 Eine Liebe in Rosa
-
                             </Text>
-                            <Text style={{fontSize: 28}}>
+                            <Text style={[{fontSize: 26}, styles.text]}>
                                 Rosa, zart und stets am schwimmen,{"\n"}
                                 Nur du, ach kannst mein Herz gewinnen.{"\n"}
                                 Im Wasser ziehst du deine Runden{"\n"}
@@ -41,7 +39,6 @@ class DescriptionUI extends React.Component {
                                 Am liebsten aß ich dich mit Heidensterz{"\n"}
                                 Auch gegrillt kann ich dich lieben{"\n"}
                                 Ach Shrimps wo seid ihr nur geblieben?{"\n"}
-
                             </Text>
                         </View>
                     </View>
@@ -69,10 +66,16 @@ class UI extends React.Component {
         //this.setState({gazed: true,});
     };
 
+    componentDidMount() {
+        console.log("hello yellow");
+    }
+
     componentWillUnmount() {
         clearInterval(this.state.id);
         this.setState({opacity: 0});
         MyModule.closeDescription();
+
+        setWatched(false);
     }
 
     render() {
@@ -118,7 +121,7 @@ const styles = StyleSheet.create({
     panel: {
         // Fill the entire surface
         width: 900,
-        height: 600,
+        height: 700,
         backgroundColor: 'rgba(255, 255, 255, 0.4)',
         //justifyContent: 'center',
         alignItems: 'flex-end',
@@ -139,7 +142,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
     },
     text: {
-        padding: 20
+        padding: 15
     }
 });
 
