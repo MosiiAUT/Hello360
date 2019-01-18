@@ -1,54 +1,40 @@
 import React from 'react';
 import {
-    AppRegistry,
     StyleSheet,
     Text,
     View,
-    VrButton,
     NativeModules,
 } from 'react-360';
 
 import GazeButton from "react-360-gaze-button";
-import {setStation} from './ClickManager';
+import {setStation, setWatched} from './ClickManager';
 
 const {MyModule} = NativeModules;
 
 
 export class MyGaze extends React.Component {
-
-
     constructor(props) {
         super(props);
         this.state = {
-            gazed: false
-
+            gazed: false,
         };
-        this.station = 0;
-        this.message = "ere";
-        //this.handleClick = this.handleClick.bind(this);
     }
-
 
     setGazed = () => {
 
         console.log("end of time");
-        //MyModule.deleteTitlescreen;
         this.setState({gazed: true});
-        //MyModule.setWorld(15, 0, -10);
-        setStation(this.state.station);
-        this.setState({
-                gazed: false,
-                station: this.state.station * -1
-            }
-        );
 
+        //setStation(this.props.station * -1);
 
-    };
+        this.setState({gazed: false,});
+
+        };
 
     render() {
         const {gazed} = this.state;
 
-        console.log("prop gaze text : " + this.props.gazeText);
+        //console.log("prop gaze text : " + this.props.gazeText);
 
         let message = this.props.gazeText;
         let waitingtime = this.props.timey;
