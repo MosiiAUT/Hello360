@@ -16,6 +16,7 @@ class Models extends React.Component {
                         <Terrain/>
                         <Bild/>
                         <Fass/>
+                        <Fass_w/>
                         <Ship/>
                         <Geschirr/>
                         <GPflanze/>
@@ -62,7 +63,7 @@ class Scene extends React.Component {
 class Ship extends React.Component {
     render() {
         return (
-            <Entity lit={true} style={[styles.brown, styles.transformation]} source={{obj: asset('ship.obj')}}/>
+            <Entity lit={true} style={[styles.darkbrown, styles.transformation]} source={{obj: asset('ship.obj')}}/>
         );
     }
 }
@@ -95,6 +96,14 @@ class Fass extends React.Component {
     render() {
         return (
             <Entity style={[styles.brown, styles.transformation]} source={{obj: asset('fass.obj')}} lit={true}/>
+        );
+    }
+}
+
+class Fass_w extends React.Component {
+    render() {
+        return (
+            <Entity style={[styles.brown, styles.transformation, styles.fass]} source={{obj: asset('fass_watched.obj')}} lit={true}/>
         );
     }
 }
@@ -217,10 +226,10 @@ const styles = StyleSheet.create({
         color: 'darkgrey',
     },
     brown: {
-        color: '#8C5321',
+        color: '#A86F3E',
     },
     darkbrown: {
-        color: '#6B411C',
+        color: '#663D1A',
     },
     green: {
         color: '#1E9949',
@@ -252,6 +261,9 @@ const styles = StyleSheet.create({
     },
     transformation: {
         transform: [{translate: [0, -17, -170]}],
+    },
+    fass: {
+        transform: [{translate: [0, 0, 0]}],
     }
 });
 
