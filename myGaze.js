@@ -25,7 +25,7 @@ export class MyGaze extends React.Component {
         console.log("end of time");
         this.setState({gazed: true});
 
-        setStation(this.props.station * -1);
+        //setStation(this.props.station * -1);
 
         this.setState({gazed: false,});
 

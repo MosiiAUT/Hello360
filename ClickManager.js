@@ -9,7 +9,7 @@ import * as React from 'react';
  * ensure all of our elements are synchronized.
  */
 const State = {
-    station: -1,
+    station: 0,
     isWatched: false,
 };
 
