@@ -11,7 +11,7 @@ class Models extends React.Component {
 
         switch (this.props.station) {
             case 0:
-                elements = <Fass_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>;
+                elements = [<Fass_d/>,<Truhe_d/>];
                 break;
             case 1:
                 elements = [<Fass_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>, <Truhe_d/>];
@@ -63,7 +63,7 @@ class Fass_w extends React.Component {
     booli = false;
 
     render() {
-        if (this.props.isWatched == true && this.props.station == 0) {
+        if (this.props.isWatched == true && this.props.station == 1) {
             this.rotation.setValue(0);
             this.translationX.setValue(0);
             this.translationY.setValue(0);
@@ -75,7 +75,7 @@ class Fass_w extends React.Component {
             Animated.timing(this.translationZ, {toValue: 2, duration: 5000}).start();
             this.booli = true;
 
-        } else if (this.props.isWatched == false && this.props.station == 0 && this.booli) {
+        } else if (this.props.isWatched == false && this.props.station == 1 && this.booli) {
             this.rotation.setValue(0);
             this.translationX.setValue(2);
             this.translationY.setValue(1);
@@ -110,7 +110,7 @@ class Truhe_w extends React.Component {
     booli = false;
 
     render() {
-        if (this.props.isWatched == true && this.props.station == 0) {
+        if (this.props.isWatched == true && this.props.station == 2) {
             this.rotation.setValue(0);
             this.translationX.setValue(0);
             this.translationY.setValue(0);
@@ -122,7 +122,7 @@ class Truhe_w extends React.Component {
             Animated.timing(this.translationZ, {toValue: 2, duration: 5000}).start();
             this.booli = true;
 
-        } else if (this.props.isWatched == false && this.props.station == 0 && this.booli) {
+        } else if (this.props.isWatched == false && this.props.station == 2 && this.booli) {
             this.rotation.setValue(0);
             this.translationX.setValue(2);
             this.translationY.setValue(1);
