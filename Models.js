@@ -164,12 +164,7 @@ class Truhe_w extends React.Component {
         } else if (this.props.isWatched == false && this.props.station == 2 && this.booli) {
             // animationElement(0, 0, 0, true);
 
-            this.rotation.setValue(0);
-            this.translationX.setValue(4);
-            this.translationY.setValue(18);
-            this.translationZ.setValue(2);
-
-            Animated.timing(this.rotation, {toValue: 360, duration: 5000}).start();
+            Animated.timing(this.rotation, {toValue: 0, duration: 5000}).start();
             Animated.timing(this.translationX, {toValue: 0, duration: 5000}).start();
             Animated.timing(this.translationY, {toValue: 0, duration: 5000}).start();
             Animated.timing(this.translationZ, {toValue: 0, duration: 5000}).start();
