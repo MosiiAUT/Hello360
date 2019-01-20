@@ -16,13 +16,37 @@ function init(bundle, parent, options = {}) {
             myLocation.setWorldPosition(x, y, z);
         }
 
-        moveWatchButton(yaw, pitch, roll) {
+        ////////TELEPORT UI/////////
+        moveTeleport(yaw, pitch) {
+            teleportSurface.setAngle(
+                yaw,
+                pitch,
+            );
+        }
+
+        closeTeleport() {
+            teleportSurface.resize(0, 0);
+        }
+
+        openTeleport() {
+            teleportSurface.resize(300, 300);
+        }
+
+        moveWatchButton(yaw, pitch) {
             watchButtonSurface.setAngle(
                 yaw,
                 pitch,
-                roll
             );
         }
+
+        closeWatchButton() {
+            watchButtonSurface.resize(0, 0);
+        }
+
+        openWatchButton() {
+            watchButtonSurface.resize(300, 300);
+        }
+
 
         moveDescription(yaw, pitch) {
             descriptionSurface.setAngle(
@@ -31,12 +55,12 @@ function init(bundle, parent, options = {}) {
             );
         }
 
-        closeDescription(){
-            descriptionSurface.resize(0,0);
+        closeDescription() {
+            descriptionSurface.resize(0, 0);
         }
 
-        openDescription(){
-            descriptionSurface.resize(900,600);
+        openDescription() {
+            descriptionSurface.resize(900, 600);
         }
     }
 
@@ -58,6 +82,7 @@ function init(bundle, parent, options = {}) {
     // );
 
 
+    ////////DESCRIPTION UI/////////
     const descriptionSurface = new Surface(
         0,
         0,
@@ -70,12 +95,12 @@ function init(bundle, parent, options = {}) {
     );
 
     descriptionSurface.setAngle(
-        -Math.PI / 4,
+        -Math.PI / 2.5,
         0,
     );
 
 
-
+    ////////TELEPORT UI/////////
     const teleportSurface = new Surface(
         200,
         200,
@@ -88,15 +113,15 @@ function init(bundle, parent, options = {}) {
     );
 
     teleportSurface.setAngle(
-        Math.PI / 4,
+        -Math.PI / 6,
         0,
     );
 
 
-
+    ////////WATCH UI/////////
     const watchButtonSurface = new Surface(
-        300,
-        300,
+        0,
+        0,
         Surface.SurfaceShape.Flat,
     );
 
@@ -106,10 +131,12 @@ function init(bundle, parent, options = {}) {
     );
 
     watchButtonSurface.setAngle(
-        -Math.PI / 1.45,
-        -Math.PI / 9,
+        -Math.PI / 4.8,
+        -Math.PI / 6.5,
     );
 
+
+    ////////LOCATION UI/////////
     const myLocation = new Location([0, 0, 0]);
 
     r360.renderToLocation(
