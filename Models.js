@@ -1,9 +1,12 @@
 import * as React from 'react';
-import {Animated, asset, StyleSheet, PointLight, AmbientLight, View} from 'react-360';
+import {Animated, asset, StyleSheet, PointLight, DirectionalLight, AmbientLight, View} from 'react-360';
 import Entity from 'Entity';
 import {connect} from './ClickManager';
 
 const AnimatedEntity = Animated.createAnimatedComponent(Entity);
+
+const t_truhe = [-63, 0, -281];
+const t_fass = [-111, 0, -237];
 
 class Models extends React.Component {
     render() {
@@ -11,20 +14,32 @@ class Models extends React.Component {
 
         switch (this.props.station) {
             case 0:
-                elements = <ChairTwo isWatched={this.props.isWatched} station={this.props.station} lit={true}/>;
+                // elements = <ChairTwo isWatched={this.props.isWatched} station={this.props.station} lit={true}/>;
+                elements = [<Fass_d/>, <Truhe_d/>];
                 break;
             case 1:
-                elements = null;
+                elements = [<Fass_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>,
+                    <Truhe_d/>];
+                break;
+            case 2:
+                elements = [<Fass_d/>,
+                    <Truhe_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>];
+                break;
+            case 3:
+                elements = [<Fass_d/>, <Truhe_d/>];
+                break;
         }
 
-        return(
+        return (
             <View>
-                <PointLight intensity={0.5}/>
+                {/*<PointLight intensity={0.5} style={{color:'white', transform:[{translate:[0,50,0]}]}}/>*/}
+                <DirectionalLight intensity={0.4}/>
                 <AmbientLight intensity={0.3}/>
                 <Terrain/>
-                <Bild/>
-                {/*<Fass isWatched={this.props.isWatched} station={this.props.station}/>*/}
+                <Scene/>
                 <Ship/>
+                {/*
+                <Fass/>
                 <Geschirr/>
                 <GPflanze/>
                 <Koralle/>
@@ -34,6 +49,7 @@ class Models extends React.Component {
                 <Schuh/>
                 <Stein/>
                 <Truhe/>
+                */}
                 {elements}
             </View>
         );
@@ -41,18 +57,147 @@ class Models extends React.Component {
     }
 }
 
-class ChairOne extends React.Component {
+/*
+//da die variablen global sind, greifen alle entities darauf zu, deswegen bewegt sich das
+//nächste objekt wenn man sich teleportiert zurück....
+let rotation = new Animated.Value(0);
+let translationX = new Animated.Value(0);
+let translationY = new Animated.Value(0);
+let translationZ = new Animated.Value(0);
+
+
+function animationElement(x, y, z, back) {
+    if (!back) {
+        translationX.setValue(0);
+        translationY.setValue(0);
+        translationZ.setValue(0);
+
+        Animated.timing(rotation, {toValue: 360, duration: 20000}).start();
+        Animated.timing(translationX, {toValue: x, duration: 5000}).start();
+        Animated.timing(translationY, {toValue: y, duration: 5000}).start();
+        Animated.timing(translationZ, {toValue: z, duration: 5000}).start();
+    } else {
+        Animated.timing(rotation, {toValue: 0, duration: 5000}).start();
+        Animated.timing(translationX, {toValue: 0, duration: 5000}).start();
+        Animated.timing(translationY, {toValue: 0, duration: 5000}).start();
+        Animated.timing(translationZ, {toValue: 0, duration: 5000}).start();
+
+    }
+}
+*/
+
+
+// _w - watched things
+// _d - watched things in default
+
+class Fass_w extends React.Component {
+    rotation = new Animated.Value(0);
+    translationX = new Animated.Value(0);
+    translationY = new Animated.Value(0);
+    translationZ = new Animated.Value(0);
+
+    booli = false;
+
     render() {
+        if (this.props.isWatched == true && this.props.station == 1) {
+            // animationElement(12, 18, 6, false);
+            this.rotation.setValue(0);
+            this.translationX.setValue(0);
+            this.translationY.setValue(0);
+            this.translationZ.setValue(0);
+
+            Animated.timing(this.rotation, {toValue: 360, duration: 20000}).start();
+            Animated.timing(this.translationX, {toValue: 12, duration: 5000}).start();
+            Animated.timing(this.translationY, {toValue: 18, duration: 5000}).start();
+            Animated.timing(this.translationZ, {toValue: 6, duration: 5000}).start();
+
+            this.booli = true;
+
+        } else if (this.props.isWatched == false && this.props.station == 1 && this.booli) {
+            // animationElement(0, 0, 0, true);
+
+            Animated.timing(this.rotation, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.translationX, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.translationY, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.translationZ, {toValue: 0, duration: 5000}).start();
+            this.booli = false;
+        }
+
         return (
-            <Entity style={styles.chair} source={{obj: asset('chair.obj')}}/>
+            <AnimatedEntity style={[{
+                transform: [
+                    {translateX: this.translationX},
+                    {translateY: this.translationY},
+                    {translateZ: this.translationZ},
+                    {translate: t_fass},
+                    {rotateY: this.rotation},
+                ]
+            },
+                styles.brown]} source={{obj: asset('fass_watched.obj')}} lit={true}/>
         );
     }
 }
 
-class Scene extends React.Component {
+class Truhe_w extends React.Component {
+    rotation = new Animated.Value(0);
+    translationX = new Animated.Value(0);
+    translationY = new Animated.Value(0);
+    translationZ = new Animated.Value(0);
+
+    booli = false;
+
+    render() {
+        if (this.props.isWatched == true && this.props.station == 2) {
+            // animationElement(12, 18, 6, false);
+
+            this.rotation.setValue(0);
+            this.translationX.setValue(0);
+            this.translationY.setValue(0);
+            this.translationZ.setValue(0);
+
+            Animated.timing(this.rotation, {toValue: 360, duration: 20000}).start();
+            Animated.timing(this.translationX, {toValue: 4, duration: 5000}).start();
+            Animated.timing(this.translationY, {toValue: 18, duration: 5000}).start();
+            Animated.timing(this.translationZ, {toValue: 2, duration: 5000}).start();
+            this.booli = true;
+
+        } else if (this.props.isWatched == false && this.props.station == 2 && this.booli) {
+            // animationElement(0, 0, 0, true);
+
+            Animated.timing(this.rotation, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.translationX, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.translationY, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.translationZ, {toValue: 0, duration: 5000}).start();
+            this.booli = false;
+        }
+
+        return (
+            <AnimatedEntity style={[{
+                transform: [
+                    {translateX: this.translationX},
+                    {translateY: this.translationY},
+                    {translateZ: this.translationZ},
+                    {translate: t_truhe},
+                    {rotateY: this.rotation},
+                ]
+            },
+                styles.brown]} source={{obj: asset('truhe_watched.obj')}} lit={true}/>
+        );
+    }
+}
+
+class Fass_d extends React.Component {
     render() {
         return (
-            <Entity lit={true} style={[styles.sand, styles.transformation]} source={{obj: asset('scene.obj')}}/>
+            <Entity lit={true} style={[styles.brown, styles.fass]} source={{obj: asset('fass_watched.obj')}}/>
+        );
+    }
+}
+
+class Truhe_d extends React.Component {
+    render() {
+        return (
+            <Entity lit={true} style={[styles.brown, styles.truhe]} source={{obj: asset('truhe_watched.obj')}}/>
         );
     }
 }
@@ -60,7 +205,7 @@ class Scene extends React.Component {
 class Ship extends React.Component {
     render() {
         return (
-            <Entity lit={true} style={[styles.brown, styles.transformation, {transform:[{scale: 2}]}]} source={{obj: asset('ship.obj')}}/>
+            <Entity lit={true} style={styles.brown} source={{obj: asset('ship.obj')}}/>
         );
     }
 }
@@ -68,62 +213,101 @@ class Ship extends React.Component {
 class Terrain extends React.Component {
     render() {
         return (
-            <Entity lit={true} style={[styles.sand, styles.transformation]} source={{obj: asset('terrain.obj')}}/>
+            <Entity lit={true} style={styles.sand} source={{obj: asset('terrain.obj')}}/>
         );
     }
 }
 
-class Shrimp extends React.Component {
+class Scene extends React.Component {
     render() {
         return (
-            <Entity style={styles.scene} source={{obj: asset('shrimp.obj')}} lit={true}/>
-        );
-    }
-}
-
-class Bild extends React.Component {
-    render() {
-        return (
-            <Entity style={[styles.brown, styles.transformation]} source={{obj: asset('bild.obj')}} lit={true}/>
+            <Entity style={styles.white} source={{obj: asset('scene.obj')}} lit={true}/>
         );
     }
 }
 
 class Fass extends React.Component {
-    rotation = new Animated.Value(0);
-    translationX = new Animated.Value(0);
-    translationY = new Animated.Value(0);
-    translationZ = new Animated.Value(0);
-
     render() {
-        this.rotation.setValue(0);
-        this.translationX.setValue(0);
-        this.translationY.setValue(0);
-        this.translationZ.setValue(0);
-
-        if (this.props.isWatched == true && this.props.station == 0) {
-            console.log("hhelo");
-            // Animated.timing(this.rotation, {toValue: 390, duration: 20000}).start();
-            Animated.timing(this.translationX, {toValue: 200, duration: 10000}).start();
-            Animated.timing(this.translationY, {toValue: 100, duration: 5000}).start();
-            Animated.timing(this.translationZ, {toValue: 200, duration: 10000}).start();
-        }
-
         return (
-            <AnimatedEntity
-                style={[{
-                    transform:
-                        [{translateX: this.translationX},
-                            {translateY: this.translationY},
-                            {translateZ: this.translationZ},
-                            {rotateY: this.rotation}]
-                },
-                    styles.brown,
-                    styles.transformation]} source={{obj: asset('fass.obj')}} lit={true}/>
+            <Entity style={styles.brown} source={{obj: asset('fass.obj')}} lit={true}/>
         );
     }
 }
 
+class Geschirr extends React.Component {
+    render() {
+        return (
+            <Entity style={styles.white} source={{obj: asset('geschirr.obj')}} lit={true}/>
+        );
+    }
+}
+
+class GPflanze extends React.Component {
+    render() {
+        return (
+            <Entity style={styles.lightgreen} source={{obj: asset('gpflanze.obj')}}
+                    lit={true}/>
+        );
+    }
+}
+
+class Pflanze extends React.Component {
+    render() {
+        return (
+            <Entity style={styles.green} source={{obj: asset('pflanze.obj')}} lit={true}/>
+        );
+    }
+}
+
+class Koralle extends React.Component {
+    render() {
+        return (
+            <Entity style={styles.red} source={{obj: asset('koralle.obj')}} lit={true}/>
+        );
+    }
+}
+
+class Lilapflanze extends React.Component {
+    render() {
+        return (
+            <Entity style={styles.purple} source={{obj: asset('lilapflanze.obj')}} lit={true}/>
+        );
+    }
+}
+
+class Rosakoralle extends React.Component {
+    render() {
+        return (
+            <Entity style={styles.pink} source={{obj: asset('rosakoralle.obj')}} lit={true}/>
+        );
+    }
+}
+
+class Schuh extends React.Component {
+    render() {
+        return (
+            <Entity style={styles.black} source={{obj: asset('schuh.obj')}} lit={true}/>
+        );
+    }
+}
+
+class Stein extends React.Component {
+    render() {
+        return (
+            <Entity style={styles.grey} source={{obj: asset('stein.obj')}} lit={true}/>
+        );
+    }
+}
+
+class Truhe extends React.Component {
+    render() {
+        return (
+            <Entity style={styles.brown} source={{obj: asset('truhe.obj')}} lit={true}/>
+        );
+    }
+}
+
+/*
 class ChairTwo extends React.Component {
     rotation = new Animated.Value(30);
     translationX = new Animated.Value(0);
@@ -156,7 +340,7 @@ class ChairTwo extends React.Component {
             this.booli = false;
         }
 
-            return (
+        return (
             <AnimatedEntity style={[{
                 transform: [
                     {translateX: this.translationX},
@@ -170,99 +354,17 @@ class ChairTwo extends React.Component {
         );
     }
 }
-
-class Geschirr extends React.Component {
-    render() {
-        return (
-            <Entity style={[styles.white, styles.transformation]} source={{obj: asset('geschirr.obj')}} lit={true}/>
-        );
-    }
-}
-
-class GPflanze extends React.Component {
-    render() {
-        return (
-            <Entity style={[styles.lightgreen, styles.transformation]} source={{obj: asset('gpflanze.obj')}}
-                    lit={true}/>
-        );
-    }
-}
-
-class Pflanze extends React.Component {
-    render() {
-        return (
-            <Entity style={[styles.green, styles.transformation]} source={{obj: asset('pflanze.obj')}} lit={true}/>
-        );
-    }
-}
-
-class Koralle extends React.Component {
-    render() {
-        return (
-            <Entity style={[styles.red, styles.transformation]} source={{obj: asset('koralle.obj')}} lit={true}/>
-        );
-    }
-}
-
-class Lilapflanze extends React.Component {
-    render() {
-        return (
-            <Entity style={[styles.purple, styles.transformation]} source={{obj: asset('lilapflanze.obj')}} lit={true}/>
-        );
-    }
-}
-
-class Rosakoralle extends React.Component {
-    render() {
-        return (
-            <Entity style={[styles.pink, styles.transformation]} source={{obj: asset('rosakoralle.obj')}} lit={true}/>
-        );
-    }
-}
-
-class Schuh extends React.Component {
-    render() {
-        return (
-            <Entity style={[styles.black, styles.transformation]} source={{obj: asset('schuh.obj')}} lit={true}/>
-        );
-    }
-}
-
-class Stein extends React.Component {
-    render() {
-        return (
-            <Entity style={[styles.grey, styles.transformation]} source={{obj: asset('stein.obj')}} lit={true}/>
-        );
-    }
-}
-
-class Truhe extends React.Component {
-    render() {
-        return (
-            <Entity style={[styles.brown, styles.transformation]} source={{obj: asset('truhe.obj')}} lit={true}/>
-        );
-    }
-}
-
+*/
 
 const styles = StyleSheet.create({
-    chair: {
-        transform: [{translate: [-5, 0, -4]}, {rotateY: 0}]
-    },
-    chairTwo: {
-        transform: [{translate: [5, 0, -10]}, {rotateY: 150}]
-    },
-    scene: {
-        transform: [{translate: [0, -5, 0]}],
-    },
     black: {
         color: 'darkgrey',
     },
     brown: {
-        color: '#8C5321',
+        color: '#A86F3E',
     },
     darkbrown: {
-        color: '#6B411C',
+        color: '#663D1A',
     },
     green: {
         color: '#1E9949',
@@ -288,13 +390,12 @@ const styles = StyleSheet.create({
     white: {
         color: 'white',
     },
-
-    starttransformation: {
-        transform: [{translate: [0, -17, -400]}],
+    fass: {
+        transform: [{translate: t_fass}],
     },
-    transformation: {
-        transform: [{translate: [0, -17, -170]}],
-    }
+    truhe: {
+        transform: [{translate: t_truhe}],
+    },
 });
 
 const ConnectedModelsView = connect(Models);
