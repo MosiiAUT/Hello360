@@ -11,3 +11,5 @@ build.zip
 .idea/vcs.xml
 .idea/workspace.xml
 static_assets/scene.obj
+*.obj
+*.gltf
