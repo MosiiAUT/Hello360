@@ -35,19 +35,41 @@ class TeleportButton extends React.Component {
         //Achtung! case 0 ist initial case, dh es wirkt sich eigentlich auf den Render case 1 aus
         switch (this.state.station) {
             case 0:
-                MyModule.setWorld(90, 0, 210);
+                MyModule.setWorld(60, 0, 170);
                 MyModule.openWatchButton();
-                MyModule.moveTeleport(Math.PI / 8, 0);
+                MyModule.moveWatchButton(-Math.PI / 1.37, 0);
+                MyModule.moveDescription(-Math.PI / 2.1, 0,);
+                MyModule.moveTeleport(-Math.PI / 8, 0);
                 break;
             case 1:
                 MyModule.setWorld(70, 0, 250);
-                MyModule.closeDescription();
-                MyModule.moveDescription(-Math.PI / 8, 0,);
-                MyModule.moveWatchButton(Math.PI / 13, -Math.PI / 6.3);
+                MyModule.moveWatchButton(-Math.PI / 1.65, -Math.PI / 8);
+                MyModule.moveDescription(-Math.PI / 2.7, 0,);
+                MyModule.moveTeleport(Math.PI / 2.2, 0);
                 break;
             case 2:
-                MyModule.setWorld(50, 0, 320);
-                MyModule.closeDescription();
+                MyModule.setWorld(-40, 0, 240);
+                MyModule.moveWatchButton(Math.PI / 8, -Math.PI / 9);
+                MyModule.moveDescription(Math.PI / 2.5, 0,);
+                MyModule.moveTeleport(-Math.PI / 8, 0);
+                break;
+            case 3:
+                MyModule.setWorld(55, 0, 430);
+                MyModule.moveWatchButton(Math.PI / 1.15, -Math.PI / 6);
+                MyModule.moveDescription(Math.PI / 1.7, 0,);
+                MyModule.moveTeleport(Math.PI / 2, 0);
+                break;
+            case 4:
+                MyModule.setWorld(-45, 0, 390);
+                MyModule.moveWatchButton(-Math.PI / 14, -Math.PI / 10);
+                MyModule.moveDescription(Math.PI / 6, 0,);
+                MyModule.moveTeleport(0, 0);
+                break;
+            case 5:
+                MyModule.setWorld(-55, 20, 530);
+                MyModule.moveWatchButton(-Math.PI / 14, -Math.PI / 10);
+                MyModule.moveDescription(Math.PI / 6, 0,);
+                MyModule.moveTeleport(0, 0);
                 break;
 
         }
