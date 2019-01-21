@@ -35,7 +35,7 @@ function init(bundle, parent, options = {}) {
         }
 
         openTeleport() {
-            teleportSurface.resize(300, 300);
+            teleportSurface.resize(200, 200);
         }
 
         moveWatchButton(yaw, pitch) {
@@ -154,9 +154,9 @@ function init(bundle, parent, options = {}) {
 
 
 // Load the initial environment
-    var geometry = new THREE.CylinderBufferGeometry(2, 5, 20, 16, 4, true);
+    let geometry = new THREE.CylinderBufferGeometry(2, 5, 20, 16, 4, true);
     geometry.computeBoundingBox();
-    var material = new THREE.ShaderMaterial({
+    let material = new THREE.ShaderMaterial({
         uniforms: {
             color1: {
                 value: new THREE.Color("red")
@@ -202,54 +202,51 @@ function init(bundle, parent, options = {}) {
 
 //animation
 
-    var loader = new THREE.GLTFLoader();
-    var scene = r360.compositor._scene;
-    var camera = r360.compositor._camera;
+    /*
+var loader = new THREE.GLTFLoader();
+var camera = r360.compositor._camera;
 
 
-    loader.load(
-        // resource URL
-        'static_assets/fishy.gltf',
-        // called when the resource is loaded
-        function (gltf) {
+loader.load(
+    // resource URL
+    'static_assets/fishy.gltf',
+    // called when the resource is loaded
+    function (gltf) {
 
-            gltf.scene.traverse(function (child) {
-                if (child.isMesh) {
-                    child.geometry.position.y = 10; // center here
-                }
-            });
+        gltf.scene.traverse(function (child) {
+            if (child.isMesh) {
+                child.geometry.position.y = 10; // center here
+            }
+        });
 
-            scene.add(gltf.scene);
-            var myObj = object;
-            object.position.z = 20;
-            gltf.scene.position.y = 10;
-            gltf.position.y = 10;
+        scene.add(gltf.scene);
+        var myObj = object;
+        object.position.z = 20;
+        gltf.scene.position.y = 10;
+        gltf.position.y = 10;
 
-            gltf.animations; // Array<THREE.AnimationClip>
-            gltf.scene; // THREE.Scene
-            gltf.scenes; // Array<THREE.Scene>
-            gltf.cameras; // Array<THREE.Camera>
-            gltf.asset; // Object
+        gltf.animations; // Array<THREE.AnimationClip>
+        gltf.scene; // THREE.Scene
+        gltf.scenes; // Array<THREE.Scene>
+        gltf.cameras; // Array<THREE.Camera>
+        gltf.asset; // Object
 
-        },
-        // called while loading is progressing
-        function (xhr) {
+    },
+    // called while loading is progressing
+    function (xhr) {
 
-            console.log((xhr.loaded / xhr.total * 100) + '% loaded');
+        console.log((xhr.loaded / xhr.total * 100) + '% loaded');
 
-        },
-        // called when loading has errors
-        function (error) {
+    },
+    // called when loading has errors
+    function (error) {
 
-            console.log('An error happened');
+        console.log('An error happened');
 
-        }
-    );
+    }
+);
 
-    let light = new THREE.AmbientLight(0x2aabea);
-    light.intensity = 0.5;
-
-    scene.add(light);
+*/
 
     /*
     let dotSystem = new THREE.Group();
@@ -335,6 +332,13 @@ function init(bundle, parent, options = {}) {
 
     drawDotSystem();
     */
+
+    let scene = r360.compositor._scene;
+
+    let light = new THREE.AmbientLight(0x2aabea);
+    light.intensity = 0.5;
+
+    scene.add(light);
 
     let fogColor = new THREE.Color(0x42f4e2);
     r360.compositor.setBackground(r360.getAssetURL('skynew.png'));

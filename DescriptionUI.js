@@ -4,7 +4,6 @@ import {
     Text,
     View,
     NativeModules,
-    Animated,
 } from 'react-360';
 
 import GazeButton from "react-360-gaze-button";

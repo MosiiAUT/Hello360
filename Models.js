@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Animated, asset, StyleSheet, PointLight, DirectionalLight, AmbientLight, View} from 'react-360';
+import {Animated, asset, StyleSheet, DirectionalLight, AmbientLight, View} from 'react-360';
 import Entity from 'Entity';
 import {connect} from './ClickManager';
 
@@ -66,21 +66,17 @@ let translationY = new Animated.Value(0);
 let translationZ = new Animated.Value(0);
 
 
-function animationElement(x, y, z, back) {
+function animationElement(x, y, z, back, r, tx, ty, tz) {
     if (!back) {
-        translationX.setValue(0);
-        translationY.setValue(0);
-        translationZ.setValue(0);
-
-        Animated.timing(rotation, {toValue: 360, duration: 20000}).start();
-        Animated.timing(translationX, {toValue: x, duration: 5000}).start();
-        Animated.timing(translationY, {toValue: y, duration: 5000}).start();
-        Animated.timing(translationZ, {toValue: z, duration: 5000}).start();
+        Animated.timing(r, {toValue: 360, duration: 20000}).start();
+        Animated.timing(tx, {toValue: x, duration: 5000}).start();
+        Animated.timing(ty, {toValue: y, duration: 5000}).start();
+        Animated.timing(tz, {toValue: z, duration: 5000}).start();
     } else {
-        Animated.timing(rotation, {toValue: 0, duration: 5000}).start();
-        Animated.timing(translationX, {toValue: 0, duration: 5000}).start();
-        Animated.timing(translationY, {toValue: 0, duration: 5000}).start();
-        Animated.timing(translationZ, {toValue: 0, duration: 5000}).start();
+        Animated.timing(r, {toValue: 0, duration: 5000}).start();
+        Animated.timing(tx, {toValue: 0, duration: 5000}).start();
+        Animated.timing(ty, {toValue: 0, duration: 5000}).start();
+        Animated.timing(tz, {toValue: 0, duration: 5000}).start();
 
     }
 }
@@ -100,7 +96,7 @@ class Fass_w extends React.Component {
 
     render() {
         if (this.props.isWatched == true && this.props.station == 1) {
-            // animationElement(12, 18, 6, false);
+            // animationElement(12, 18, 6, false, this.rotation, this.translationX, this.translationY, this,this.translationZ);
             this.rotation.setValue(0);
             this.translationX.setValue(0);
             this.translationY.setValue(0);
@@ -114,7 +110,7 @@ class Fass_w extends React.Component {
             this.booli = true;
 
         } else if (this.props.isWatched == false && this.props.station == 1 && this.booli) {
-            // animationElement(0, 0, 0, true);
+            // animationElement(0, 0, 0, true, this.rotation, this.translationX, this.translationY, this,this.translationZ);
 
             Animated.timing(this.rotation, {toValue: 0, duration: 5000}).start();
             Animated.timing(this.translationX, {toValue: 0, duration: 5000}).start();
