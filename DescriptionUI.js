@@ -31,7 +31,7 @@ class DescriptionUI extends React.Component {
                                 Nur du, ach kannst mein Herz gewinnen.{"\n"}
                                 Im Wasser ziehst du deine Runden{"\n"}
                                 In meinem Herzen tiefe Wunden{"\n"}
-                                Deine Schwarzen Äuglein, so tot und doch doch so allerliebst,{"\n"}
+                                Deine Schwarzen Äuglein, so tot und doch so allerliebst,{"\n"}
                                 Mein Herz wundert wo du nur verbliebst{"\n"}
                                 Seit 5 Jahren schon kein Blick von dir{"\n"}
                                 Du bist wie ausgestorben hier{"\n"}
@@ -115,12 +115,9 @@ class UI extends React.Component {
             setWatched(false);
         }
 
+        MyModule.openTeleport();
         //this.setState({gazed: true,});
     };
-
-    componentDidMount() {
-        console.log("hello yellow");
-    }
 
     componentWillUnmount() {
         clearInterval(this.state.id);
@@ -157,6 +154,7 @@ class UI extends React.Component {
                         height: 50,
                         borderColor: '#639dda',
                         borderWidth: 2,
+                        alignSelf: 'flex-end'
                     }}>
                         <Text style={styles.greeting}>
                             X
@@ -176,7 +174,7 @@ const styles = StyleSheet.create({
         height: 700,
         backgroundColor: 'rgba(255, 255, 255, 0.4)',
         //justifyContent: 'center',
-        alignItems: 'flex-end',
+        alignItems: 'stretch',
     },
     greetingBox: {
         width: 50,
@@ -194,7 +192,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
     },
     text: {
-        padding: 15
+        padding: 15,
+        alignSelf: 'center'
     }
 });
 

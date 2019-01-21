@@ -7,7 +7,6 @@ const AnimatedEntity = Animated.createAnimatedComponent(Entity);
 
 let t_truhe = [-63, 0, -281];
 let t_fass = [-111, 0, -237];
-
 class Models extends React.Component {
     render() {
         let elements;
@@ -23,15 +22,19 @@ class Models extends React.Component {
                 elements = [<Fass_d/>, <Truhe_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>];
                 break;
             case 3:
-                elements = [<Fass_d/>,<Truhe_d/>];
+                // elements = <ChairTwo isWatched={this.props.isWatched} station={this.props.station} lit={true}/>;
+                elements = [<Fass_d/>, <Truhe_d/>];
                 break;
+
         }
 
-        return(
+        return (
             <View>
                 {/*<PointLight intensity={0.5} style={{color:'white', transform:[{translate:[0,50,0]}]}}/>*/}
                 <DirectionalLight intensity={0.4} />
                 <AmbientLight intensity={0.3} />
+                <DirectionalLight intensity={0.4}/>
+                <AmbientLight intensity={0.3}/>
                 <Terrain/>
                 <Scene/>
                 <Ship/>
@@ -54,6 +57,36 @@ class Models extends React.Component {
     }
 }
 
+/*
+//da die variablen global sind, greifen alle entities darauf zu, deswegen bewegt sich das
+//nächste objekt wenn man sich teleportiert zurück....
+let rotation = new Animated.Value(0);
+let translationX = new Animated.Value(0);
+let translationY = new Animated.Value(0);
+let translationZ = new Animated.Value(0);
+
+
+function animationElement(x, y, z, back) {
+    if (!back) {
+        translationX.setValue(0);
+        translationY.setValue(0);
+        translationZ.setValue(0);
+
+        Animated.timing(rotation, {toValue: 360, duration: 20000}).start();
+        Animated.timing(translationX, {toValue: x, duration: 5000}).start();
+        Animated.timing(translationY, {toValue: y, duration: 5000}).start();
+        Animated.timing(translationZ, {toValue: z, duration: 5000}).start();
+    } else {
+        Animated.timing(rotation, {toValue: 0, duration: 5000}).start();
+        Animated.timing(translationX, {toValue: 0, duration: 5000}).start();
+        Animated.timing(translationY, {toValue: 0, duration: 5000}).start();
+        Animated.timing(translationZ, {toValue: 0, duration: 5000}).start();
+
+    }
+}
+*/
+
+
 // _w - watched things
 // _d - watched things in default
 
@@ -67,6 +100,8 @@ class Fass_w extends React.Component {
 
     render() {
         if (this.props.isWatched == true && this.props.station == 1) {
+
+            // animationElement(12, 18, 6, false);
             this.rotation.setValue(0);
             this.translationX.setValue(0);
             this.translationY.setValue(0);
@@ -84,10 +119,12 @@ class Fass_w extends React.Component {
             this.translationY.setValue(1);
             this.translationZ.setValue(2);
 
-            Animated.timing(this.translationX, {toValue: 0, duration: 5000}).start();
-            Animated.timing(this.translationY, {toValue: 0, duration: 5000}).start();
-            Animated.timing(this.translationZ, {toValue: 0, duration: 5000}).start();
-            this.booli = false;
+            Animated.timing(this.translationX, {toValue: 12, duration: 5000}).start();
+            Animated.timing(this.translationY, {toValue: 18, duration: 5000}).start();
+            Animated.timing(this.translationZ, {toValue: 6, duration: 5000}).start();
+
+            this.booli = true;
+
         }
 
         return (
@@ -104,6 +141,7 @@ class Fass_w extends React.Component {
         );
     }
 }
+
 class Truhe_w extends React.Component {
     rotation = new Animated.Value(0);
     translationX = new Animated.Value(0);
@@ -114,14 +152,15 @@ class Truhe_w extends React.Component {
 
     render() {
         if (this.props.isWatched == true && this.props.station == 2) {
+            // animationElement(12, 18, 6, false);
             this.rotation.setValue(0);
             this.translationX.setValue(0);
             this.translationY.setValue(0);
             this.translationZ.setValue(0);
 
             Animated.timing(this.rotation, {toValue: 360, duration: 20000}).start();
-            Animated.timing(this.translationX, {toValue: 2, duration: 5000}).start();
-            Animated.timing(this.translationY, {toValue: 1, duration: 5000}).start();
+            Animated.timing(this.translationX, {toValue: 4, duration: 5000}).start();
+            Animated.timing(this.translationY, {toValue: 18, duration: 5000}).start();
             Animated.timing(this.translationZ, {toValue: 2, duration: 5000}).start();
             this.booli = true;
 
@@ -131,6 +170,7 @@ class Truhe_w extends React.Component {
             this.translationY.setValue(1);
             this.translationZ.setValue(2);
 
+            Animated.timing(this.rotation, {toValue: 0, duration: 5000}).start();
             Animated.timing(this.translationX, {toValue: 0, duration: 5000}).start();
             Animated.timing(this.translationY, {toValue: 0, duration: 5000}).start();
             Animated.timing(this.translationZ, {toValue: 0, duration: 5000}).start();
@@ -273,6 +313,54 @@ class Truhe extends React.Component {
     }
 }
 
+/*
+class ChairTwo extends React.Component {
+    rotation = new Animated.Value(30);
+    translationX = new Animated.Value(0);
+    translationY = new Animated.Value(0);
+    translationZ = new Animated.Value(0);
+
+    booli = false;
+
+    render() {
+        if (this.props.isWatched == true && this.props.station == 0) {
+            this.rotation.setValue(30);
+            this.translationX.setValue(0);
+            this.translationY.setValue(0);
+            this.translationZ.setValue(0);
+
+            Animated.timing(this.rotation, {toValue: 360, duration: 20000}).start();
+            Animated.timing(this.translationX, {toValue: 2, duration: 5000}).start();
+            Animated.timing(this.translationY, {toValue: 1, duration: 5000}).start();
+            Animated.timing(this.translationZ, {toValue: 2, duration: 5000}).start();
+            this.booli = true;
+
+        } else if (this.props.isWatched == false && this.props.station == 0 && this.booli) {
+            this.translationX.setValue(2);
+            this.translationY.setValue(1);
+            this.translationZ.setValue(2);
+
+            Animated.timing(this.translationX, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.translationY, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.translationZ, {toValue: 0, duration: 5000}).start();
+            this.booli = false;
+        }
+
+        return (
+            <AnimatedEntity style={[{
+                transform: [
+                    {translateX: this.translationX},
+                    {translateY: this.translationY},
+                    {translateZ: this.translationZ},
+                    {translate: [-5, 0.5, 0.1]},
+                    {rotateY: this.rotation},
+                    {scale: 0.3}
+                ]
+            }]} source={{obj: asset('chair.obj')}}/>
+        );
+    }
+}
+*/
 
 const styles = StyleSheet.create({
     black: {

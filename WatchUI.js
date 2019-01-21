@@ -35,7 +35,7 @@ class WatchButton extends React.Component {
 
         //Setzt die Größe des beschreibungspanels
         MyModule.openDescription();
-
+        MyModule.closeTeleport();
         //this.setState({gazed: true,});
     };
 

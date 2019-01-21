@@ -7,7 +7,7 @@ import {
 } from 'react-360';
 
 import GazeButton from "react-360-gaze-button";
-import {connect, setStation} from './ClickManager';
+import {connect, setStation, setWatched} from './ClickManager';
 
 const {MyModule} = NativeModules;
 
@@ -36,12 +36,18 @@ class TeleportButton extends React.Component {
         switch (this.state.station) {
             case 0:
                 MyModule.setWorld(90, 0, 210);
+                MyModule.openWatchButton();
+                MyModule.moveTeleport(Math.PI / 8, 0);
                 break;
             case 1:
                 MyModule.setWorld(70, 0, 250);
+                MyModule.closeDescription();
+                MyModule.moveDescription(-Math.PI / 8, 0,);
+                MyModule.moveWatchButton(Math.PI / 13, -Math.PI / 6.3);
                 break;
             case 2:
                 MyModule.setWorld(50, 0, 320);
+                MyModule.closeDescription();
                 break;
 
         }
