@@ -172,7 +172,7 @@ const styles = StyleSheet.create({
         // Fill the entire surface
         width: 900,
         height: 700,
-        backgroundColor: 'rgba(255, 255, 255, 0.4)',
+        backgroundColor: 'rgba(255, 255, 255, 0.6)',
         //justifyContent: 'center',
         alignItems: 'stretch',
     },
