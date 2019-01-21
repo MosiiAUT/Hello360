@@ -29,7 +29,7 @@ function init(bundle, parent, options = {}) {
         }
 
         openTeleport() {
-            teleportSurface.resize(300, 300);
+            teleportSurface.resize(200, 200);
         }
 
         moveWatchButton(yaw, pitch) {
