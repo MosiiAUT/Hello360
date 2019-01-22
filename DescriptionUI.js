@@ -153,6 +153,132 @@ class DescriptionUI extends React.Component {
                             </View>
                         </View>
                     );
+            case 7:
+                if(this.props.isWatched)
+                    return (
+                        <View style={styles.panel}>
+                            <UI isWatched={this.props.isWatched}/>
+                            <View>
+                                <Text style={[{fontSize: 38}, styles.text]}>
+                                    Schuh
+                                </Text>
+                                <Text style={[{fontSize: 26}, styles.text]}>
+                                    Ein Designer Schuh eines französischen Gefangenen.
+                                </Text>
+                            </View>
+                        </View>
+                    );
+            case 8:
+                if(this.props.isWatched)
+                    return (
+                        <View style={styles.panel}>
+                            <UI isWatched={this.props.isWatched}/>
+                            <View>
+                                <Text style={[{fontSize: 38}, styles.text]}>
+                                    Plankenwart der 13. Piratenkönig
+                                </Text>
+                                <Text style={[{fontSize: 26}, styles.text]}>
+                                    Ein Bildnis des amtierenden Piratenkönigs
+                                </Text>
+                            </View>
+                        </View>
+                    );
+            case 9:
+                if(this.props.isWatched)
+                    return (
+                        <View style={styles.panel}>
+                            <UI isWatched={this.props.isWatched}/>
+                            <View>
+                                <Text style={[{fontSize: 38}, styles.text]}>
+                                    Zeitungsartikel: Die Seemöve 19. August 1732.
+                                </Text>
+                                <Text style={[{fontSize: 26}, styles.text]}>
+                                    Hat es sich ausgeshrimpt?{"\n"}
+                                    {"\n"}
+                                    Seid nun fast 2 Jahren bleiben die Netze der Shrimp Fischer{"\n"}
+                                    nahe Tortugas leer wenn Winter herreinbricht und die {"\n"}
+                                    Shrimp Jagdzeit beginnt. Die wenigen die gefangen werden sind erkrankt {"\n"}
+                                    und ungenießbar. Aus diversen Quellen heißt es nun, {"\n"}
+                                    dass die Shrimp Ernte auch diesen Winter ausfallen soll. {"\n"}
+                                    Die Wissenschaftlern des Königs bezeichnen das Phänomen als “Werk Satans” {"\n"}
+                                    und schlagen einen umgehenden Aderlass bei den verbliebenden {"\n"}
+                                    erkrankten Shrimps im Aquarium des Königs vor, {"\n"}
+                                    in der Hoffnung diese zu gesunden und anschließend zu züchten.
+                                </Text>
+                            </View>
+                        </View>
+                    );
+            case 10:
+                if(this.props.isWatched)
+                    return (
+                        <View style={styles.panel}>
+                            <UI isWatched={this.props.isWatched}/>
+                            <View>
+                                <Text style={[{fontSize: 38}, styles.text]}>
+                                    Shrimp Statue
+                                </Text>
+                                <Text style={[{fontSize: 26}, styles.text]}>
+                                    Eine in Stein verewigte Schönheit. Erbeutet 1729.
+                                </Text>
+                            </View>
+                        </View>
+                    );
+            case 11:
+                if(this.props.isWatched)
+                    return (
+                        <View style={styles.panel}>
+                            <UI isWatched={this.props.isWatched}/>
+                            <View>
+                                <Text style={[{fontSize: 38}, styles.text]}>
+                                    Der gemeine Haken
+                                </Text>
+                                <Text style={[{fontSize: 26}, styles.text]}>
+                                    Der gemeine Haken war, obwohl das wohl stereotypischste {"\n"}
+                                    Zeichen der Piraterie, ein relativ unbeliebtes Werkzeug, {"\n"}
+                                    da man damit weder Rum trinken, noch Kameraden verprügeln konnte.
+                                </Text>
+                            </View>
+                        </View>
+                    );
+            case 12:
+                if(this.props.isWatched)
+                    return (
+                        <View style={styles.panel}>
+                            <UI isWatched={this.props.isWatched}/>
+                            <View>
+                                <Text style={[{fontSize: 38}, styles.text]}>
+                                    Wellness Broschüre
+                                </Text>
+                                <Text style={[{fontSize: 26}, styles.text]}>
+                                    Ahoi Kameraden! {"\n"}
+                                    {"\n"}
+                                    Gönnen Sie sich eine Pause von Cholera und billigem Rum {"\n"}
+                                    und kommen Sie an Bord der Wellennässe!{"\n"}
+                                    Unsere Exklusive Erholungskur auf hoher See bietet Ihnen {"\n"}
+                                    eine Zwei Wöchige Pause von dem Piratentreiben {"\n"}
+                                    und lässt sie erfrischt in den Arbeitsalltag zurückkehren.{"\n"}
+                                    Wir bieten Ihnen authentische Schlaf Bretter aus Eichenholz, {"\n"}
+                                    ausgewählte Kurse um Ihre Piraterie zu verbessern {"\n"}
+                                    und einen Wellnessbereich mit exklusiver Rum Badewanne. {"\n"}
+                                    {"\n"}
+                                    Unser mit drei Enterhaken ausgezeichneter Schiffskoch {"\n"}
+                                    bereitet jeden zweiten Sonnenuntergang Algengulasch {"\n"}
+                                    und jeden Morgen Staubiges Trockenfleisch für Sie zu. {"\n"}
+                                    {"\n"}
+                                    Inkludiert sind:{"\n"}
+                                    1x Zahnvergoldung{"\n"}
+                                    1x Holzbein polieren (auch andere hölzerne Prothesen werden akzeptiert) {"\n"}
+                                    5x Seemanslied nach Wahl {"\n"}
+                                    2x Bartflechten {"\n"}
+                                    1x Enterhaken werfen für Anfänger (Kurs) {"\n"}
+                                    1x Reden ohne Zähne (Kurs) {"\n"}
+                                    {"\n"}
+                                    Wir freuen uns auf Sie!{"\n"}
+                                    Ihr Wellenässe Team.
+                                </Text>
+                            </View>
+                        </View>
+                    );
             default:
                 return null;
         }
