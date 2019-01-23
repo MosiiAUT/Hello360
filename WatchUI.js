@@ -5,6 +5,7 @@ import {
     View,
     NativeModules,
     asset,
+    Image
 } from 'react-360';
 
 import GazeButton from "react-360-gaze-button";
@@ -38,7 +39,7 @@ class WatchButton extends React.Component {
         //Setzt die Größe des beschreibungspanels
         MyModule.openDescription();
         MyModule.closeTeleport();
-        //this.setState({gazed: true,});
+        MyModule.closeWatchButton();
         AudioModule.playOneShot({
             source: asset('click.mp3'),
         });
@@ -55,9 +56,7 @@ class WatchButton extends React.Component {
                 }}
                 render={(remainingTime, isGazed) => (
                     <View style={styles.greetingBox}>
-                        <Text style={styles.greeting}>
-                            {/*{gazed ? "You have gazed me" : isGazed ? remainingTime : "Gaze me"}*/}
-                        </Text>
+                        {/*<Image style={styles.image} source={asset('circle.png')} />*/}
                     </View>
                 )}
             />
@@ -84,6 +83,10 @@ const styles = StyleSheet.create({
     greeting: {
         fontSize: 30,
     },
+    image: {
+        width: 300,
+        height: 300,
+    }
 });
 
 const ConnectedWatchUI = connect(WatchUI);

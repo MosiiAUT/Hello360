@@ -13,3 +13,4 @@ build.zip
 static_assets/scene.obj
 *.obj
 *.gltf
+*.png

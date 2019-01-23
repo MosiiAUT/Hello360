@@ -175,6 +175,7 @@ class UI extends React.Component {
         }
 
         MyModule.openTeleport();
+        MyModule.openWatchButton();
         //this.setState({gazed: true,});
         AudioModule.playOneShot({
             source: asset('click2.mp3'),
@@ -215,7 +216,7 @@ class UI extends React.Component {
                     <View style={{backgroundColor: 'rgba(255, 255, 255, ' + this.state.opacity  + ')',
                         width: 50,
                         height: 50,
-                        borderColor: '#639dda',
+                        borderColor: '#5e5e5e',
                         borderWidth: 2,
                         alignSelf: 'flex-end'
                     }}>
@@ -242,7 +243,7 @@ const styles = StyleSheet.create({
     greetingBox: {
         width: 50,
         height: 50,
-        borderColor: '#639dda',
+        borderColor: '#000000',
         borderWidth: 2,
     },
     greeting: {
