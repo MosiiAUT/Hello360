@@ -1,9 +1,15 @@
 import * as React from 'react';
-import {Animated, asset, StyleSheet, DirectionalLight, AmbientLight, View} from 'react-360';
+import {Animated, asset, StyleSheet, DirectionalLight, AmbientLight, View, NativeModules} from 'react-360';
 import Entity from 'Entity';
 import {connect} from './ClickManager';
 
 const AnimatedEntity = Animated.createAnimatedComponent(Entity);
+const {AudioModule} = NativeModules;
+
+AudioModule.playEnvironmental({
+    source: asset('Fluidscape.mp3'),
+    volume: 0.1,
+});
 
 let t_koralle = [-116, 0, -112];
 let t_fass = [-111, 0, -237];
@@ -600,5 +606,4 @@ const styles = StyleSheet.create({
 });
 
 const ConnectedModelsView = connect(Models);
-
 export default ConnectedModelsView;

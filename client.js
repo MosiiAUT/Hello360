@@ -5,6 +5,7 @@ import * as THREE from 'three';
 import {ReactInstance, Location, Module, Surface} from 'react-360-web';
 import SimpleRaycaster from "simple-raycaster";
 
+
 function init(bundle, parent, options = {}) {
 
     class MyModule extends Module {
@@ -152,7 +153,7 @@ function init(bundle, parent, options = {}) {
         myLocation,
     );
 
-
+/*
 // Load the initial environment
     let geometry = new THREE.CylinderBufferGeometry(2, 5, 20, 16, 4, true);
     geometry.computeBoundingBox();
@@ -199,7 +200,7 @@ function init(bundle, parent, options = {}) {
 //var mesh = new THREE.Mesh(geometry, material);
 //r360.compositor._scene.add(mesh);
 
-
+*/
 //animation
 
     /*

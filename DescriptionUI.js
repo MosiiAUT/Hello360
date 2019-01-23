@@ -4,12 +4,14 @@ import {
     Text,
     View,
     NativeModules,
+    asset,
 } from 'react-360';
 
 import GazeButton from "react-360-gaze-button";
 import {connect, setWatched} from './ClickManager';
 
 const {MyModule} = NativeModules;
+const {AudioModule} = NativeModules;
 
 
 class DescriptionUI extends React.Component {
@@ -174,6 +176,10 @@ class UI extends React.Component {
 
         MyModule.openTeleport();
         //this.setState({gazed: true,});
+        AudioModule.playOneShot({
+            source: asset('click2.mp3'),
+        });
+
     };
 
     componentWillUnmount() {

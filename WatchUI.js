@@ -4,11 +4,13 @@ import {
     Text,
     View,
     NativeModules,
+    asset,
 } from 'react-360';
 
 import GazeButton from "react-360-gaze-button";
 import {connect, setWatched} from './ClickManager';
 
+const {AudioModule} = NativeModules;
 const {MyModule} = NativeModules;
 
 
@@ -37,6 +39,9 @@ class WatchButton extends React.Component {
         MyModule.openDescription();
         MyModule.closeTeleport();
         //this.setState({gazed: true,});
+        AudioModule.playOneShot({
+            source: asset('click.mp3'),
+        });
     };
 
     render() {
