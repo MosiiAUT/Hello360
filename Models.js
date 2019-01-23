@@ -11,17 +11,30 @@ AudioModule.playEnvironmental({
     volume: 0.1,
 });
 
+//outside
 let t_koralle = [-116, 0, -112];
 let t_fass = [-111, 0, -237];
 let t_truhe = [61, 0, -290];
 let t_haken_mug = [-42, 0, -399];
 let t_bild_shrimp = [32, 0, -454];
 
+//floor 1
+let t_bett = [81, 0, -573];
+let t_shoe = [32, 0, -538];
+let t_bild_plankenwart = [-4, 0, -507];
+let t_book_see = [-24, 0, -534];
+let t_shrimpstatue = [-68, 0, -568];
+let t_haken_gemein = [-123, 0, -552];
+let t_wellness = [-82, 0, -516];
+
+
 class Models extends React.Component {
     render() {
         let elements;
 
         switch (this.props.station) {
+            // elements = <ChairTwo isWatched={this.props.isWatched} station={this.props.station} lit={true}/>;
+            // outside
             case 0:
                 elements = [<Koralle_d/>,<Fass_d/>,<Truhe_d/>,<Haken_mug_d/>,<Bild_shrimp_d/>];
                 break;
@@ -32,24 +45,48 @@ class Models extends React.Component {
                 elements = [<Koralle_d/>, <Fass_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>, <Truhe_d/>,<Haken_mug_d/>,<Bild_shrimp_d/>];
                 break;
             case 3:
-                // elements = <ChairTwo isWatched={this.props.isWatched} station={this.props.station} lit={true}/>;
                 elements = [<Koralle_d/>, <Fass_d/>, <Truhe_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>,<Haken_mug_d/>,<Bild_shrimp_d/>];
                 break;
             case 4:
-                // elements = <ChairTwo isWatched={this.props.isWatched} station={this.props.station} lit={true}/>;
                 elements = [<Koralle_d/>, <Fass_d/>, <Truhe_d/>,<Haken_mug_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>,<Bild_shrimp_d/>];
                 break;
             case 5:
-                // elements = <ChairTwo isWatched={this.props.isWatched} station={this.props.station} lit={true}/>;
-                elements = [<Koralle_d/>, <Fass_d/>, <Truhe_d/>,<Haken_mug_d/>,<Bild_shrimp_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>];
+                elements = [<Koralle_d/>, <Fass_d/>, <Truhe_d/>,<Haken_mug_d/>,<Bild_shrimp_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>, <Bett_d/>,<Schuh_d/>,<Bild_plankenwart_d/>,<Book_see_d/>,<Shrimpstatue_d/>,<Haken_gemein_d/>,<Wellness_d/>];
                 break;
+
+            //first floor
+            case 6:
+                elements = [<Koralle_d/>, <Fass_d/>, <Truhe_d/>,<Haken_mug_d/>,<Bild_shrimp_d/>, <Bett_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>,<Schuh_d/>,<Bild_plankenwart_d/>,<Book_see_d/>,<Shrimpstatue_d/>,<Haken_gemein_d/>,<Wellness_d/>];
+                break;
+            case 7:
+                elements = [<Koralle_d/>, <Fass_d/>, <Truhe_d/>,<Haken_mug_d/>,<Bild_shrimp_d/>, <Bett_d/>,<Schuh_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>,<Bild_plankenwart_d/>,<Book_see_d/>,<Shrimpstatue_d/>,<Haken_gemein_d/>,<Wellness_d/>];
+                break;
+            case 8:
+                elements = [<Bett_d/>,<Schuh_d/>,<Bild_plankenwart_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>,<Book_see_d/>,<Shrimpstatue_d/>,<Haken_gemein_d/>,<Wellness_d/>];
+                break;
+            case 9:
+                elements = [<Bett_d/>,<Schuh_d/>,<Bild_plankenwart_d/>,<Book_see_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>,<Shrimpstatue_d/>,<Haken_gemein_d/>,<Wellness_d/>];
+                break;
+            case 10:
+                elements = [<Bett_d/>,<Schuh_d/>,<Bild_plankenwart_d/>,<Book_see_d/>,<Shrimpstatue_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>,<Haken_gemein_d/>,<Wellness_d/>];
+                break;
+            case 11:
+                elements = [<Bett_d/>,<Schuh_d/>,<Bild_plankenwart_d/>,<Book_see_d/>,<Shrimpstatue_d/>,<Haken_gemein_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>,<Wellness_d/>];
+                break;
+            case 12:
+                elements = [<Bett_d/>,<Schuh_d/>,<Bild_plankenwart_d/>,<Book_see_d/>,<Shrimpstatue_d/>,<Haken_gemein_d/>,<Wellness_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>];
+                break;
+            case 13:
+                elements = null;
+                break;
+
         }
 
         return (
             <View>
                 {/*<PointLight intensity={0.5} style={{color:'white', transform:[{translate:[0,50,0]}]}}/>*/}
-                <DirectionalLight intensity={0.4}/>
-                <AmbientLight intensity={0.3}/>
+                <DirectionalLight intensity={0.4} />
+                <AmbientLight intensity={0.3} />
                 <Terrain/>
                 <Scene/>
                 <Ship/>
@@ -129,8 +166,6 @@ class Koralle_w extends React.Component {
             this.booli = true;
 
         } else if (this.props.isWatched == false && this.props.station == 1 && this.booli) {
-            // animationElement(0, 0, 0, true, this.rotation, this.translationX, this.translationY, this,this.translationZ);
-
             Animated.timing(this.rotation, {toValue: 0, duration: 5000}).start();
             Animated.timing(this.translationX, {toValue: 0, duration: 5000}).start();
             Animated.timing(this.translationY, {toValue: 0, duration: 5000}).start();
@@ -218,7 +253,6 @@ class Truhe_w extends React.Component {
     render() {
         if (this.props.isWatched == true && this.props.station == 3) {
             // animationElement(12, 18, 6, false);
-
             this.rotation.setValue(0);
             this.translationX.setValue(0);
             this.translationY.setValue(0);
@@ -358,6 +392,358 @@ class Bild_shrimp_w extends React.Component {
     }
 }
 
+class Bett_w extends React.Component {
+    rotation = new Animated.Value(0);
+    translationX = new Animated.Value(0);
+    translationY = new Animated.Value(0);
+    translationZ = new Animated.Value(0);
+
+    booli = false;
+
+    render() {
+        if (this.props.isWatched == true && this.props.station == 6) {
+            // animationElement(12, 18, 6, false);
+            this.rotation.setValue(0);
+            this.translationX.setValue(0);
+            this.translationY.setValue(0);
+            this.translationZ.setValue(0);
+
+            Animated.timing(this.rotation, {toValue: 360, duration: 20000}).start();
+            Animated.timing(this.translationX, {toValue: 4, duration: 5000}).start();
+            Animated.timing(this.translationY, {toValue: 18, duration: 5000}).start();
+            Animated.timing(this.translationZ, {toValue: 2, duration: 5000}).start();
+            this.booli = true;
+
+        } else if (this.props.isWatched == false && this.props.station == 6 && this.booli) {
+            this.rotation.setValue(0);
+            this.translationX.setValue(2);
+            this.translationY.setValue(1);
+            this.translationZ.setValue(2);
+
+            Animated.timing(this.rotation, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.translationX, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.translationY, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.translationZ, {toValue: 0, duration: 5000}).start();
+            this.booli = false;
+        }
+
+        return (
+            <AnimatedEntity style={[{
+                transform: [
+                    {translateX: this.translationX},
+                    {translateY: this.translationY},
+                    {translateZ: this.translationZ},
+                    {translate: t_bett},
+                    {rotateY: this.rotation},
+                ]
+            },
+                styles.brown]} source={{obj: asset('w_bett.obj')}} lit={true}/>
+        );
+    }
+}
+
+class Schuh_w extends React.Component {
+    rotation = new Animated.Value(0);
+    translationX = new Animated.Value(0);
+    translationY = new Animated.Value(0);
+    translationZ = new Animated.Value(0);
+
+    booli = false;
+
+    render() {
+        if (this.props.isWatched == true && this.props.station == 7) {
+            // animationElement(12, 18, 6, false);
+            this.rotation.setValue(0);
+            this.translationX.setValue(0);
+            this.translationY.setValue(0);
+            this.translationZ.setValue(0);
+
+            Animated.timing(this.rotation, {toValue: 360, duration: 20000}).start();
+            Animated.timing(this.translationX, {toValue: 4, duration: 5000}).start();
+            Animated.timing(this.translationY, {toValue: 18, duration: 5000}).start();
+            Animated.timing(this.translationZ, {toValue: 2, duration: 5000}).start();
+            this.booli = true;
+
+        } else if (this.props.isWatched == false && this.props.station == 7 && this.booli) {
+            this.rotation.setValue(0);
+            this.translationX.setValue(2);
+            this.translationY.setValue(1);
+            this.translationZ.setValue(2);
+
+            Animated.timing(this.rotation, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.translationX, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.translationY, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.translationZ, {toValue: 0, duration: 5000}).start();
+            this.booli = false;
+        }
+
+        return (
+            <AnimatedEntity style={[{
+                transform: [
+                    {translateX: this.translationX},
+                    {translateY: this.translationY},
+                    {translateZ: this.translationZ},
+                    {translate: t_shoe},
+                    {rotateY: this.rotation},
+                ]
+            },
+                styles.black]} source={{obj: asset('w_schuh.obj')}} lit={true}/>
+        );
+    }
+}
+
+class Bild_plankenwart_w extends React.Component {
+    rotation = new Animated.Value(0);
+    translationX = new Animated.Value(0);
+    translationY = new Animated.Value(0);
+    translationZ = new Animated.Value(0);
+
+    booli = false;
+
+    render() {
+        if (this.props.isWatched == true && this.props.station == 8) {
+            // animationElement(12, 18, 6, false);
+            this.rotation.setValue(0);
+            this.translationX.setValue(0);
+            this.translationY.setValue(0);
+            this.translationZ.setValue(0);
+
+            Animated.timing(this.rotation, {toValue: 360, duration: 20000}).start();
+            Animated.timing(this.translationX, {toValue: 4, duration: 5000}).start();
+            Animated.timing(this.translationY, {toValue: 18, duration: 5000}).start();
+            Animated.timing(this.translationZ, {toValue: 2, duration: 5000}).start();
+            this.booli = true;
+
+        } else if (this.props.isWatched == false && this.props.station == 8 && this.booli) {
+            this.rotation.setValue(0);
+            this.translationX.setValue(2);
+            this.translationY.setValue(1);
+            this.translationZ.setValue(2);
+
+            Animated.timing(this.rotation, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.translationX, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.translationY, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.translationZ, {toValue: 0, duration: 5000}).start();
+            this.booli = false;
+        }
+
+        return (
+            <AnimatedEntity style={[{
+                transform: [
+                    {translateX: this.translationX},
+                    {translateY: this.translationY},
+                    {translateZ: this.translationZ},
+                    {translate: t_bild_plankenwart},
+                    {rotateY: this.rotation},
+                ]
+            },
+                styles.brown]} source={{obj: asset('w_bild_plankenwart.obj')}} lit={true}/>
+        );
+    }
+}
+
+class Book_see_w extends React.Component {
+    rotation = new Animated.Value(0);
+    translationX = new Animated.Value(0);
+    translationY = new Animated.Value(0);
+    translationZ = new Animated.Value(0);
+
+    booli = false;
+
+    render() {
+        if (this.props.isWatched == true && this.props.station == 9) {
+            // animationElement(12, 18, 6, false);
+            this.rotation.setValue(0);
+            this.translationX.setValue(0);
+            this.translationY.setValue(0);
+            this.translationZ.setValue(0);
+
+            Animated.timing(this.rotation, {toValue: 360, duration: 20000}).start();
+            Animated.timing(this.translationX, {toValue: 4, duration: 5000}).start();
+            Animated.timing(this.translationY, {toValue: 18, duration: 5000}).start();
+            Animated.timing(this.translationZ, {toValue: 2, duration: 5000}).start();
+            this.booli = true;
+
+        } else if (this.props.isWatched == false && this.props.station == 9 && this.booli) {
+            this.rotation.setValue(0);
+            this.translationX.setValue(2);
+            this.translationY.setValue(1);
+            this.translationZ.setValue(2);
+
+            Animated.timing(this.rotation, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.translationX, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.translationY, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.translationZ, {toValue: 0, duration: 5000}).start();
+            this.booli = false;
+        }
+
+        return (
+            <AnimatedEntity style={[{
+                transform: [
+                    {translateX: this.translationX},
+                    {translateY: this.translationY},
+                    {translateZ: this.translationZ},
+                    {translate: t_book_see},
+                    {rotateY: this.rotation},
+                ]
+            },
+                styles.brown]} source={{obj: asset('w_book_see.obj')}} lit={true}/>
+        );
+    }
+}
+
+class Shrimpstatue_w extends React.Component {
+    rotation = new Animated.Value(0);
+    translationX = new Animated.Value(0);
+    translationY = new Animated.Value(0);
+    translationZ = new Animated.Value(0);
+
+    booli = false;
+
+    render() {
+        if (this.props.isWatched == true && this.props.station == 10) {
+            // animationElement(12, 18, 6, false);
+            this.rotation.setValue(0);
+            this.translationX.setValue(0);
+            this.translationY.setValue(0);
+            this.translationZ.setValue(0);
+
+            Animated.timing(this.rotation, {toValue: 360, duration: 20000}).start();
+            Animated.timing(this.translationX, {toValue: 4, duration: 5000}).start();
+            Animated.timing(this.translationY, {toValue: 18, duration: 5000}).start();
+            Animated.timing(this.translationZ, {toValue: 2, duration: 5000}).start();
+            this.booli = true;
+
+        } else if (this.props.isWatched == false && this.props.station == 10 && this.booli) {
+            this.rotation.setValue(0);
+            this.translationX.setValue(2);
+            this.translationY.setValue(1);
+            this.translationZ.setValue(2);
+
+            Animated.timing(this.rotation, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.translationX, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.translationY, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.translationZ, {toValue: 0, duration: 5000}).start();
+            this.booli = false;
+        }
+
+        return (
+            <AnimatedEntity style={[{
+                transform: [
+                    {translateX: this.translationX},
+                    {translateY: this.translationY},
+                    {translateZ: this.translationZ},
+                    {translate: t_shrimpstatue},
+                    {rotateY: this.rotation},
+                ]
+            },
+                styles.brown]} source={{obj: asset('w_shrimpstatue.obj')}} lit={true}/>
+        );
+    }
+}
+
+class Haken_gemein_w extends React.Component {
+    rotation = new Animated.Value(0);
+    translationX = new Animated.Value(0);
+    translationY = new Animated.Value(0);
+    translationZ = new Animated.Value(0);
+
+    booli = false;
+
+    render() {
+        if (this.props.isWatched == true && this.props.station == 11) {
+            // animationElement(12, 18, 6, false);
+            this.rotation.setValue(0);
+            this.translationX.setValue(0);
+            this.translationY.setValue(0);
+            this.translationZ.setValue(0);
+
+            Animated.timing(this.rotation, {toValue: 360, duration: 20000}).start();
+            Animated.timing(this.translationX, {toValue: 4, duration: 5000}).start();
+            Animated.timing(this.translationY, {toValue: 18, duration: 5000}).start();
+            Animated.timing(this.translationZ, {toValue: 2, duration: 5000}).start();
+            this.booli = true;
+
+        } else if (this.props.isWatched == false && this.props.station == 11 && this.booli) {
+            this.rotation.setValue(0);
+            this.translationX.setValue(2);
+            this.translationY.setValue(1);
+            this.translationZ.setValue(2);
+
+            Animated.timing(this.rotation, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.translationX, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.translationY, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.translationZ, {toValue: 0, duration: 5000}).start();
+            this.booli = false;
+        }
+
+        return (
+            <AnimatedEntity style={[{
+                transform: [
+                    {translateX: this.translationX},
+                    {translateY: this.translationY},
+                    {translateZ: this.translationZ},
+                    {translate: t_haken_gemein},
+                    {rotateY: this.rotation},
+                ]
+            },
+                styles.brown]} source={{obj: asset('w_haken_gemein.obj')}} lit={true}/>
+        );
+    }
+}
+
+class Wellness_w extends React.Component {
+    rotation = new Animated.Value(0);
+    translationX = new Animated.Value(0);
+    translationY = new Animated.Value(0);
+    translationZ = new Animated.Value(0);
+
+    booli = false;
+
+    render() {
+        if (this.props.isWatched == true && this.props.station == 12) {
+            // animationElement(12, 18, 6, false);
+            this.rotation.setValue(0);
+            this.translationX.setValue(0);
+            this.translationY.setValue(0);
+            this.translationZ.setValue(0);
+
+            Animated.timing(this.rotation, {toValue: 360, duration: 20000}).start();
+            Animated.timing(this.translationX, {toValue: 4, duration: 5000}).start();
+            Animated.timing(this.translationY, {toValue: 18, duration: 5000}).start();
+            Animated.timing(this.translationZ, {toValue: 2, duration: 5000}).start();
+            this.booli = true;
+
+        } else if (this.props.isWatched == false && this.props.station == 12 && this.booli) {
+            this.rotation.setValue(0);
+            this.translationX.setValue(2);
+            this.translationY.setValue(1);
+            this.translationZ.setValue(2);
+
+            Animated.timing(this.rotation, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.translationX, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.translationY, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.translationZ, {toValue: 0, duration: 5000}).start();
+            this.booli = false;
+        }
+
+        return (
+            <AnimatedEntity style={[{
+                transform: [
+                    {translateX: this.translationX},
+                    {translateY: this.translationY},
+                    {translateZ: this.translationZ},
+                    {translate: t_wellness},
+                    {rotateY: this.rotation},
+                ]
+            },
+                styles.brown]} source={{obj: asset('w_wellness.obj')}} lit={true}/>
+        );
+    }
+}
+
+
+
 class Koralle_d extends React.Component {
     render() {
         return (
@@ -399,10 +785,66 @@ class Bild_shrimp_d extends React.Component {
     }
 }
 
+class Bett_d extends React.Component {
+    render() {
+        return (
+            <Entity lit={true} style={[styles.brown, styles.bett]} source={{obj: asset('w_bett.obj')}}/>
+        );
+    }
+}
+
+class Schuh_d extends React.Component {
+    render() {
+        return (
+            <Entity lit={true} style={[styles.black, styles.shoe]} source={{obj: asset('w_schuh.obj')}}/>
+        );
+    }
+}
+
+class Bild_plankenwart_d extends React.Component {
+    render() {
+        return (
+            <Entity lit={true} style={[styles.brown, styles.bild_plankenwart]} source={{obj: asset('w_bild_plankenwart.obj')}}/>
+        );
+    }
+}
+
+class Book_see_d extends React.Component {
+    render() {
+        return (
+            <Entity lit={true} style={[styles.black, styles.book_see]} source={{obj: asset('w_book_see.obj')}}/>
+        );
+    }
+}
+
+class Shrimpstatue_d extends React.Component {
+    render() {
+        return (
+            <Entity lit={true} style={[styles.black, styles.shrimpstatue]} source={{obj: asset('w_shrimpstatue.obj')}}/>
+        );
+    }
+}
+
+class Haken_gemein_d extends React.Component {
+    render() {
+        return (
+            <Entity lit={true} style={[styles.black, styles.haken_gemein]} source={{obj: asset('w_haken_gemein.obj')}}/>
+        );
+    }
+}
+
+class Wellness_d extends React.Component {
+    render() {
+        return (
+            <Entity lit={true} style={[styles.black, styles.wellness]} source={{obj: asset('w_wellness.obj')}}/>
+        );
+    }
+}
+
 class Ship extends React.Component {
     render() {
         return (
-            <Entity lit={true} style={styles.brown} source={{obj: asset('ship.obj')}}/>
+            <Entity lit={true} style={styles.darkbrown} source={{obj: asset('ship.obj')}}/>
         );
     }
 }
@@ -602,8 +1044,30 @@ const styles = StyleSheet.create({
     bild_shrimp: {
         transform: [{translate: t_bild_shrimp}],
     },
+    bett: {
+        transform: [{translate: t_bett}],
+    },
+    shoe: {
+        transform: [{translate: t_shoe}],
+    },
+    bild_plankenwart: {
+        transform: [{translate: t_bild_plankenwart}],
+    },
+    book_see: {
+        transform: [{translate: t_book_see}],
+    },
+    shrimpstatue: {
+        transform: [{translate: t_shrimpstatue}],
+    },
+    haken_gemein: {
+        transform: [{translate: t_haken_gemein}],
+    },
+    wellness: {
+        transform: [{translate: t_wellness}],
+    },
 
 });
 
 const ConnectedModelsView = connect(Models);
+
 export default ConnectedModelsView;

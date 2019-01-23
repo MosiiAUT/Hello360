@@ -208,44 +208,44 @@ var loader = new THREE.GLTFLoader();
 var camera = r360.compositor._camera;
 
 
-loader.load(
-    // resource URL
-    'static_assets/fishy.gltf',
-    // called when the resource is loaded
-    function (gltf) {
+    loader.load(
+        // resource URL
+        'static_assets/fishy.gltf',
+        // called when the resource is loaded
+        function (gltf) {
 
-        gltf.scene.traverse(function (child) {
-            if (child.isMesh) {
-                child.geometry.position.y = 10; // center here
-            }
-        });
+            gltf.scene.traverse(function (child) {
+                if (child.isMesh) {
+                    child.geometry.position.y = 10; // center here
+                }
+            });
 
-        scene.add(gltf.scene);
-        var myObj = object;
-        object.position.z = 20;
-        gltf.scene.position.y = 10;
-        gltf.position.y = 10;
+            scene.add(gltf.scene);
+            var myObj = object;
+            object.position.z = 20;
+            gltf.scene.position.y = 10;
+            gltf.position.y = 10;
 
-        gltf.animations; // Array<THREE.AnimationClip>
-        gltf.scene; // THREE.Scene
-        gltf.scenes; // Array<THREE.Scene>
-        gltf.cameras; // Array<THREE.Camera>
-        gltf.asset; // Object
+            gltf.animations; // Array<THREE.AnimationClip>
+            gltf.scene; // THREE.Scene
+            gltf.scenes; // Array<THREE.Scene>
+            gltf.cameras; // Array<THREE.Camera>
+            gltf.asset; // Object
 
-    },
-    // called while loading is progressing
-    function (xhr) {
+        },
+        // called while loading is progressing
+        function (xhr) {
 
-        console.log((xhr.loaded / xhr.total * 100) + '% loaded');
+            console.log((xhr.loaded / xhr.total * 100) + '% loaded');
 
-    },
-    // called when loading has errors
-    function (error) {
+        },
+        // called when loading has errors
+        function (error) {
 
-        console.log('An error happened');
+            console.log('An error happened');
 
-    }
-);
+        }
+    );
 
 */
 

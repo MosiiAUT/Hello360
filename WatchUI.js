@@ -32,7 +32,7 @@ class WatchButton extends React.Component {
     };
 
     setGazed = () => {
-        if(this.props.isWatched == false){
+        if (this.props.isWatched == false) {
             setWatched(true);
         }
 
