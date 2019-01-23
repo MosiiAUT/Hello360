@@ -1,9 +1,15 @@
 import * as React from 'react';
-import {Animated, asset, StyleSheet, PointLight, DirectionalLight, AmbientLight, View} from 'react-360';
+import {Animated, asset, StyleSheet, DirectionalLight, AmbientLight, View, NativeModules} from 'react-360';
 import Entity from 'Entity';
 import {connect} from './ClickManager';
 
 const AnimatedEntity = Animated.createAnimatedComponent(Entity);
+const {AudioModule} = NativeModules;
+
+AudioModule.playEnvironmental({
+    source: asset('Fluidscape.mp3'),
+    volume: 0.1,
+});
 
 //outside
 let t_koralle = [-116, 0, -112];
@@ -83,7 +89,6 @@ class Models extends React.Component {
                 <AmbientLight intensity={0.3} />
                 <Terrain/>
                 <Scene/>
-
                 <Ship/>
                 {/*
                 <Fass/>
@@ -161,11 +166,7 @@ class Koralle_w extends React.Component {
             this.booli = true;
 
         } else if (this.props.isWatched == false && this.props.station == 1 && this.booli) {
-            this.rotation.setValue(0);
-            this.translationX.setValue(2);
-            this.translationY.setValue(1);
-            this.translationZ.setValue(2);
-
+            Animated.timing(this.rotation, {toValue: 0, duration: 5000}).start();
             Animated.timing(this.translationX, {toValue: 0, duration: 5000}).start();
             Animated.timing(this.translationY, {toValue: 0, duration: 5000}).start();
             Animated.timing(this.translationZ, {toValue: 0, duration: 5000}).start();

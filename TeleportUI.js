@@ -4,13 +4,14 @@ import {
     Text,
     View,
     NativeModules,
+    asset,
 } from 'react-360';
 
 import GazeButton from "react-360-gaze-button";
-import {connect, setStation, setWatched} from './ClickManager';
+import {connect, setStation} from './ClickManager';
 
 const {MyModule} = NativeModules;
-
+const {AudioModule} = NativeModules;
 
 class TeleportUI extends React.Component {
     render() {
@@ -126,6 +127,10 @@ class TeleportButton extends React.Component {
         this.setState({
             gazed: false,
             station: this.state.station + 1,
+        });
+
+        AudioModule.playOneShot({
+            source: asset('swim.mp3'),
         });
 
         //this.setState({gazed: true,});

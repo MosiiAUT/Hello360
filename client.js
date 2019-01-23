@@ -5,6 +5,7 @@ import * as THREE from 'three';
 import {ReactInstance, Location, Module, Surface} from 'react-360-web';
 import SimpleRaycaster from "simple-raycaster";
 
+
 function init(bundle, parent, options = {}) {
 
     class MyModule extends Module {
@@ -152,11 +153,11 @@ function init(bundle, parent, options = {}) {
         myLocation,
     );
 
-
+/*
 // Load the initial environment
-    var geometry = new THREE.CylinderBufferGeometry(2, 5, 20, 16, 4, true);
+    let geometry = new THREE.CylinderBufferGeometry(2, 5, 20, 16, 4, true);
     geometry.computeBoundingBox();
-    var material = new THREE.ShaderMaterial({
+    let material = new THREE.ShaderMaterial({
         uniforms: {
             color1: {
                 value: new THREE.Color("red")
@@ -199,12 +200,12 @@ function init(bundle, parent, options = {}) {
 //var mesh = new THREE.Mesh(geometry, material);
 //r360.compositor._scene.add(mesh);
 
-
+*/
 //animation
 
-    var loader = new THREE.GLTFLoader();
-    var scene = r360.compositor._scene;
-    var camera = r360.compositor._camera;
+    /*
+var loader = new THREE.GLTFLoader();
+var camera = r360.compositor._camera;
 
 
     loader.load(
@@ -246,10 +247,7 @@ function init(bundle, parent, options = {}) {
         }
     );
 
-    let light = new THREE.AmbientLight(0x2aabea);
-    light.intensity = 0.5;
-
-    scene.add(light);
+*/
 
     /*
     let dotSystem = new THREE.Group();
@@ -335,6 +333,13 @@ function init(bundle, parent, options = {}) {
 
     drawDotSystem();
     */
+
+    let scene = r360.compositor._scene;
+
+    let light = new THREE.AmbientLight(0x2aabea);
+    light.intensity = 0.5;
+
+    scene.add(light);
 
     let fogColor = new THREE.Color(0x42f4e2);
     r360.compositor.setBackground(r360.getAssetURL('skynew.png'));
