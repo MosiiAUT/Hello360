@@ -46,83 +46,83 @@ class Models extends React.Component {
         switch (this.props.station) {
             // outside
             case 0:
-                elements = [<Koralle_d/>, <Fass_d/>, <Truhe_d/>, <Haken_mug_d/>, <Bild_shrimp_d/>];
+                elements = [<Koralle_w/>, <Fass_w/>, <Truhe_w/>, <Haken_mug_w/>, <Bild_shrimp_w/>];
                 break;
             case 1:
                 elements = [<Koralle_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>,
-                    <Fass_d/>, <Truhe_d/>, <Haken_mug_d/>, <Bild_shrimp_d/>];
+                    <Fass_w/>, <Truhe_w/>, <Haken_mug_w/>, <Bild_shrimp_w/>];
                 break;
             case 2:
-                elements = [<Koralle_d/>,
-                    <Fass_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>, <Truhe_d/>,
-                    <Haken_mug_d/>, <Bild_shrimp_d/>];
+                elements = [<Koralle_w/>,
+                    <Fass_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>, <Truhe_w/>,
+                    <Haken_mug_w/>, <Bild_shrimp_w/>];
                 break;
             case 3:
-                elements = [<Koralle_d/>, <Fass_d/>,
-                    <Truhe_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>, <Haken_mug_d/>,
-                    <Bild_shrimp_d/>];
+                elements = [<Koralle_w/>, <Fass_w/>,
+                    <Truhe_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>, <Haken_mug_w/>,
+                    <Bild_shrimp_w/>];
                 break;
             case 4:
-                elements = [<Koralle_d/>, <Fass_d/>, <Truhe_d/>,
+                elements = [<Koralle_w/>, <Fass_w/>, <Truhe_w/>,
                     <Haken_mug_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>,
-                    <Bild_shrimp_d/>];
+                    <Bild_shrimp_w/>];
                 break;
             case 5:
-                elements = [<Koralle_d/>, <Fass_d/>, <Truhe_d/>, <Haken_mug_d/>,
+                elements = [<Koralle_w/>, <Fass_w/>, <Truhe_w/>, <Haken_mug_w/>,
                     <Bild_shrimp_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>,
-                    <Bett_d/>, <Schuh_d/>, <Bild_plankenwart_d/>, <Book_see_d/>, <Shrimpstatue_d/>, <Haken_gemein_d/>,
-                    <Wellness_d/>];
+                    <Bett_w/>, <Schuh_w/>, <Bild_plankenwart_w/>, <Book_see_w/>, <Shrimpstatue_w/>, <Haken_gemein_w/>,
+                    <Wellness_w/>];
                 break;
 
             //first floor
             case 6:
-                elements = [<Koralle_d/>, <Fass_d/>, <Truhe_d/>, <Haken_mug_d/>, <Bild_shrimp_d/>,
-                    <Bett_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>, <Schuh_d/>,
-                    <Bild_plankenwart_d/>, <Book_see_d/>, <Shrimpstatue_d/>, <Haken_gemein_d/>, <Wellness_d/>];
+                elements = [<Koralle_w/>, <Fass_w/>, <Truhe_w/>, <Haken_mug_w/>, <Bild_shrimp_w/>,
+                    <Bett_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>, <Schuh_w/>,
+                    <Bild_plankenwart_w/>, <Book_see_w/>, <Shrimpstatue_w/>, <Haken_gemein_w/>, <Wellness_w/>];
                 break;
             case 7:
-                elements = [<Koralle_d/>, <Fass_d/>, <Truhe_d/>, <Haken_mug_d/>, <Bild_shrimp_d/>, <Bett_d/>,
+                elements = [<Koralle_w/>, <Fass_w/>, <Truhe_w/>, <Haken_mug_w/>, <Bild_shrimp_w/>, <Bett_w/>,
                     <Schuh_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>,
-                    <Bild_plankenwart_d/>, <Book_see_d/>, <Shrimpstatue_d/>, <Haken_gemein_d/>, <Wellness_d/>];
+                    <Bild_plankenwart_w/>, <Book_see_w/>, <Shrimpstatue_w/>, <Haken_gemein_w/>, <Wellness_w/>];
                 break;
             case 8:
-                elements = [<Bett_d/>, <Schuh_d/>,
+                elements = [<Bett_w/>, <Schuh_w/>,
                     <Bild_plankenwart_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>,
-                    <Book_see_d/>, <Shrimpstatue_d/>, <Haken_gemein_d/>, <Wellness_d/>];
+                    <Book_see_w/>, <Shrimpstatue_w/>, <Haken_gemein_w/>, <Wellness_w/>];
                 break;
             case 9:
-                elements = [<Bett_d/>, <Schuh_d/>, <Bild_plankenwart_d/>,
+                elements = [<Bett_w/>, <Schuh_w/>, <Bild_plankenwart_w/>,
                     <Book_see_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>,
-                    <Shrimpstatue_d/>, <Haken_gemein_d/>, <Wellness_d/>];
+                    <Shrimpstatue_w/>, <Haken_gemein_w/>, <Wellness_w/>];
                 break;
             case 10:
-                elements = [<Bett_d/>, <Schuh_d/>, <Bild_plankenwart_d/>, <Book_see_d/>,
+                elements = [<Bett_w/>, <Schuh_w/>, <Bild_plankenwart_w/>, <Book_see_w/>,
                     <Shrimpstatue_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>,
-                    <Haken_gemein_d/>, <Wellness_d/>];
+                    <Haken_gemein_w/>, <Wellness_w/>];
                 break;
             case 11:
-                elements = [<Bett_d/>, <Schuh_d/>, <Bild_plankenwart_d/>, <Book_see_d/>, <Shrimpstatue_d/>,
+                elements = [<Bett_w/>, <Schuh_w/>, <Bild_plankenwart_w/>, <Book_see_w/>, <Shrimpstatue_w/>,
                     <Haken_gemein_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>,
-                    <Wellness_d/>];
+                    <Wellness_w/>];
                 break;
             case 12:
-                elements = [<Bett_d/>, <Schuh_d/>, <Bild_plankenwart_d/>, <Book_see_d/>, <Shrimpstatue_d/>,
-                    <Haken_gemein_d/>,
+                elements = [<Bett_w/>, <Schuh_w/>, <Bild_plankenwart_w/>, <Book_see_w/>, <Shrimpstatue_w/>,
+                    <Haken_gemein_w/>,
                     <Wellness_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>];
                 break;
 
             //second floor room one
             case 13:
-                elements = [<Haken_loeffler_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>,<Knochen_body_d/>,<Gedicht_d/>,<Haken_laser_d/>];
+                elements = [<Haken_loeffler_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>,<Knochen_body_w/>,<Gedicht_w/>,<Haken_laser_w/>];
                 break;
             case 14:
-                elements = [<Haken_loeffler_d/>,<Knochen_body_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>,<Gedicht_d/>,<Haken_laser_d/>];
+                elements = [<Haken_loeffler_w/>,<Knochen_body_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>,<Gedicht_w/>,<Haken_laser_w/>];
                 break;
             case 15:
-                elements = [<Haken_loeffler_d/>,<Knochen_body_d/>,<Gedicht_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>,<Haken_laser_d/>];
+                elements = [<Haken_loeffler_w/>,<Knochen_body_w/>,<Gedicht_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>,<Haken_laser_w/>];
                 break;
             case 16:
-                elements = [<Haken_loeffler_d/>,<Knochen_body_d/>,<Gedicht_d/>,<Haken_laser_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>];
+                elements = [<Haken_loeffler_w/>,<Knochen_body_w/>,<Gedicht_w/>,<Haken_laser_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>];
                 break;
 
                 //knochen outside
@@ -141,10 +141,6 @@ class Models extends React.Component {
                 elements = [<Augenklappe_w/>,<Hut_w/>,<Book_tagebuch_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>,<Teller_w/>];
                 break;
             case 21:
-                elements = [<Augenklappe_w />,<Hut_w/>,<Book_tagebuch_w/>,<Teller_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>];
-                break;
-
-            case 4:
                 elements = [<Augenklappe_w />,<Hut_w/>,<Book_tagebuch_w/>,<Teller_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>];
                 break;
 
@@ -1180,136 +1176,6 @@ class Teller_w extends React.Component {
                 ]
             },
                 styles.grey]} source={{obj: asset('w_teller.obj')}} lit={true}/>
-        );
-    }
-}
-
-class Koralle_d extends React.Component {
-    render() {
-        return (
-            <Entity lit={true} style={[styles.red, styles.koralle]} source={{obj: asset('w_coral.obj')}}/>
-        );
-    }
-}
-
-
-class Fass_d extends React.Component {
-    render() {
-        return (
-            <Entity lit={true} style={[styles.brown, styles.fass]} source={{obj: asset('w_fass.obj')}}/>
-        );
-    }
-}
-
-class Truhe_d extends React.Component {
-    render() {
-        return (
-            <Entity lit={true} style={[styles.brown, styles.truhe]} source={{obj: asset('w_truhe.obj')}}/>
-        );
-    }
-}
-
-class Haken_mug_d extends React.Component {
-    render() {
-        return (
-            <Entity lit={true} style={[styles.grey, styles.haken_mug]} source={{obj: asset('w_haken_mug.obj')}}/>
-        );
-    }
-}
-
-class Bild_shrimp_d extends React.Component {
-    render() {
-        return (
-            <Entity lit={true} style={[styles.brown, styles.bild_shrimp]} source={{obj: asset('w_bild_shrimp.obj')}}/>
-        );
-    }
-}
-
-class Bett_d extends React.Component {
-    render() {
-        return (
-            <Entity lit={true} style={[styles.brown, styles.bett]} source={{obj: asset('w_bett.obj')}}/>
-        );
-    }
-}
-
-class Schuh_d extends React.Component {
-    render() {
-        return (
-            <Entity lit={true} style={[styles.black, styles.shoe]} source={{obj: asset('w_schuh.obj')}}/>
-        );
-    }
-}
-
-class Bild_plankenwart_d extends React.Component {
-    render() {
-        return (
-            <Entity lit={true} style={[styles.brown, styles.bild_plankenwart]}
-                    source={{obj: asset('w_bild_plankenwart.obj')}}/>
-        );
-    }
-}
-
-class Book_see_d extends React.Component {
-    render() {
-        return (
-            <Entity lit={true} style={[styles.black, styles.book_see]} source={{obj: asset('w_book_see.obj')}}/>
-        );
-    }
-}
-
-class Shrimpstatue_d extends React.Component {
-    render() {
-        return (
-            <Entity lit={true} style={[styles.black, styles.shrimpstatue]} source={{obj: asset('w_shrimpstatue.obj')}}/>
-        );
-    }
-}
-
-class Haken_gemein_d extends React.Component {
-    render() {
-        return (
-            <Entity lit={true} style={[styles.black, styles.haken_gemein]} source={{obj: asset('w_haken_gemein.obj')}}/>
-        );
-    }
-}
-
-class Wellness_d extends React.Component {
-    render() {
-        return (
-            <Entity lit={true} style={[styles.black, styles.wellness]} source={{obj: asset('w_wellness.obj')}}/>
-        );
-    }
-}
-
-class Haken_loeffler_d extends React.Component {
-    render() {
-        return (
-            <Entity lit={true} style={[styles.grey, styles.haken_loeffler]} source={{obj: asset('w_haken_loeffler.obj')}}/>
-        );
-    }
-}
-
-class Knochen_body_d extends React.Component {
-    render() {
-        return (
-            <Entity lit={true} style={[styles.grey, styles.knochen_body]} source={{obj: asset('w_knochen_body.obj')}}/>
-        );
-    }
-}
-
-class Gedicht_d extends React.Component {
-    render() {
-        return (
-            <Entity lit={true} style={[styles.grey, styles.gedicht]} source={{obj: asset('w_gedicht.obj')}}/>
-        );
-    }
-}
-
-class Haken_laser_d extends React.Component {
-    render() {
-        return (
-            <Entity lit={true} style={[styles.grey, styles.haken_laser]} source={{obj: asset('w_haken_laser.obj')}}/>
         );
     }
 }
