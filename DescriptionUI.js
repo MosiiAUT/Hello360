@@ -263,6 +263,189 @@ class DescriptionUI extends React.Component {
                             </View>
                         </View>
                     );
+            case 13:
+                if(this.props.isWatched)
+                    return (
+                        <View style={styles.panel}>
+                            <UI isWatched={this.props.isWatched}/>
+                            <View>
+                                <Text style={[{fontSize: 38}, styles.text]}>
+                                    Löffler
+                                </Text>
+                                <Text style={[{fontSize: 26}, styles.text]}>
+                                    Dieser Haken wurde unter Piraten der Löffler genannt{"\n"}
+                                    und erfreute sich großer Beliebtheit. Mit Gusto wurde{"\n"}
+                                    Rum und Pulverisiertes Trockenfleisch damit konsumiert.{"\n"}
+                                    Oft auch gemischt als bekömmlicher Brei.{"\n"}
+                                    Hierarchisch höher gestellte Piraten hatten dazu{"\n"}
+                                    noch einen Gabelhaken. Seltener waren die sogenannten{"\n"}
+                                    Sushi Haken, eine Spezialität aus dem Osten,{"\n"}
+                                    oder der Trichterhaken, welche gerne bei Festen getragen wurden.
+                                </Text>
+                            </View>
+                        </View>
+                    );
+            case 14:
+                if(this.props.isWatched)
+                    return (
+                        <View style={styles.panel}>
+                            <UI isWatched={this.props.isWatched}/>
+                            <View>
+                                <Text style={[{fontSize: 38}, styles.text]}>
+                                    Oberschenkel-Knochen
+                                </Text>
+                                <Text style={[{fontSize: 26}, styles.text]}>
+                                    Eine DNA Analyse des Oberschenkelknochens ergab folgende{"\n"}
+                                    Schlüsse auf die Bestandteile des Ehemaligen Besitzers.{"\n"}
+                                    {"\n"}
+                                    Keuchhusten 15%{"\n"}
+                                    Flöhe 20% (23 Stück){"\n"}
+                                    Rum 98 %{"\n"}
+                                    Vitamin C Mangel 14 %
+                                </Text>
+                            </View>
+                        </View>
+                    );
+            case 15:
+                if(this.props.isWatched)
+                    return (
+                        <View style={styles.panel}>
+                            <UI isWatched={this.props.isWatched}/>
+                            <View>
+                                <Text style={[{fontSize: 38}, styles.text]}>
+                                    Gedicht aus der Sammelband von Plankenwart{"\n"}
+                                    dem 13. Piratenkönig
+                                </Text>
+                                <Text style={[{fontSize: 26}, styles.text]}>
+                                    Eine Liebe in Rosa{"\n"}
+                                    Rosa, zart und stets am schwimmen,{"\n"}
+                                    Nur du, ach kannst mein Herz gewinnen.{"\n"}
+                                    Im Wasser ziehst du deine Runden{"\n"}
+                                    In meinem Herzen tiefe Wunden{"\n"}
+                                    Deine Schwarzen Äuglein, so tot und doch doch so allerliebst,{"\n"}
+                                    Mein Herz wundert wo du nur verbliebst{"\n"}
+                                    Seit 5 Jahren schon kein Blick von dir{"\n"}
+                                    Du bist wie ausgestorben hier{"\n"}
+                                    Ausgestorben wie mein Herz{"\n"}
+                                    Am liebsten aß ich dich mit Heidensterz{"\n"}
+                                    Auch gegrillt kann ich dich lieben{"\n"}
+                                    Ach Shrimps wo seid ihr nur geblieben?
+                                </Text>
+                            </View>
+                        </View>
+                    );
+            case 16:
+                if(this.props.isWatched)
+                    return (
+                        <View style={styles.panel}>
+                            <UI isWatched={this.props.isWatched}/>
+                            <View>
+                                <Text style={[{fontSize: 38}, styles.text]}>
+                                    Laserhaken
+                                </Text>
+                                <Text style={[{fontSize: 26}, styles.text]}>
+                                    Ein Haken unbekannter Herkunft.{"\n"}
+                                    Gerüchte munkeln von anderen Welten{"\n"}
+                                    und einem furchtlosen galaktischen Piraten
+                                </Text>
+                            </View>
+                        </View>
+                    );
+            case 17:
+                if(this.props.isWatched)
+                    return (
+                        <View style={styles.panel}>
+                            <UI isWatched={this.props.isWatched}/>
+                            <View>
+                                <Text style={[{fontSize: 38}, styles.text]}>
+                                    Zehen-Knochen
+                                </Text>
+                                <Text style={[{fontSize: 26}, styles.text]}>
+                                    Eine DNA Analyse diese Knochen aus dem Kleinen Zeh{"\n"}
+                                    ergab folgende Schlüsse auf die Beziehungsstatus{"\n"}
+                                    des Ehemaligen Besitzers.{"\n"}
+                                    {"\n"}
+                                    12 % Es ist Kompliziert{"\n"}
+                                    50% Alle Hoffnung kommt zu spät{"\n"}
+                                    40% Vermisse meine Frau, die an Cholera gestorben ist
+                                </Text>
+                            </View>
+                        </View>
+                    );
+            case 18:
+                if(this.props.isWatched)
+                    return (
+                        <View style={styles.panel}>
+                            <UI isWatched={this.props.isWatched}/>
+                            <View>
+                                <Text style={[{fontSize: 38}, styles.text]}>
+                                    Augenklappe
+                                </Text>
+                                <Text style={[{fontSize: 26}, styles.text]}>
+                                    Auch wenn beide Ihrer Augen funktionierten, hatte{"\n"}
+                                    Captain Anämie doch immer eine Augenklappe in ihren Kammern,{"\n"}
+                                    für den Fall, dass sie Adlige auf einem{"\n"}
+                                    gekenterten Schiff einschüchtern wollte.
+                                </Text>
+                            </View>
+                        </View>
+                    );
+            case 19:
+                if(this.props.isWatched)
+                    return (
+                        <View style={styles.panel}>
+                            <UI isWatched={this.props.isWatched}/>
+                            <View>
+                                <Text style={[{fontSize: 38}, styles.text]}>
+                                    Hut
+                                </Text>
+                                <Text style={[{fontSize: 26}, styles.text]}>
+                                    Die Kopfbedeckung von Captain Anämie, welche sie{"\n"}
+                                    von den Sonnenstrahlen und Gottes zornigen Blicken schützen sollte.
+                                </Text>
+                            </View>
+                        </View>
+                    );
+            case 20:
+                if(this.props.isWatched)
+                    return (
+                        <View style={styles.panel}>
+                            <UI isWatched={this.props.isWatched}/>
+                            <View>
+                                <Text style={[{fontSize: 38}, styles.text]}>
+                                    Tagebucheintrag von Anämie, 27 Jänner 1733.
+                                </Text>
+                                <Text style={[{fontSize: 26}, styles.text]}>
+                                    Liebes Tagebuch,{"\n"}
+                                    Heute habe ich meine 30. Lebensjahr erreicht.{"\n"}
+                                    Jedoch ist mein Gemüt getrübt, und selbst{"\n"}
+                                    nachdem ich mich von meiner Crew hochleben ließ,{"\n"}
+                                    kam kein Bestreben nach dem Foltern von Adeligen{"\n"}
+                                    zu mir und mein Verlangen nach Rum blieb gestillt.{"\n"}
+                                    Mein Verstand ist nimmermüde und ich sehe die Krone{"\n"}
+                                    des Piratenkönigs in meiner Hand.{"\n"}
+                                    Nichts möchte ich nun mehr verspüren als diese Macht.{"\n"}
+                                    Koste es alles was ich besitze,{"\n"}
+                                    ich werde als nächstes über unsere Zunft herrschen!
+                                </Text>
+                            </View>
+                        </View>
+                    );
+            case 21:
+                if(this.props.isWatched)
+                    return (
+                        <View style={styles.panel}>
+                            <UI isWatched={this.props.isWatched}/>
+                            <View>
+                                <Text style={[{fontSize: 38}, styles.text]}>
+                                    Snackteller
+                                </Text>
+                                <Text style={[{fontSize: 26}, styles.text]}>
+                                    Ein paar Getrocknete Sardellen helfen den Hirnzellen
+                                </Text>
+                            </View>
+                        </View>
+                    );
             default:
                 return null;
         }
