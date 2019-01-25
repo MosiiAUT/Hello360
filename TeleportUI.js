@@ -1,16 +1,16 @@
 import React from 'react';
 import {
     StyleSheet,
-    Text,
     View,
     NativeModules,
+    asset,
 } from 'react-360';
 
 import GazeButton from "react-360-gaze-button";
-import {connect, setStation, setWatched} from './ClickManager';
+import {connect, setStation} from './ClickManager';
 
 const {MyModule} = NativeModules;
-
+const {AudioModule} = NativeModules;
 
 class TeleportUI extends React.Component {
     render() {
@@ -91,23 +91,23 @@ class TeleportButton extends React.Component {
                 MyModule.setWorld(20, 5, 510);
                 MyModule.moveWatchButton(-Math.PI / 16, -Math.PI / 4);
                 MyModule.moveDescription(Math.PI / 5, 0,);
-                MyModule.moveTeleport(-Math.PI / 6, -Math.PI / 6);
+                MyModule.moveTeleport(-Math.PI / 5.5, -Math.PI / 6);
                 break;
             case 9:
                 MyModule.setWorld(50, 35, 560);
-                MyModule.moveWatchButton(-Math.PI / 2.5, -Math.PI / 4);
+                MyModule.moveWatchButton(-Math.PI / 2.8, -Math.PI / 4);
                 MyModule.moveDescription(-Math.PI / 7, 0,);
                 MyModule.moveTeleport(-Math.PI / 2, 0);
                 break;
             case 10:
                 MyModule.setWorld(90, 35, 560);
-                MyModule.moveWatchButton(-Math.PI / 1.8, -Math.PI / 7);
+                MyModule.moveWatchButton(-Math.PI / 1.75, -Math.PI / 7);
                 MyModule.moveDescription(-Math.PI / 3, 0,);
                 MyModule.moveTeleport(-Math.PI / 1.2, Math.PI / 12);
                 break;
             case 11:
                 MyModule.setWorld(120, 25, 540);
-                MyModule.moveWatchButton(Math.PI / 1.5, 0);
+                MyModule.moveWatchButton(Math.PI / 1.48, -Math.PI / 29);
                 MyModule.moveDescription(Math.PI / 2.2, 0,);
                 MyModule.moveTeleport(-Math.PI / 3.5, Math.PI / 5);
                 break;
@@ -175,7 +175,6 @@ class TeleportButton extends React.Component {
                 MyModule.moveDescription(-Math.PI / 3, 0,);
                 MyModule.moveTeleport(-Math.PI / 2, -Math.PI / 20);
                 break;
-
         }
 
         setStation(this.state.station + 1);
@@ -183,6 +182,10 @@ class TeleportButton extends React.Component {
         this.setState({
             gazed: false,
             station: this.state.station + 1,
+        });
+
+        AudioModule.playOneShot({
+            source: asset('swim.mp3'),
         });
 
         //this.setState({gazed: true,});
@@ -199,9 +202,6 @@ class TeleportButton extends React.Component {
                 }}
                 render={(remainingTime, isGazed) => (
                     <View style={styles.greetingBox}>
-                        <Text style={styles.greeting}>
-                            {/*{gazed ? "You have gazed me" : isGazed ? remainingTime : "Gaze me"}*/}
-                        </Text>
                     </View>
                 )}
             />

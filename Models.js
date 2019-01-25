@@ -1,9 +1,15 @@
 import * as React from 'react';
-import {Animated, asset, StyleSheet, PointLight, DirectionalLight, AmbientLight, View} from 'react-360';
+import {Animated, asset, StyleSheet, DirectionalLight, AmbientLight, View, NativeModules} from 'react-360';
 import Entity from 'Entity';
 import {connect} from './ClickManager';
 
 const AnimatedEntity = Animated.createAnimatedComponent(Entity);
+const {AudioModule} = NativeModules;
+
+AudioModule.playEnvironmental({
+    source: asset('Fluidscape.mp3'),
+    volume: 0.1,
+});
 
 //outside
 let t_koralle = [-116, 0, -112];
@@ -38,49 +44,71 @@ class Models extends React.Component {
         let elements;
 
         switch (this.props.station) {
-            // elements = <ChairTwo isWatched={this.props.isWatched} station={this.props.station} lit={true}/>;
-
             // outside
             case 0:
-                elements = [<Koralle_d/>,<Fass_d/>,<Truhe_d/>,<Haken_mug_d/>,<Bild_shrimp_d/>];
+                elements = [<Koralle_d/>, <Fass_d/>, <Truhe_d/>, <Haken_mug_d/>, <Bild_shrimp_d/>];
                 break;
             case 1:
-                elements = [<Koralle_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>, <Fass_d/>,<Truhe_d/>,<Haken_mug_d/>,<Bild_shrimp_d/>];
+                elements = [<Koralle_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>,
+                    <Fass_d/>, <Truhe_d/>, <Haken_mug_d/>, <Bild_shrimp_d/>];
                 break;
             case 2:
-                elements = [<Koralle_d/>, <Fass_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>, <Truhe_d/>,<Haken_mug_d/>,<Bild_shrimp_d/>];
+                elements = [<Koralle_d/>,
+                    <Fass_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>, <Truhe_d/>,
+                    <Haken_mug_d/>, <Bild_shrimp_d/>];
                 break;
             case 3:
-                elements = [<Koralle_d/>, <Fass_d/>, <Truhe_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>,<Haken_mug_d/>,<Bild_shrimp_d/>];
+                elements = [<Koralle_d/>, <Fass_d/>,
+                    <Truhe_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>, <Haken_mug_d/>,
+                    <Bild_shrimp_d/>];
                 break;
             case 4:
-                elements = [<Koralle_d/>, <Fass_d/>, <Truhe_d/>,<Haken_mug_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>,<Bild_shrimp_d/>];
+                elements = [<Koralle_d/>, <Fass_d/>, <Truhe_d/>,
+                    <Haken_mug_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>,
+                    <Bild_shrimp_d/>];
                 break;
             case 5:
-                elements = [<Koralle_d/>, <Fass_d/>, <Truhe_d/>,<Haken_mug_d/>,<Bild_shrimp_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>, <Bett_d/>,<Schuh_d/>,<Bild_plankenwart_d/>,<Book_see_d/>,<Shrimpstatue_d/>,<Haken_gemein_d/>,<Wellness_d/>];
+                elements = [<Koralle_d/>, <Fass_d/>, <Truhe_d/>, <Haken_mug_d/>,
+                    <Bild_shrimp_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>,
+                    <Bett_d/>, <Schuh_d/>, <Bild_plankenwart_d/>, <Book_see_d/>, <Shrimpstatue_d/>, <Haken_gemein_d/>,
+                    <Wellness_d/>];
                 break;
 
             //first floor
             case 6:
-                elements = [<Koralle_d/>, <Fass_d/>, <Truhe_d/>,<Haken_mug_d/>,<Bild_shrimp_d/>, <Bett_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>,<Schuh_d/>,<Bild_plankenwart_d/>,<Book_see_d/>,<Shrimpstatue_d/>,<Haken_gemein_d/>,<Wellness_d/>];
+                elements = [<Koralle_d/>, <Fass_d/>, <Truhe_d/>, <Haken_mug_d/>, <Bild_shrimp_d/>,
+                    <Bett_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>, <Schuh_d/>,
+                    <Bild_plankenwart_d/>, <Book_see_d/>, <Shrimpstatue_d/>, <Haken_gemein_d/>, <Wellness_d/>];
                 break;
             case 7:
-                elements = [<Koralle_d/>, <Fass_d/>, <Truhe_d/>,<Haken_mug_d/>,<Bild_shrimp_d/>, <Bett_d/>,<Schuh_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>,<Bild_plankenwart_d/>,<Book_see_d/>,<Shrimpstatue_d/>,<Haken_gemein_d/>,<Wellness_d/>];
+                elements = [<Koralle_d/>, <Fass_d/>, <Truhe_d/>, <Haken_mug_d/>, <Bild_shrimp_d/>, <Bett_d/>,
+                    <Schuh_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>,
+                    <Bild_plankenwart_d/>, <Book_see_d/>, <Shrimpstatue_d/>, <Haken_gemein_d/>, <Wellness_d/>];
                 break;
             case 8:
-                elements = [<Bett_d/>,<Schuh_d/>,<Bild_plankenwart_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>,<Book_see_d/>,<Shrimpstatue_d/>,<Haken_gemein_d/>,<Wellness_d/>];
+                elements = [<Bett_d/>, <Schuh_d/>,
+                    <Bild_plankenwart_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>,
+                    <Book_see_d/>, <Shrimpstatue_d/>, <Haken_gemein_d/>, <Wellness_d/>];
                 break;
             case 9:
-                elements = [<Bett_d/>,<Schuh_d/>,<Bild_plankenwart_d/>,<Book_see_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>,<Shrimpstatue_d/>,<Haken_gemein_d/>,<Wellness_d/>];
+                elements = [<Bett_d/>, <Schuh_d/>, <Bild_plankenwart_d/>,
+                    <Book_see_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>,
+                    <Shrimpstatue_d/>, <Haken_gemein_d/>, <Wellness_d/>];
                 break;
             case 10:
-                elements = [<Bett_d/>,<Schuh_d/>,<Bild_plankenwart_d/>,<Book_see_d/>,<Shrimpstatue_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>,<Haken_gemein_d/>,<Wellness_d/>];
+                elements = [<Bett_d/>, <Schuh_d/>, <Bild_plankenwart_d/>, <Book_see_d/>,
+                    <Shrimpstatue_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>,
+                    <Haken_gemein_d/>, <Wellness_d/>];
                 break;
             case 11:
-                elements = [<Bett_d/>,<Schuh_d/>,<Bild_plankenwart_d/>,<Book_see_d/>,<Shrimpstatue_d/>,<Haken_gemein_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>,<Wellness_d/>];
+                elements = [<Bett_d/>, <Schuh_d/>, <Bild_plankenwart_d/>, <Book_see_d/>, <Shrimpstatue_d/>,
+                    <Haken_gemein_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>,
+                    <Wellness_d/>];
                 break;
             case 12:
-                elements = [<Bett_d/>,<Schuh_d/>,<Bild_plankenwart_d/>,<Book_see_d/>,<Shrimpstatue_d/>,<Haken_gemein_d/>,<Wellness_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>];
+                elements = [<Bett_d/>, <Schuh_d/>, <Bild_plankenwart_d/>, <Book_see_d/>, <Shrimpstatue_d/>,
+                    <Haken_gemein_d/>,
+                    <Wellness_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>];
                 break;
 
             //second floor room one
@@ -125,12 +153,11 @@ class Models extends React.Component {
         return (
             <View>
                 {/*<PointLight intensity={0.5} style={{color:'white', transform:[{translate:[0,50,0]}]}}/>*/}
-                <DirectionalLight intensity={0.4} />
-                <AmbientLight intensity={0.3} />
-                <Scene/>
-
-                <Ship/>
+                <DirectionalLight intensity={0.4}/>
+                <AmbientLight intensity={0.3}/>
                 <Terrain/>
+                <Scene/>
+                <Ship/>
                 {/*
                 <Fass/>
                 <Geschirr/>
@@ -150,44 +177,15 @@ class Models extends React.Component {
     }
 }
 
-/*
-//da die variablen global sind, greifen alle entities darauf zu, deswegen bewegt sich das
-//nächste objekt wenn man sich teleportiert zurück....
-let rotation = new Animated.Value(0);
-let translationX = new Animated.Value(0);
-let translationY = new Animated.Value(0);
-let translationZ = new Animated.Value(0);
-
-
-function animationElement(x, y, z, back) {
-    if (!back) {
-        translationX.setValue(0);
-        translationY.setValue(0);
-        translationZ.setValue(0);
-
-        Animated.timing(rotation, {toValue: 360, duration: 20000}).start();
-        Animated.timing(translationX, {toValue: x, duration: 5000}).start();
-        Animated.timing(translationY, {toValue: y, duration: 5000}).start();
-        Animated.timing(translationZ, {toValue: z, duration: 5000}).start();
-    } else {
-        Animated.timing(rotation, {toValue: 0, duration: 5000}).start();
-        Animated.timing(translationX, {toValue: 0, duration: 5000}).start();
-        Animated.timing(translationY, {toValue: 0, duration: 5000}).start();
-        Animated.timing(translationZ, {toValue: 0, duration: 5000}).start();
-
-    }
-}
-*/
-
 
 // _w - watched things
 // _d - watched things in default
 
 class Koralle_w extends React.Component {
     rotation = new Animated.Value(0);
-    translationX = new Animated.Value(0);
-    translationY = new Animated.Value(0);
-    translationZ = new Animated.Value(0);
+    // translationX = new Animated.Value(0);
+    // translationY = new Animated.Value(0);
+    // translationZ = new Animated.Value(0);
 
     booli = false;
 
@@ -196,25 +194,21 @@ class Koralle_w extends React.Component {
 
             // animationElement(12, 18, 6, false);
             this.rotation.setValue(0);
-            this.translationX.setValue(0);
-            this.translationY.setValue(0);
-            this.translationZ.setValue(0);
+            // this.translationX.setValue(0);
+            // this.translationY.setValue(0);
+            // this.translationZ.setValue(0);
 
             Animated.timing(this.rotation, {toValue: 360, duration: 20000}).start();
-            Animated.timing(this.translationX, {toValue: 2, duration: 5000}).start();
-            Animated.timing(this.translationY, {toValue: 1, duration: 5000}).start();
-            Animated.timing(this.translationZ, {toValue: 2, duration: 5000}).start();
+            // Animated.timing(this.translationX, {toValue: 0, duration: 5000}).start();
+            // Animated.timing(this.translationY, {toValue: 0, duration: 5000}).start();
+            // Animated.timing(this.translationZ, {toValue: 0, duration: 5000}).start();
             this.booli = true;
 
         } else if (this.props.isWatched == false && this.props.station == 1 && this.booli) {
-            this.rotation.setValue(0);
-            this.translationX.setValue(2);
-            this.translationY.setValue(1);
-            this.translationZ.setValue(2);
-
-            Animated.timing(this.translationX, {toValue: 0, duration: 5000}).start();
-            Animated.timing(this.translationY, {toValue: 0, duration: 5000}).start();
-            Animated.timing(this.translationZ, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.rotation, {toValue: 0, duration: 5000}).start();
+            // Animated.timing(this.translationX, {toValue: 0, duration: 5000}).start();
+            // Animated.timing(this.translationY, {toValue: 0, duration: 5000}).start();
+            // Animated.timing(this.translationZ, {toValue: 0, duration: 5000}).start();
 
             this.booli = true;
 
@@ -223,9 +217,9 @@ class Koralle_w extends React.Component {
         return (
             <AnimatedEntity style={[{
                 transform: [
-                    {translateX: this.translationX},
-                    {translateY: this.translationY},
-                    {translateZ: this.translationZ},
+                    // {translateX: this.translationX},
+                    // {translateY: this.translationY},
+                    // {translateZ: this.translationZ},
                     {translate: t_koralle},
                     {rotateY: this.rotation},
                 ]
@@ -246,24 +240,19 @@ class Fass_w extends React.Component {
     render() {
         if (this.props.isWatched == true && this.props.station == 2) {
 
-            // animationElement(12, 18, 6, false);
             this.rotation.setValue(0);
             this.translationX.setValue(0);
             this.translationY.setValue(0);
             this.translationZ.setValue(0);
 
             Animated.timing(this.rotation, {toValue: 360, duration: 20000}).start();
-            Animated.timing(this.translationX, {toValue: 2, duration: 5000}).start();
-            Animated.timing(this.translationY, {toValue: 1, duration: 5000}).start();
-            Animated.timing(this.translationZ, {toValue: 2, duration: 5000}).start();
+            Animated.timing(this.translationX, {toValue: 18, duration: 5000}).start();
+            Animated.timing(this.translationY, {toValue: 18, duration: 5000}).start();
+            Animated.timing(this.translationZ, {toValue: -4, duration: 5000}).start();
             this.booli = true;
 
         } else if (this.props.isWatched == false && this.props.station == 2 && this.booli) {
-            this.rotation.setValue(0);
-            this.translationX.setValue(2);
-            this.translationY.setValue(1);
-            this.translationZ.setValue(2);
-
+            Animated.timing(this.rotation, {toValue: 0, duration: 5000}).start();
             Animated.timing(this.translationX, {toValue: 0, duration: 5000}).start();
             Animated.timing(this.translationY, {toValue: 0, duration: 5000}).start();
             Animated.timing(this.translationZ, {toValue: 0, duration: 5000}).start();
@@ -304,17 +293,12 @@ class Truhe_w extends React.Component {
             this.translationZ.setValue(0);
 
             Animated.timing(this.rotation, {toValue: 360, duration: 20000}).start();
-            Animated.timing(this.translationX, {toValue: 4, duration: 5000}).start();
+            Animated.timing(this.translationX, {toValue: -5, duration: 5000}).start();
             Animated.timing(this.translationY, {toValue: 18, duration: 5000}).start();
-            Animated.timing(this.translationZ, {toValue: 2, duration: 5000}).start();
+            Animated.timing(this.translationZ, {toValue: 22, duration: 5000}).start();
             this.booli = true;
 
         } else if (this.props.isWatched == false && this.props.station == 3 && this.booli) {
-            this.rotation.setValue(0);
-            this.translationX.setValue(2);
-            this.translationY.setValue(1);
-            this.translationZ.setValue(2);
-
             Animated.timing(this.rotation, {toValue: 0, duration: 5000}).start();
             Animated.timing(this.translationX, {toValue: 0, duration: 5000}).start();
             Animated.timing(this.translationY, {toValue: 0, duration: 5000}).start();
@@ -347,24 +331,18 @@ class Haken_mug_w extends React.Component {
 
     render() {
         if (this.props.isWatched == true && this.props.station == 4) {
-            // animationElement(12, 18, 6, false);
             this.rotation.setValue(0);
             this.translationX.setValue(0);
             this.translationY.setValue(0);
             this.translationZ.setValue(0);
 
             Animated.timing(this.rotation, {toValue: 360, duration: 20000}).start();
-            Animated.timing(this.translationX, {toValue: 4, duration: 5000}).start();
+            Animated.timing(this.translationX, {toValue: -4, duration: 5000}).start();
             Animated.timing(this.translationY, {toValue: 18, duration: 5000}).start();
-            Animated.timing(this.translationZ, {toValue: 2, duration: 5000}).start();
+            Animated.timing(this.translationZ, {toValue: -10, duration: 5000}).start();
             this.booli = true;
 
         } else if (this.props.isWatched == false && this.props.station == 4 && this.booli) {
-            this.rotation.setValue(0);
-            this.translationX.setValue(2);
-            this.translationY.setValue(1);
-            this.translationZ.setValue(2);
-
             Animated.timing(this.rotation, {toValue: 0, duration: 5000}).start();
             Animated.timing(this.translationX, {toValue: 0, duration: 5000}).start();
             Animated.timing(this.translationY, {toValue: 0, duration: 5000}).start();
@@ -397,24 +375,18 @@ class Bild_shrimp_w extends React.Component {
 
     render() {
         if (this.props.isWatched == true && this.props.station == 5) {
-            // animationElement(12, 18, 6, false);
             this.rotation.setValue(0);
             this.translationX.setValue(0);
             this.translationY.setValue(0);
             this.translationZ.setValue(0);
 
             Animated.timing(this.rotation, {toValue: 360, duration: 20000}).start();
-            Animated.timing(this.translationX, {toValue: 4, duration: 5000}).start();
-            Animated.timing(this.translationY, {toValue: 18, duration: 5000}).start();
-            Animated.timing(this.translationZ, {toValue: 2, duration: 5000}).start();
+            Animated.timing(this.translationX, {toValue: 6, duration: 5000}).start();
+            Animated.timing(this.translationY, {toValue: 19, duration: 5000}).start();
+            Animated.timing(this.translationZ, {toValue: 24, duration: 5000}).start();
             this.booli = true;
 
         } else if (this.props.isWatched == false && this.props.station == 5 && this.booli) {
-            this.rotation.setValue(0);
-            this.translationX.setValue(2);
-            this.translationY.setValue(1);
-            this.translationZ.setValue(2);
-
             Animated.timing(this.rotation, {toValue: 0, duration: 5000}).start();
             Animated.timing(this.translationX, {toValue: 0, duration: 5000}).start();
             Animated.timing(this.translationY, {toValue: 0, duration: 5000}).start();
@@ -438,7 +410,7 @@ class Bild_shrimp_w extends React.Component {
 }
 
 class Bett_w extends React.Component {
-    rotation = new Animated.Value(0);
+    // rotation = new Animated.Value(0);
     translationX = new Animated.Value(0);
     translationY = new Animated.Value(0);
     translationZ = new Animated.Value(0);
@@ -447,25 +419,19 @@ class Bett_w extends React.Component {
 
     render() {
         if (this.props.isWatched == true && this.props.station == 6) {
-            // animationElement(12, 18, 6, false);
-            this.rotation.setValue(0);
+            // this.rotation.setValue(0);
             this.translationX.setValue(0);
             this.translationY.setValue(0);
             this.translationZ.setValue(0);
 
-            Animated.timing(this.rotation, {toValue: 360, duration: 20000}).start();
-            Animated.timing(this.translationX, {toValue: 4, duration: 5000}).start();
-            Animated.timing(this.translationY, {toValue: 18, duration: 5000}).start();
-            Animated.timing(this.translationZ, {toValue: 2, duration: 5000}).start();
+            // Animated.timing(this.rotation, {toValue: 360, duration: 20000}).start();
+            Animated.timing(this.translationX, {toValue: -4, duration: 5000}).start();
+            Animated.timing(this.translationY, {toValue: 20, duration: 5000}).start();
+            Animated.timing(this.translationZ, {toValue: 10, duration: 5000}).start();
             this.booli = true;
 
         } else if (this.props.isWatched == false && this.props.station == 6 && this.booli) {
-            this.rotation.setValue(0);
-            this.translationX.setValue(2);
-            this.translationY.setValue(1);
-            this.translationZ.setValue(2);
-
-            Animated.timing(this.rotation, {toValue: 0, duration: 5000}).start();
+            // Animated.timing(this.rotation, {toValue: 0, duration: 5000}).start();
             Animated.timing(this.translationX, {toValue: 0, duration: 5000}).start();
             Animated.timing(this.translationY, {toValue: 0, duration: 5000}).start();
             Animated.timing(this.translationZ, {toValue: 0, duration: 5000}).start();
@@ -479,7 +445,7 @@ class Bett_w extends React.Component {
                     {translateY: this.translationY},
                     {translateZ: this.translationZ},
                     {translate: t_bett},
-                    {rotateY: this.rotation},
+                    // {rotateY: this.rotation},
                 ]
             },
                 styles.brown]} source={{obj: asset('w_bett.obj')}} lit={true}/>
@@ -497,26 +463,20 @@ class Schuh_w extends React.Component {
 
     render() {
         if (this.props.isWatched == true && this.props.station == 7) {
-            // animationElement(12, 18, 6, false);
             this.rotation.setValue(0);
-            this.translationX.setValue(0);
+            // this.translationX.setValue(0);
             this.translationY.setValue(0);
             this.translationZ.setValue(0);
 
             Animated.timing(this.rotation, {toValue: 360, duration: 20000}).start();
-            Animated.timing(this.translationX, {toValue: 4, duration: 5000}).start();
+            // Animated.timing(this.translationX, {toValue: 4, duration: 5000}).start();
             Animated.timing(this.translationY, {toValue: 18, duration: 5000}).start();
             Animated.timing(this.translationZ, {toValue: 2, duration: 5000}).start();
             this.booli = true;
 
         } else if (this.props.isWatched == false && this.props.station == 7 && this.booli) {
-            this.rotation.setValue(0);
-            this.translationX.setValue(2);
-            this.translationY.setValue(1);
-            this.translationZ.setValue(2);
-
             Animated.timing(this.rotation, {toValue: 0, duration: 5000}).start();
-            Animated.timing(this.translationX, {toValue: 0, duration: 5000}).start();
+            // Animated.timing(this.translationX, {toValue: 0, duration: 5000}).start();
             Animated.timing(this.translationY, {toValue: 0, duration: 5000}).start();
             Animated.timing(this.translationZ, {toValue: 0, duration: 5000}).start();
             this.booli = false;
@@ -525,7 +485,7 @@ class Schuh_w extends React.Component {
         return (
             <AnimatedEntity style={[{
                 transform: [
-                    {translateX: this.translationX},
+                    // {translateX: this.translationX},
                     {translateY: this.translationY},
                     {translateZ: this.translationZ},
                     {translate: t_shoe},
@@ -542,33 +502,31 @@ class Bild_plankenwart_w extends React.Component {
     translationX = new Animated.Value(0);
     translationY = new Animated.Value(0);
     translationZ = new Animated.Value(0);
+    scale = new Animated.Value(1);
 
     booli = false;
 
     render() {
         if (this.props.isWatched == true && this.props.station == 8) {
-            // animationElement(12, 18, 6, false);
             this.rotation.setValue(0);
             this.translationX.setValue(0);
             this.translationY.setValue(0);
             this.translationZ.setValue(0);
+            this.scale.setValue(1);
 
-            Animated.timing(this.rotation, {toValue: 360, duration: 20000}).start();
-            Animated.timing(this.translationX, {toValue: 4, duration: 5000}).start();
-            Animated.timing(this.translationY, {toValue: 18, duration: 5000}).start();
-            Animated.timing(this.translationZ, {toValue: 2, duration: 5000}).start();
+            Animated.timing(this.rotation, {toValue: 300, duration: 20000}).start();
+            Animated.timing(this.translationX, {toValue: 5, duration: 5000}).start();
+            Animated.timing(this.translationY, {toValue: -10, duration: 3000}).start();
+            Animated.timing(this.translationZ, {toValue: -6, duration: 5000}).start();
+            Animated.timing(this.scale, {toValue: 0.3, duration: 3000}).start();
             this.booli = true;
 
         } else if (this.props.isWatched == false && this.props.station == 8 && this.booli) {
-            this.rotation.setValue(0);
-            this.translationX.setValue(2);
-            this.translationY.setValue(1);
-            this.translationZ.setValue(2);
-
             Animated.timing(this.rotation, {toValue: 0, duration: 5000}).start();
             Animated.timing(this.translationX, {toValue: 0, duration: 5000}).start();
             Animated.timing(this.translationY, {toValue: 0, duration: 5000}).start();
             Animated.timing(this.translationZ, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.scale, {toValue: 1, duration: 4000}).start();
             this.booli = false;
         }
 
@@ -580,6 +538,7 @@ class Bild_plankenwart_w extends React.Component {
                     {translateZ: this.translationZ},
                     {translate: t_bild_plankenwart},
                     {rotateY: this.rotation},
+                    {scale: this.scale},
                 ]
             },
                 styles.brown]} source={{obj: asset('w_bild_plankenwart.obj')}} lit={true}/>
@@ -597,24 +556,18 @@ class Book_see_w extends React.Component {
 
     render() {
         if (this.props.isWatched == true && this.props.station == 9) {
-            // animationElement(12, 18, 6, false);
             this.rotation.setValue(0);
             this.translationX.setValue(0);
             this.translationY.setValue(0);
             this.translationZ.setValue(0);
 
             Animated.timing(this.rotation, {toValue: 360, duration: 20000}).start();
-            Animated.timing(this.translationX, {toValue: 4, duration: 5000}).start();
-            Animated.timing(this.translationY, {toValue: 18, duration: 5000}).start();
-            Animated.timing(this.translationZ, {toValue: 2, duration: 5000}).start();
+            Animated.timing(this.translationX, {toValue: -3, duration: 5000}).start();
+            Animated.timing(this.translationY, {toValue: 22, duration: 5000}).start();
+            Animated.timing(this.translationZ, {toValue: 3, duration: 5000}).start();
             this.booli = true;
 
         } else if (this.props.isWatched == false && this.props.station == 9 && this.booli) {
-            this.rotation.setValue(0);
-            this.translationX.setValue(2);
-            this.translationY.setValue(1);
-            this.translationZ.setValue(2);
-
             Animated.timing(this.rotation, {toValue: 0, duration: 5000}).start();
             Animated.timing(this.translationX, {toValue: 0, duration: 5000}).start();
             Animated.timing(this.translationY, {toValue: 0, duration: 5000}).start();
@@ -647,24 +600,18 @@ class Shrimpstatue_w extends React.Component {
 
     render() {
         if (this.props.isWatched == true && this.props.station == 10) {
-            // animationElement(12, 18, 6, false);
             this.rotation.setValue(0);
             this.translationX.setValue(0);
             this.translationY.setValue(0);
             this.translationZ.setValue(0);
 
             Animated.timing(this.rotation, {toValue: 360, duration: 20000}).start();
-            Animated.timing(this.translationX, {toValue: 4, duration: 5000}).start();
-            Animated.timing(this.translationY, {toValue: 18, duration: 5000}).start();
+            Animated.timing(this.translationX, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.translationY, {toValue: 19, duration: 5000}).start();
             Animated.timing(this.translationZ, {toValue: 2, duration: 5000}).start();
             this.booli = true;
 
         } else if (this.props.isWatched == false && this.props.station == 10 && this.booli) {
-            this.rotation.setValue(0);
-            this.translationX.setValue(2);
-            this.translationY.setValue(1);
-            this.translationZ.setValue(2);
-
             Animated.timing(this.rotation, {toValue: 0, duration: 5000}).start();
             Animated.timing(this.translationX, {toValue: 0, duration: 5000}).start();
             Animated.timing(this.translationY, {toValue: 0, duration: 5000}).start();
@@ -697,24 +644,18 @@ class Haken_gemein_w extends React.Component {
 
     render() {
         if (this.props.isWatched == true && this.props.station == 11) {
-            // animationElement(12, 18, 6, false);
             this.rotation.setValue(0);
             this.translationX.setValue(0);
             this.translationY.setValue(0);
             this.translationZ.setValue(0);
 
             Animated.timing(this.rotation, {toValue: 360, duration: 20000}).start();
-            Animated.timing(this.translationX, {toValue: 4, duration: 5000}).start();
-            Animated.timing(this.translationY, {toValue: 18, duration: 5000}).start();
-            Animated.timing(this.translationZ, {toValue: 2, duration: 5000}).start();
+            Animated.timing(this.translationX, {toValue: 15, duration: 5000}).start();
+            Animated.timing(this.translationY, {toValue: 16, duration: 5000}).start();
+            Animated.timing(this.translationZ, {toValue: 0, duration: 5000}).start();
             this.booli = true;
 
         } else if (this.props.isWatched == false && this.props.station == 11 && this.booli) {
-            this.rotation.setValue(0);
-            this.translationX.setValue(2);
-            this.translationY.setValue(1);
-            this.translationZ.setValue(2);
-
             Animated.timing(this.rotation, {toValue: 0, duration: 5000}).start();
             Animated.timing(this.translationX, {toValue: 0, duration: 5000}).start();
             Animated.timing(this.translationY, {toValue: 0, duration: 5000}).start();
@@ -747,24 +688,18 @@ class Wellness_w extends React.Component {
 
     render() {
         if (this.props.isWatched == true && this.props.station == 12) {
-            // animationElement(12, 18, 6, false);
             this.rotation.setValue(0);
             this.translationX.setValue(0);
             this.translationY.setValue(0);
             this.translationZ.setValue(0);
 
             Animated.timing(this.rotation, {toValue: 360, duration: 20000}).start();
-            Animated.timing(this.translationX, {toValue: 4, duration: 5000}).start();
-            Animated.timing(this.translationY, {toValue: 18, duration: 5000}).start();
-            Animated.timing(this.translationZ, {toValue: 2, duration: 5000}).start();
+            Animated.timing(this.translationX, {toValue: -25, duration: 5000}).start();
+            Animated.timing(this.translationY, {toValue: 5, duration: 5000}).start();
+            Animated.timing(this.translationZ, {toValue: -10, duration: 5000}).start();
             this.booli = true;
 
         } else if (this.props.isWatched == false && this.props.station == 12 && this.booli) {
-            this.rotation.setValue(0);
-            this.translationX.setValue(2);
-            this.translationY.setValue(1);
-            this.translationZ.setValue(2);
-
             Animated.timing(this.rotation, {toValue: 0, duration: 5000}).start();
             Animated.timing(this.translationX, {toValue: 0, duration: 5000}).start();
             Animated.timing(this.translationY, {toValue: 0, duration: 5000}).start();
@@ -1249,7 +1184,6 @@ class Teller_w extends React.Component {
     }
 }
 
-
 class Koralle_d extends React.Component {
     render() {
         return (
@@ -1310,7 +1244,8 @@ class Schuh_d extends React.Component {
 class Bild_plankenwart_d extends React.Component {
     render() {
         return (
-            <Entity lit={true} style={[styles.brown, styles.bild_plankenwart]} source={{obj: asset('w_bild_plankenwart.obj')}}/>
+            <Entity lit={true} style={[styles.brown, styles.bild_plankenwart]}
+                    source={{obj: asset('w_bild_plankenwart.obj')}}/>
         );
     }
 }
@@ -1483,55 +1418,6 @@ class Truhe extends React.Component {
         );
     }
 }
-
-/*
-class ChairTwo extends React.Component {
-    rotation = new Animated.Value(30);
-    translationX = new Animated.Value(0);
-    translationY = new Animated.Value(0);
-    translationZ = new Animated.Value(0);
-
-    booli = false;
-
-    render() {
-        if (this.props.isWatched == true && this.props.station == 0) {
-            this.rotation.setValue(30);
-            this.translationX.setValue(0);
-            this.translationY.setValue(0);
-            this.translationZ.setValue(0);
-
-            Animated.timing(this.rotation, {toValue: 360, duration: 20000}).start();
-            Animated.timing(this.translationX, {toValue: 2, duration: 5000}).start();
-            Animated.timing(this.translationY, {toValue: 1, duration: 5000}).start();
-            Animated.timing(this.translationZ, {toValue: 2, duration: 5000}).start();
-            this.booli = true;
-
-        } else if (this.props.isWatched == false && this.props.station == 0 && this.booli) {
-            this.translationX.setValue(2);
-            this.translationY.setValue(1);
-            this.translationZ.setValue(2);
-
-            Animated.timing(this.translationX, {toValue: 0, duration: 5000}).start();
-            Animated.timing(this.translationY, {toValue: 0, duration: 5000}).start();
-            Animated.timing(this.translationZ, {toValue: 0, duration: 5000}).start();
-            this.booli = false;
-        }
-
-        return (
-            <AnimatedEntity style={[{
-                transform: [
-                    {translateX: this.translationX},
-                    {translateY: this.translationY},
-                    {translateZ: this.translationZ},
-                    {translate: [-5, 0.5, 0.1]},
-                    {rotateY: this.rotation},
-                    {scale: 0.3}
-                ]
-            }]} source={{obj: asset('chair.obj')}}/>
-        );
-    }
-}
-*/
 
 const styles = StyleSheet.create({
     black: {
