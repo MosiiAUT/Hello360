@@ -39,6 +39,8 @@ function init(bundle, parent, options = {}) {
             teleportSurface.resize(200, 200);
         }
 
+
+        ////////WATCH UI/////////
         moveWatchButton(yaw, pitch) {
             watchButtonSurface.setAngle(
                 yaw,
@@ -55,6 +57,7 @@ function init(bundle, parent, options = {}) {
         }
 
 
+        ////DESCRIPTION UI///////
         moveDescription(yaw, pitch) {
             descriptionSurface.setAngle(
                 yaw,
@@ -69,8 +72,6 @@ function init(bundle, parent, options = {}) {
         openDescription() {
             descriptionSurface.resize(900, 600);
         }
-
-
     }
 
     const r360 = new ReactInstance(bundle, parent, {
@@ -90,6 +91,8 @@ function init(bundle, parent, options = {}) {
     //     r360.getDefaultSurface()
     // );
 
+
+    // SimpleRaycaster.
 
     ////////DESCRIPTION UI/////////
     const descriptionSurface = new Surface(
@@ -153,54 +156,68 @@ function init(bundle, parent, options = {}) {
         myLocation,
     );
 
-/*
-// Load the initial environment
-    let geometry = new THREE.CylinderBufferGeometry(2, 5, 20, 16, 4, true);
-    geometry.computeBoundingBox();
-    let material = new THREE.ShaderMaterial({
-        uniforms: {
-            color1: {
-                value: new THREE.Color("red")
-            },
-            color2: {
-                value: new THREE.Color("purple")
-            },
-            bboxMin: {
-                value: geometry.boundingBox.min
-            },
-            bboxMax: {
-                value: geometry.boundingBox.max
-            }
-        },
-        vertexShader: `
-    uniform vec3 bboxMin;
-    uniform vec3 bboxMax;
-  
-    varying vec2 vUv;
 
-    void main() {
-      vUv.y = (position.y - bboxMin.y) / (bboxMax.y - bboxMin.y);
-      gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0);
-    }
-  `,
-        fragmentShader: `
-    uniform vec3 color1;
-    uniform vec3 color2;
-  
-    varying vec2 vUv;
-    
-    void main() {
-      
-      gl_FragColor = vec4(mix(color1, color2, vUv.y), 1.0);
-    }
-  `,
-        wireframe: true
-    });
+    let scene = r360.compositor._scene;
 
-//var mesh = new THREE.Mesh(geometry, material);
-//r360.compositor._scene.add(mesh);
+    let light = new THREE.AmbientLight(0x2aabea);
+    light.intensity = 0.5;
 
-*/
+    scene.add(light);
+
+    let fogColor = new THREE.Color(0x42f4e2);
+    r360.compositor.setBackground(r360.getAssetURL('skynew.png'));
+    r360.compositor._scene.fog = new THREE.FogExp2(fogColor, 0.0015);
+    r360.controls.clearRaycasters();
+    r360.controls.addRaycaster(SimpleRaycaster);
+
+    /*
+    // Load the initial environment
+        let geometry = new THREE.CylinderBufferGeometry(2, 5, 20, 16, 4, true);
+        geometry.computeBoundingBox();
+        let material = new THREE.ShaderMaterial({
+            uniforms: {
+                color1: {
+                    value: new THREE.Color("red")
+                },
+                color2: {
+                    value: new THREE.Color("purple")
+                },
+                bboxMin: {
+                    value: geometry.boundingBox.min
+                },
+                bboxMax: {
+                    value: geometry.boundingBox.max
+                }
+            },
+            vertexShader: `
+        uniform vec3 bboxMin;
+        uniform vec3 bboxMax;
+
+        varying vec2 vUv;
+
+        void main() {
+          vUv.y = (position.y - bboxMin.y) / (bboxMax.y - bboxMin.y);
+          gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0);
+        }
+      `,
+            fragmentShader: `
+        uniform vec3 color1;
+        uniform vec3 color2;
+
+        varying vec2 vUv;
+
+        void main() {
+
+          gl_FragColor = vec4(mix(color1, color2, vUv.y), 1.0);
+        }
+      `,
+            wireframe: true
+        });
+
+    //var mesh = new THREE.Mesh(geometry, material);
+    //r360.compositor._scene.add(mesh);
+
+    */
 //animation
 
     /*
@@ -334,18 +351,6 @@ var camera = r360.compositor._camera;
     drawDotSystem();
     */
 
-    let scene = r360.compositor._scene;
-
-    let light = new THREE.AmbientLight(0x2aabea);
-    light.intensity = 0.5;
-
-    scene.add(light);
-
-    let fogColor = new THREE.Color(0x42f4e2);
-    r360.compositor.setBackground(r360.getAssetURL('skynew.png'));
-    r360.compositor._scene.fog = new THREE.FogExp2(fogColor, 0.0015);
-    r360.controls.clearRaycasters();
-    r360.controls.addRaycaster(SimpleRaycaster);
 
     /*
     animate();
@@ -365,5 +370,4 @@ var camera = r360.compositor._camera;
     }
     */
 }
-
 window.React360 = {init};

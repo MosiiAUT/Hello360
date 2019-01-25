@@ -7,7 +7,7 @@ import {
 } from 'react-360';
 
 import GazeButton from "react-360-gaze-button";
-import {setStation, setWatched} from './ClickManager';
+import {setStation} from './ClickManager';
 
 const {MyModule} = NativeModules;
 
