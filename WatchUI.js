@@ -1,11 +1,9 @@
 import React from 'react';
 import {
     StyleSheet,
-    Text,
     View,
     NativeModules,
     asset,
-    Image
 } from 'react-360';
 
 import GazeButton from "react-360-gaze-button";
