@@ -21,6 +21,17 @@ let t_shrimpstatue = [-68, 0, -568];
 let t_haken_gemein = [-123, 0, -552];
 let t_wellness = [-82, 0, -516];
 
+//floor 2 room 1
+let t_haken_loeffler = [-203, 0, -543];
+let t_knochen_body = [-290, 0, -581];
+let t_gedicht = [-196, 0, -631];
+let t_haken_laser = [-181, 0, -590];
+
+//floor 2 room 2
+let t_augenklappe = [37.5, 0, -549.5];
+let t_hut = [57, 0, -544];
+let t_book_tagebuch = [76, 0, -580];
+let t_teller = [98, 0, -586];
 
 class Models extends React.Component {
     render() {
@@ -28,6 +39,7 @@ class Models extends React.Component {
 
         switch (this.props.station) {
             // elements = <ChairTwo isWatched={this.props.isWatched} station={this.props.station} lit={true}/>;
+
             // outside
             case 0:
                 elements = [<Koralle_d/>,<Fass_d/>,<Truhe_d/>,<Haken_mug_d/>,<Bild_shrimp_d/>];
@@ -70,8 +82,42 @@ class Models extends React.Component {
             case 12:
                 elements = [<Bett_d/>,<Schuh_d/>,<Bild_plankenwart_d/>,<Book_see_d/>,<Shrimpstatue_d/>,<Haken_gemein_d/>,<Wellness_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>];
                 break;
+
+            //second floor room one
             case 13:
+                elements = [<Haken_loeffler_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>,<Knochen_body_d/>,<Gedicht_d/>,<Haken_laser_d/>];
+                break;
+            case 14:
+                elements = [<Haken_loeffler_d/>,<Knochen_body_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>,<Gedicht_d/>,<Haken_laser_d/>];
+                break;
+            case 15:
+                elements = [<Haken_loeffler_d/>,<Knochen_body_d/>,<Gedicht_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>,<Haken_laser_d/>];
+                break;
+            case 16:
+                elements = [<Haken_loeffler_d/>,<Knochen_body_d/>,<Gedicht_d/>,<Haken_laser_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>];
+                break;
+
+                //knochen outside
+            case 17:
                 elements = null;
+                break;
+
+            //second floor room one
+            case 18:
+                elements = [<Augenklappe_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>,<Hut_w/>,<Book_tagebuch_w/>,<Teller_w/>];
+                break;
+            case 19:
+                elements = [<Augenklappe_w />,<Hut_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>,<Book_tagebuch_w/>,<Teller_w/>];
+                break;
+            case 20:
+                elements = [<Augenklappe_w/>,<Hut_w/>,<Book_tagebuch_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>,<Teller_w/>];
+                break;
+            case 21:
+                elements = [<Augenklappe_w />,<Hut_w/>,<Book_tagebuch_w/>,<Teller_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>];
+                break;
+
+            case 4:
+                elements = [<Augenklappe_w />,<Hut_w/>,<Book_tagebuch_w/>,<Teller_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>];
                 break;
 
         }
@@ -81,10 +127,10 @@ class Models extends React.Component {
                 {/*<PointLight intensity={0.5} style={{color:'white', transform:[{translate:[0,50,0]}]}}/>*/}
                 <DirectionalLight intensity={0.4} />
                 <AmbientLight intensity={0.3} />
-                <Terrain/>
                 <Scene/>
 
                 <Ship/>
+                <Terrain/>
                 {/*
                 <Fass/>
                 <Geschirr/>
@@ -741,6 +787,467 @@ class Wellness_w extends React.Component {
     }
 }
 
+class Haken_loeffler_w extends React.Component {
+    rotation = new Animated.Value(0);
+    translationX = new Animated.Value(0);
+    translationY = new Animated.Value(0);
+    translationZ = new Animated.Value(0);
+
+    booli = false;
+
+    render() {
+        if (this.props.isWatched == true && this.props.station == 13) {
+
+            // animationElement(12, 18, 6, false);
+            this.rotation.setValue(0);
+            this.translationX.setValue(0);
+            this.translationY.setValue(0);
+            this.translationZ.setValue(0);
+
+            Animated.timing(this.rotation, {toValue: 360, duration: 20000}).start();
+            Animated.timing(this.translationX, {toValue: 2, duration: 5000}).start();
+            Animated.timing(this.translationY, {toValue: 1, duration: 5000}).start();
+            Animated.timing(this.translationZ, {toValue: 2, duration: 5000}).start();
+            this.booli = true;
+
+        } else if (this.props.isWatched == false && this.props.station == 13 && this.booli) {
+            this.rotation.setValue(0);
+            this.translationX.setValue(2);
+            this.translationY.setValue(1);
+            this.translationZ.setValue(2);
+
+            Animated.timing(this.translationX, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.translationY, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.translationZ, {toValue: 0, duration: 5000}).start();
+
+            this.booli = true;
+
+        }
+
+        return (
+            <AnimatedEntity style={[{
+                transform: [
+                    {translateX: this.translationX},
+                    {translateY: this.translationY},
+                    {translateZ: this.translationZ},
+                    {translate: t_haken_loeffler},
+                    {rotateY: this.rotation},
+                ]
+            },
+                styles.grey]} source={{obj: asset('w_haken_loeffler.obj')}} lit={true}/>
+        );
+    }
+}
+
+class Knochen_body_w extends React.Component {
+    rotation = new Animated.Value(0);
+    translationX = new Animated.Value(0);
+    translationY = new Animated.Value(0);
+    translationZ = new Animated.Value(0);
+
+    booli = false;
+
+    render() {
+        if (this.props.isWatched == true && this.props.station == 14) {
+
+            // animationElement(12, 18, 6, false);
+            this.rotation.setValue(0);
+            this.translationX.setValue(0);
+            this.translationY.setValue(0);
+            this.translationZ.setValue(0);
+
+            Animated.timing(this.rotation, {toValue: 360, duration: 20000}).start();
+            Animated.timing(this.translationX, {toValue: 2, duration: 5000}).start();
+            Animated.timing(this.translationY, {toValue: 1, duration: 5000}).start();
+            Animated.timing(this.translationZ, {toValue: 2, duration: 5000}).start();
+            this.booli = true;
+
+        } else if (this.props.isWatched == false && this.props.station == 14 && this.booli) {
+            this.rotation.setValue(0);
+            this.translationX.setValue(2);
+            this.translationY.setValue(1);
+            this.translationZ.setValue(2);
+
+            Animated.timing(this.translationX, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.translationY, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.translationZ, {toValue: 0, duration: 5000}).start();
+
+            this.booli = true;
+
+        }
+
+        return (
+            <AnimatedEntity style={[{
+                transform: [
+                    {translateX: this.translationX},
+                    {translateY: this.translationY},
+                    {translateZ: this.translationZ},
+                    {translate: t_knochen_body},
+                    {rotateY: this.rotation},
+                ]
+            },
+                styles.grey]} source={{obj: asset('w_knochen_body.obj')}} lit={true}/>
+        );
+    }
+}
+
+class Gedicht_w extends React.Component {
+    rotation = new Animated.Value(0);
+    translationX = new Animated.Value(0);
+    translationY = new Animated.Value(0);
+    translationZ = new Animated.Value(0);
+
+    booli = false;
+
+    render() {
+        if (this.props.isWatched == true && this.props.station == 15) {
+            // animationElement(12, 18, 6, false);
+            this.rotation.setValue(0);
+            this.translationX.setValue(0);
+            this.translationY.setValue(0);
+            this.translationZ.setValue(0);
+
+            Animated.timing(this.rotation, {toValue: 360, duration: 20000}).start();
+            Animated.timing(this.translationX, {toValue: 4, duration: 5000}).start();
+            Animated.timing(this.translationY, {toValue: 18, duration: 5000}).start();
+            Animated.timing(this.translationZ, {toValue: 2, duration: 5000}).start();
+            this.booli = true;
+
+        } else if (this.props.isWatched == false && this.props.station == 15 && this.booli) {
+            this.rotation.setValue(0);
+            this.translationX.setValue(2);
+            this.translationY.setValue(1);
+            this.translationZ.setValue(2);
+
+            Animated.timing(this.rotation, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.translationX, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.translationY, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.translationZ, {toValue: 0, duration: 5000}).start();
+            this.booli = false;
+        }
+
+        return (
+            <AnimatedEntity style={[{
+                transform: [
+                    {translateX: this.translationX},
+                    {translateY: this.translationY},
+                    {translateZ: this.translationZ},
+                    {translate: t_gedicht},
+                    {rotateY: this.rotation},
+                ]
+            },
+                styles.grey]} source={{obj: asset('w_gedicht.obj')}} lit={true}/>
+        );
+    }
+}
+
+class Haken_laser_w extends React.Component {
+    rotation = new Animated.Value(0);
+    translationX = new Animated.Value(0);
+    translationY = new Animated.Value(0);
+    translationZ = new Animated.Value(0);
+
+    booli = false;
+
+    render() {
+        if (this.props.isWatched == true && this.props.station == 16) {
+            // animationElement(12, 18, 6, false);
+            this.rotation.setValue(0);
+            this.translationX.setValue(0);
+            this.translationY.setValue(0);
+            this.translationZ.setValue(0);
+
+            Animated.timing(this.rotation, {toValue: 360, duration: 20000}).start();
+            Animated.timing(this.translationX, {toValue: 4, duration: 5000}).start();
+            Animated.timing(this.translationY, {toValue: 18, duration: 5000}).start();
+            Animated.timing(this.translationZ, {toValue: 2, duration: 5000}).start();
+            this.booli = true;
+
+        } else if (this.props.isWatched == false && this.props.station == 17 && this.booli) {
+            this.rotation.setValue(0);
+            this.translationX.setValue(2);
+            this.translationY.setValue(1);
+            this.translationZ.setValue(2);
+
+            Animated.timing(this.rotation, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.translationX, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.translationY, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.translationZ, {toValue: 0, duration: 5000}).start();
+            this.booli = false;
+        }
+
+        return (
+            <AnimatedEntity style={[{
+                transform: [
+                    {translateX: this.translationX},
+                    {translateY: this.translationY},
+                    {translateZ: this.translationZ},
+                    {translate: t_haken_laser},
+                    {rotateY: this.rotation},
+                ]
+            },
+                styles.grey]} source={{obj: asset('w_haken_laser.obj')}} lit={true}/>
+        );
+    }
+}
+
+//
+class Knochen_life_w extends React.Component {
+    rotation = new Animated.Value(0);
+    translationX = new Animated.Value(0);
+    translationY = new Animated.Value(0);
+    translationZ = new Animated.Value(0);
+
+    booli = false;
+
+    render() {
+        if (this.props.isWatched == true && this.props.station == 17) {
+
+            // animationElement(12, 18, 6, false);
+            this.rotation.setValue(0);
+            this.translationX.setValue(0);
+            this.translationY.setValue(0);
+            this.translationZ.setValue(0);
+
+            Animated.timing(this.rotation, {toValue: 360, duration: 20000}).start();
+            Animated.timing(this.translationX, {toValue: 2, duration: 5000}).start();
+            Animated.timing(this.translationY, {toValue: 1, duration: 5000}).start();
+            Animated.timing(this.translationZ, {toValue: 2, duration: 5000}).start();
+            this.booli = true;
+
+        } else if (this.props.isWatched == false && this.props.station == 17 && this.booli) {
+            this.rotation.setValue(0);
+            this.translationX.setValue(2);
+            this.translationY.setValue(1);
+            this.translationZ.setValue(2);
+
+            Animated.timing(this.translationX, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.translationY, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.translationZ, {toValue: 0, duration: 5000}).start();
+
+            this.booli = true;
+
+        }
+
+        return (
+            <AnimatedEntity style={[{
+                transform: [
+                    {translateX: this.translationX},
+                    {translateY: this.translationY},
+                    {translateZ: this.translationZ},
+                    {translate: t_augenklappe},
+                    {rotateY: this.rotation},
+                ]
+            },
+                styles.black]} source={{obj: asset('w_augenklappe.obj')}} lit={true}/>
+        );
+    }
+}
+//
+
+class Augenklappe_w extends React.Component {
+    rotation = new Animated.Value(0);
+    translationX = new Animated.Value(0);
+    translationY = new Animated.Value(0);
+    translationZ = new Animated.Value(0);
+
+    booli = false;
+
+    render() {
+        if (this.props.isWatched == true && this.props.station == 18) {
+
+            // animationElement(12, 18, 6, false);
+            this.rotation.setValue(0);
+            this.translationX.setValue(0);
+            this.translationY.setValue(0);
+            this.translationZ.setValue(0);
+
+            Animated.timing(this.rotation, {toValue: 360, duration: 20000}).start();
+            Animated.timing(this.translationX, {toValue: 2, duration: 5000}).start();
+            Animated.timing(this.translationY, {toValue: 1, duration: 5000}).start();
+            Animated.timing(this.translationZ, {toValue: 2, duration: 5000}).start();
+            this.booli = true;
+
+        } else if (this.props.isWatched == false && this.props.station == 18 && this.booli) {
+            this.rotation.setValue(0);
+            this.translationX.setValue(2);
+            this.translationY.setValue(1);
+            this.translationZ.setValue(2);
+
+            Animated.timing(this.translationX, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.translationY, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.translationZ, {toValue: 0, duration: 5000}).start();
+
+            this.booli = true;
+
+        }
+
+        return (
+            <AnimatedEntity style={[{
+                transform: [
+                    {translateX: this.translationX},
+                    {translateY: this.translationY},
+                    {translateZ: this.translationZ},
+                    {translate: t_augenklappe},
+                    {rotateY: this.rotation},
+                ]
+            },
+                styles.black]} source={{obj: asset('w_augenklappe.obj')}} lit={true}/>
+        );
+    }
+}
+
+class Hut_w extends React.Component {
+    rotation = new Animated.Value(0);
+    translationX = new Animated.Value(0);
+    translationY = new Animated.Value(0);
+    translationZ = new Animated.Value(0);
+
+    booli = false;
+
+    render() {
+        if (this.props.isWatched == true && this.props.station == 19) {
+
+            // animationElement(12, 18, 6, false);
+            this.rotation.setValue(0);
+            this.translationX.setValue(0);
+            this.translationY.setValue(0);
+            this.translationZ.setValue(0);
+
+            Animated.timing(this.rotation, {toValue: 360, duration: 20000}).start();
+            Animated.timing(this.translationX, {toValue: 2, duration: 5000}).start();
+            Animated.timing(this.translationY, {toValue: 1, duration: 5000}).start();
+            Animated.timing(this.translationZ, {toValue: 2, duration: 5000}).start();
+            this.booli = true;
+
+        } else if (this.props.isWatched == false && this.props.station == 19 && this.booli) {
+            this.rotation.setValue(0);
+            this.translationX.setValue(2);
+            this.translationY.setValue(1);
+            this.translationZ.setValue(2);
+
+            Animated.timing(this.translationX, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.translationY, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.translationZ, {toValue: 0, duration: 5000}).start();
+
+            this.booli = true;
+
+        }
+
+        return (
+            <AnimatedEntity style={[{
+                transform: [
+                    {translateX: this.translationX},
+                    {translateY: this.translationY},
+                    {translateZ: this.translationZ},
+                    {translate: t_hut},
+                    {rotateY: this.rotation},
+                ]
+            },
+                styles.black]} source={{obj: asset('w_hut.obj')}} lit={true}/>
+        );
+    }
+}
+
+class Book_tagebuch_w extends React.Component {
+    rotation = new Animated.Value(0);
+    translationX = new Animated.Value(0);
+    translationY = new Animated.Value(0);
+    translationZ = new Animated.Value(0);
+
+    booli = false;
+
+    render() {
+        if (this.props.isWatched == true && this.props.station == 20) {
+            // animationElement(12, 18, 6, false);
+            this.rotation.setValue(0);
+            this.translationX.setValue(0);
+            this.translationY.setValue(0);
+            this.translationZ.setValue(0);
+
+            Animated.timing(this.rotation, {toValue: 360, duration: 20000}).start();
+            Animated.timing(this.translationX, {toValue: 4, duration: 5000}).start();
+            Animated.timing(this.translationY, {toValue: 18, duration: 5000}).start();
+            Animated.timing(this.translationZ, {toValue: 2, duration: 5000}).start();
+            this.booli = true;
+
+        } else if (this.props.isWatched == false && this.props.station == 20 && this.booli) {
+            this.rotation.setValue(0);
+            this.translationX.setValue(2);
+            this.translationY.setValue(1);
+            this.translationZ.setValue(2);
+
+            Animated.timing(this.rotation, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.translationX, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.translationY, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.translationZ, {toValue: 0, duration: 5000}).start();
+            this.booli = false;
+        }
+
+        return (
+            <AnimatedEntity style={[{
+                transform: [
+                    {translateX: this.translationX},
+                    {translateY: this.translationY},
+                    {translateZ: this.translationZ},
+                    {translate: t_book_tagebuch},
+                    {rotateY: this.rotation},
+                ]
+            },
+                styles.grey]} source={{obj: asset('w_book_tagebuch.obj')}} lit={true}/>
+        );
+    }
+}
+
+class Teller_w extends React.Component {
+    rotation = new Animated.Value(0);
+    translationX = new Animated.Value(0);
+    translationY = new Animated.Value(0);
+    translationZ = new Animated.Value(0);
+
+    booli = false;
+
+    render() {
+        if (this.props.isWatched == true && this.props.station == 21) {
+            // animationElement(12, 18, 6, false);
+            this.rotation.setValue(0);
+            this.translationX.setValue(0);
+            this.translationY.setValue(0);
+            this.translationZ.setValue(0);
+
+            Animated.timing(this.rotation, {toValue: 360, duration: 20000}).start();
+            Animated.timing(this.translationX, {toValue: 4, duration: 5000}).start();
+            Animated.timing(this.translationY, {toValue: 18, duration: 5000}).start();
+            Animated.timing(this.translationZ, {toValue: 2, duration: 5000}).start();
+            this.booli = true;
+
+        } else if (this.props.isWatched == false && this.props.station == 21 && this.booli) {
+            this.rotation.setValue(0);
+            this.translationX.setValue(2);
+            this.translationY.setValue(1);
+            this.translationZ.setValue(2);
+
+            Animated.timing(this.rotation, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.translationX, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.translationY, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.translationZ, {toValue: 0, duration: 5000}).start();
+            this.booli = false;
+        }
+
+        return (
+            <AnimatedEntity style={[{
+                transform: [
+                    {translateX: this.translationX},
+                    {translateY: this.translationY},
+                    {translateZ: this.translationZ},
+                    {translate: t_teller},
+                    {rotateY: this.rotation},
+                ]
+            },
+                styles.grey]} source={{obj: asset('w_teller.obj')}} lit={true}/>
+        );
+    }
+}
 
 
 class Koralle_d extends React.Component {
@@ -836,6 +1343,38 @@ class Wellness_d extends React.Component {
     render() {
         return (
             <Entity lit={true} style={[styles.black, styles.wellness]} source={{obj: asset('w_wellness.obj')}}/>
+        );
+    }
+}
+
+class Haken_loeffler_d extends React.Component {
+    render() {
+        return (
+            <Entity lit={true} style={[styles.grey, styles.haken_loeffler]} source={{obj: asset('w_haken_loeffler.obj')}}/>
+        );
+    }
+}
+
+class Knochen_body_d extends React.Component {
+    render() {
+        return (
+            <Entity lit={true} style={[styles.grey, styles.knochen_body]} source={{obj: asset('w_knochen_body.obj')}}/>
+        );
+    }
+}
+
+class Gedicht_d extends React.Component {
+    render() {
+        return (
+            <Entity lit={true} style={[styles.grey, styles.gedicht]} source={{obj: asset('w_gedicht.obj')}}/>
+        );
+    }
+}
+
+class Haken_laser_d extends React.Component {
+    render() {
+        return (
+            <Entity lit={true} style={[styles.grey, styles.haken_laser]} source={{obj: asset('w_haken_laser.obj')}}/>
         );
     }
 }
@@ -1064,6 +1603,18 @@ const styles = StyleSheet.create({
     wellness: {
         transform: [{translate: t_wellness}],
     },
+    haken_loeffler: {
+        transform: [{translate: t_haken_loeffler}],
+    },
+    knochen_body: {
+        transform: [{translate: t_knochen_body}],
+    },
+    gedicht: {
+        transform: [{translate: t_gedicht}],
+    },
+    haken_laser: {
+        transform: [{translate: t_haken_laser}],
+    }
 
 });
 
