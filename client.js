@@ -112,6 +112,7 @@ function init(bundle, parent, options = {}) {
     );
 
 
+
     ////////TELEPORT UI/////////
     const teleportSurface = new Surface(
         200,
@@ -170,101 +171,7 @@ function init(bundle, parent, options = {}) {
     r360.controls.clearRaycasters();
     r360.controls.addRaycaster(SimpleRaycaster);
 
-    /*
-    // Load the initial environment
-        let geometry = new THREE.CylinderBufferGeometry(2, 5, 20, 16, 4, true);
-        geometry.computeBoundingBox();
-        let material = new THREE.ShaderMaterial({
-            uniforms: {
-                color1: {
-                    value: new THREE.Color("red")
-                },
-                color2: {
-                    value: new THREE.Color("purple")
-                },
-                bboxMin: {
-                    value: geometry.boundingBox.min
-                },
-                bboxMax: {
-                    value: geometry.boundingBox.max
-                }
-            },
-            vertexShader: `
-        uniform vec3 bboxMin;
-        uniform vec3 bboxMax;
 
-        varying vec2 vUv;
-
-        void main() {
-          vUv.y = (position.y - bboxMin.y) / (bboxMax.y - bboxMin.y);
-          gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0);
-        }
-      `,
-            fragmentShader: `
-        uniform vec3 color1;
-        uniform vec3 color2;
-
-        varying vec2 vUv;
-
-        void main() {
-
-          gl_FragColor = vec4(mix(color1, color2, vUv.y), 1.0);
-        }
-      `,
-            wireframe: true
-        });
-
-    //var mesh = new THREE.Mesh(geometry, material);
-    //r360.compositor._scene.add(mesh);
-
-    */
-//animation
-
-    /*
-var loader = new THREE.GLTFLoader();
-var camera = r360.compositor._camera;
-
-
-    loader.load(
-        // resource URL
-        'static_assets/fishy.gltf',
-        // called when the resource is loaded
-        function (gltf) {
-
-            gltf.scene.traverse(function (child) {
-                if (child.isMesh) {
-                    child.geometry.position.y = 10; // center here
-                }
-            });
-
-            scene.add(gltf.scene);
-            var myObj = object;
-            object.position.z = 20;
-            gltf.scene.position.y = 10;
-            gltf.position.y = 10;
-
-            gltf.animations; // Array<THREE.AnimationClip>
-            gltf.scene; // THREE.Scene
-            gltf.scenes; // Array<THREE.Scene>
-            gltf.cameras; // Array<THREE.Camera>
-            gltf.asset; // Object
-
-        },
-        // called while loading is progressing
-        function (xhr) {
-
-            console.log((xhr.loaded / xhr.total * 100) + '% loaded');
-
-        },
-        // called when loading has errors
-        function (error) {
-
-            console.log('An error happened');
-
-        }
-    );
-
-*/
 
     /*
     let dotSystem = new THREE.Group();
