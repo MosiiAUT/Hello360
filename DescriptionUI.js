@@ -446,6 +446,103 @@ class DescriptionUI extends React.Component {
                             </View>
                         </View>
                     );
+            case 22:
+                if(this.props.isWatched)
+                    return (
+                        <View style={styles.panel}>
+                            <UI isWatched={this.props.isWatched}/>
+                            <View>
+                                <Text style={[{fontSize: 38}, styles.text]}>
+                                    Die schnelle Welle,  23. Dezember 1732
+                                </Text>
+                                <Text style={[{fontSize: 26}, styles.text]}>
+                                    Plankenwartet ungern und ist nicht shrimperlich{"\n"}
+                                    {"\n"}
+                                    Keine Shrimps auch diese Jahr. Eine fatale Neuigkeit{"\n"}
+                                    für Shrimpfischer, doch auch Seefahrer leiden unter den{"\n"}
+                                    nun verstärkten Angriffen von Piratenkönig Plankenwart.{"\n"}
+                                    Dieser identifiziert sich bis vor zwei Jahren als Mitglied{"\n"}
+                                    der Garnelen, einer Bevölkerungsgruppe,{"\n"}
+                                    welche sich ausschließlich von den kleinen Krebsen ernährten{"\n"}
+                                    und fungiert als Shrimp Experte in der AEF{"\n"}
+                                    (Association of Everything Fishy). Man nimmt nun an,{"\n"}
+                                    dass seine Angriffe und das Verschwinden der Shrimps zusammenhängen.
+                                </Text>
+                            </View>
+                        </View>
+                    );
+            case 23:
+                if(this.props.isWatched)
+                    return (
+                        <View style={styles.panel}>
+                            <UI isWatched={this.props.isWatched}/>
+                            <View>
+                                <Text style={[{fontSize: 38}, styles.text]}>
+                                    Trillerpfeife
+                                </Text>
+                                <Text style={[{fontSize: 26}, styles.text]}>
+                                    Der Trillerhaken war ein häufig eingesetztes Werkzeug{"\n"}
+                                    im Alltag der Crew. Vorerst wurde er zum Kiel holen benutzt.{"\n"}
+                                    Kiel war ein Pirat, welcher berüchtigt dafür war,{"\n"}
+                                    immer und überall einzuschlafen und auch mit größter Mühe{"\n"}
+                                    nicht zu wecken war. Benötigte man seine Anwesenheit,{"\n"}
+                                    musst man nun in den Trillerhaken blasen.{"\n"}
+                                    Nur diese hochfrequente Töne konnten ihn aus seinem Schlummer reißen.
+                                </Text>
+                            </View>
+                        </View>
+                    );
+            case 24:
+                if(this.props.isWatched)
+                    return (
+                        <View style={styles.panel}>
+                            <UI isWatched={this.props.isWatched}/>
+                            <View>
+                                <Text style={[{fontSize: 38}, styles.text]}>
+                                    Kanone
+                                </Text>
+                                <Text style={[{fontSize: 26}, styles.text]}>
+                                    Diese Kanonen wurden nie gefüllt sondern dienten{"\n"}
+                                    alleinig als Abschreckung. Die Crew leistete sich bei ihrem{"\n"}
+                                    letzten Besuch an Land statt Munition lieber einen tanzenden{"\n"}
+                                    Affen welcher allerdings sofort an Seekrankheit verstarb.
+                                </Text>
+                            </View>
+                        </View>
+                    );
+            case 25:
+                if(this.props.isWatched)
+                    return (
+                        <View style={styles.panel}>
+                            <UI isWatched={this.props.isWatched}/>
+                            <View>
+                                <Text style={[{fontSize: 38}, styles.text]}>
+                                    Brief
+                                </Text>
+                                <Text style={[{fontSize: 26}, styles.text]}>
+                                    Vom Federführer unserer Zahnlosigkeit, Plankenwart dem 13.{"\n"}
+                                    {"\n"}
+                                    Der Piratenkönig hat ausgerufen! Er hat ungesunde 24 Jahre regiert{"\n"}
+                                    und will nun im hohem Alter von 40 in Pension gehen. {"\n"}
+                                    Er sieht seine Aufgabe als erfüllt an und möchte sich nunfort nur noch{"\n"}
+                                    auf sein voranschreitendes Skorbut und das Foltern von Adeligen fokussieren.{"\n"}
+                                    Aus diesem Grunde bittet er alle offiziell gemeldeten Seeräuber {"\n"}
+                                    (Kopfgeld Ausruf von 1000 Gulden  oder höher - Siehe PGB P. 35 §10),{"\n"}
+                                    sich auf die Suche nach einem Schatz für Ihn zu begeben{"\n"}
+                                    und diesen in 100 Sonnenaufgängen in Tortuga zu präsentieren.{"\n"}
+                                    Die Beteiligten sind gebeten sich mit einem fehlenden Körperteil{"\n"}
+                                    (Bein, Arm, Auge, etc) als Pirat auszuweisen. Es wird um Verständnis gebeten,{"\n"}
+                                    dass fehlende Zähne oder Haare nicht als Ausweis gültig sind,{"\n"}
+                                    da auch der gemeine Bürger häufig über diese verfügt.{"\n"}
+                                    Der oder diejenige die es schafft den Piratenkönig zu Beindrucken,{"\n"}
+                                    möge den Trohn als nächstes Besteigen und außerdem das Holzbein{"\n"}
+                                    der hohen Unehre und Rums übergeben bekommen.{"\n"}
+                                    {"\n"}
+                                    Feste Briese, Kameraden!
+                                </Text>
+                            </View>
+                        </View>
+                    );
             default:
                 return null;
         }
