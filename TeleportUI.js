@@ -6,13 +6,31 @@ import {
     asset,
     Image
 } from 'react-360';
-
 import GazeButton from "react-360-gaze-button";
 import {connect, setStation} from './ClickManager';
 
 const {MyModule} = NativeModules;
 const {AudioModule} = NativeModules;
 
+// import {VideoPlayer} from 'react-360-common-ui';
+//
+// class VideoTest extends Component {
+//     render() {
+//         return (
+//             <View style={{flex: 1}}>
+//                 <VideoPlayer
+//                     muted={true}
+//                     source={{url: staticResourceURL('path/to/video.mp4')}}
+//                     stereo={'2D'}
+//                     style={{
+//                         width: 600,
+//                         height: 400,
+//                     }}
+//                 />
+//             </View>
+//         );
+//     }
+// }
 class TeleportUI extends React.Component {
     render() {
         return (
@@ -140,10 +158,9 @@ class TeleportButton extends React.Component {
                 break;
 
                 //outside
-                //still some work
             case 16:
                 MyModule.setWorld(140, -55, 570);
-                MyModule.moveWatchButton(Math.PI / 3, -Math.PI / 3.5);
+                MyModule.moveWatchButton(Math.PI / 4, -Math.PI / 4.5);
                 MyModule.moveDescription(0, 0,);
                 MyModule.moveTeleport(Math.PI / 2.2, -Math.PI / 25);
                 break;
@@ -158,7 +175,7 @@ class TeleportButton extends React.Component {
 
             case 18:
                 MyModule.setWorld(-45, -70, 570);
-                MyModule.moveWatchButton(Math.PI / 1.2, Math.PI / 8);
+                MyModule.moveWatchButton(Math.PI / 1.15, Math.PI / 12);
                 MyModule.moveDescription(-Math.PI / 1.2, 0,);
                 MyModule.moveTeleport(Math.PI / 1.9, -Math.PI / 8);
                 break;
@@ -176,6 +193,45 @@ class TeleportButton extends React.Component {
                 MyModule.moveDescription(-Math.PI / 3, 0,);
                 MyModule.moveTeleport(-Math.PI / 2, -Math.PI / 20);
                 break;
+
+            //outside
+            case 21:
+                MyModule.setWorld(10, -65, 570);
+                MyModule.moveWatchButton(-Math.PI / 1.25, -Math.PI / 10);
+                MyModule.moveDescription(-Math.PI / 1.8, 0,);
+                MyModule.moveTeleport(-Math.PI / 2.5, 0);
+                break;
+
+            case 22:
+                MyModule.setWorld(180, -100, 630);
+                MyModule.moveWatchButton(-Math.PI / 2.5, -Math.PI / 3.5);
+                MyModule.moveDescription(-Math.PI / 1.6, 0,);
+                MyModule.moveTeleport(-Math.PI / 1.3, Math.PI / 20);
+                break;
+
+            case 23:
+                MyModule.setWorld(200, -115, 590);
+                MyModule.moveWatchButton(-Math.PI / 1.9, -Math.PI / 5.5);
+                MyModule.moveDescription(-Math.PI / 1.2, 0,);
+                MyModule.moveTeleport(-Math.PI / 3, -Math.PI / 7);
+                break;
+
+            case 24:
+                MyModule.setWorld(220, -105, 619);
+                MyModule.moveWatchButton(-Math.PI / 1.9, -Math.PI / 10);
+                MyModule.moveDescription(-Math.PI / 1.35, 0,);
+                MyModule.moveTeleport(Math.PI / 1.2, Math.PI / 8);
+                break;
+
+                //the end
+            case 25:
+                MyModule.closeWatchButton();
+                MyModule.setWorld(-10, -180, 300);
+                MyModule.moveDescription(-Math.PI / 1.35, 0,);
+                MyModule.moveTeleport(Math.PI / 1.2, Math.PI / 8);
+                break;
+
+
         }
 
         setStation(this.state.station + 1);
