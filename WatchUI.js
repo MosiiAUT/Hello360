@@ -4,6 +4,7 @@ import {
     View,
     NativeModules,
     asset,
+    Image
 } from 'react-360';
 
 import GazeButton from "react-360-gaze-button";
@@ -54,7 +55,7 @@ class WatchButton extends React.Component {
                 }}
                 render={(remainingTime, isGazed) => (
                     <View style={styles.greetingBox}>
-                        {/*<Image style={styles.image} source={asset('circle.png')} />*/}
+                        <Image style={styles.image} source={asset('circleblau.png')} />
                     </View>
                 )}
             />
@@ -76,7 +77,7 @@ const styles = StyleSheet.create({
         width: 300,
         height: 300,
         borderColor: '#639dda',
-        borderWidth: 2,
+        borderWidth: 0,
     },
     greeting: {
         fontSize: 30,

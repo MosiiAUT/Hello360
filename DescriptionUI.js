@@ -505,7 +505,7 @@ class UI extends React.Component {
                     <View style={{backgroundColor: 'rgba(255, 255, 255, ' + this.state.opacity  + ')',
                         width: 50,
                         height: 50,
-                        borderColor: '#5e5e5e',
+                        borderColor: '#4a2146',
                         borderWidth: 2,
                         alignSelf: 'flex-end'
                     }}>
@@ -525,9 +525,10 @@ const styles = StyleSheet.create({
         // Fill the entire surface
         width: 900,
         height: 700,
-        backgroundColor: 'rgba(255, 255, 255, 0.6)',
+        backgroundColor: 'rgba(64, 150, 194, 0.6)',
         //justifyContent: 'center',
         alignItems: 'stretch',
+        color: 'rgba(64, 150, 194, 1)',
     },
     greetingBox: {
         width: 50,
@@ -539,7 +540,8 @@ const styles = StyleSheet.create({
         fontSize: 30,
         justifyContent: 'center',
         alignItems: 'center',
-        textAlign: 'center'
+        textAlign: 'center',
+       
     },
     exitButton: {
         justifyContent: 'center'

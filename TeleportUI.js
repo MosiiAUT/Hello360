@@ -4,6 +4,7 @@ import {
     View,
     NativeModules,
     asset,
+    Image
 } from 'react-360';
 
 import GazeButton from "react-360-gaze-button";
@@ -202,6 +203,7 @@ class TeleportButton extends React.Component {
                 }}
                 render={(remainingTime, isGazed) => (
                     <View style={styles.greetingBox}>
+                         <Image style={styles.image} source={asset('circlegelb.png')} />
                     </View>
                 )}
             />
@@ -220,13 +222,19 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     greetingBox: {
-        width: 200,
-        height: 200,
-        borderColor: '#efea01',
-        borderWidth: 2,
+        
+
+        padding: 20,
+       
+        
+        borderWidth: 0,
     },
     greeting: {
         fontSize: 30,
+    },
+    image: {
+        width: 200,
+        height: 200,
     },
 });
 
