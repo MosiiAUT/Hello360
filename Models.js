@@ -612,7 +612,7 @@ class Book_see_w extends React.Component {
                     {rotateY: this.rotation},
                 ]
             },
-                styles.brown]} source={{obj: asset('w_book_see.obj')}} lit={true}/>
+                styles.white]} source={{obj: asset('w_book_see.obj')}} lit={true}/>
         );
     }
 }
@@ -656,7 +656,7 @@ class Shrimpstatue_w extends React.Component {
                     {rotateY: this.rotation},
                 ]
             },
-                styles.brown]} source={{obj: asset('w_shrimpstatue.obj')}} lit={true}/>
+                styles.grey]} source={{obj: asset('w_shrimpstatue.obj')}} lit={true}/>
         );
     }
 }
@@ -700,7 +700,7 @@ class Haken_gemein_w extends React.Component {
                     {rotateY: this.rotation},
                 ]
             },
-                styles.brown]} source={{obj: asset('w_haken_gemein.obj')}} lit={true}/>
+                styles.grey]} source={{obj: asset('w_haken_gemein.obj')}} lit={true}/>
         );
     }
 }
@@ -744,7 +744,7 @@ class Wellness_w extends React.Component {
                     {rotateY: this.rotation},
                 ]
             },
-                styles.brown]} source={{obj: asset('w_wellness.obj')}} lit={true}/>
+                styles.white]} source={{obj: asset('w_wellness.obj')}} lit={true}/>
         );
     }
 }
@@ -848,7 +848,7 @@ class Knochen_body_w extends React.Component {
                     {rotateY: this.rotation},
                 ]
             },
-                styles.grey]} source={{obj: asset('w_knochen_body.obj')}} lit={true}/>
+                styles.white]} source={{obj: asset('w_knochen_body.obj')}} lit={true}/>
         );
     }
 }
@@ -898,7 +898,7 @@ class Gedicht_w extends React.Component {
                     {rotateY: this.rotation},
                 ]
             },
-                styles.grey]} source={{obj: asset('w_gedicht.obj')}} lit={true}/>
+                styles.white]} source={{obj: asset('w_gedicht.obj')}} lit={true}/>
         );
     }
 }
@@ -1001,7 +1001,7 @@ class Knochen_feelings_w extends React.Component {
                     {rotateY: this.rotation},
                 ]
             },
-                styles.black]} source={{obj: asset('w_knochen_feelings.obj')}} lit={true}/>
+                styles.white]} source={{obj: asset('w_knochen_feelings.obj')}} lit={true}/>
         );
     }
 }
@@ -1156,7 +1156,7 @@ class Book_tagebuch_w extends React.Component {
                     {rotateY: this.rotation},
                 ]
             },
-                styles.grey]} source={{obj: asset('w_book_tagebuch.obj')}} lit={true}/>
+                styles.white]} source={{obj: asset('w_book_tagebuch.obj')}} lit={true}/>
         );
     }
 }
@@ -1206,7 +1206,7 @@ class Teller_w extends React.Component {
                     {rotateY: this.rotation},
                 ]
             },
-                styles.grey]} source={{obj: asset('w_teller.obj')}} lit={true}/>
+                styles.white]} source={{obj: asset('w_teller.obj')}} lit={true}/>
         );
     }
 }
@@ -1256,7 +1256,7 @@ class Book_welle_w extends React.Component {
                     {rotateY: this.rotation},
                 ]
             },
-                styles.grey]} source={{obj: asset('w_book_welle.obj')}} lit={true}/>
+                styles.white]} source={{obj: asset('w_book_welle.obj')}} lit={true}/>
         );
     }
 }
@@ -1356,7 +1356,7 @@ class Kanone_w extends React.Component {
                     {rotateY: this.rotation},
                 ]
             },
-                styles.grey]} source={{obj: asset('w_kanone.obj')}} lit={true}/>
+                styles.black]} source={{obj: asset('w_kanone.obj')}} lit={true}/>
         );
     }
 }
@@ -1406,7 +1406,7 @@ class Brief_w extends React.Component {
                     {rotateY: this.rotation},
                 ]
             },
-                styles.grey]} source={{obj: asset('w_brief.obj')}} lit={true}/>
+                styles.white]} source={{obj: asset('w_brief.obj')}} lit={true}/>
         );
     }
 }
@@ -1518,7 +1518,7 @@ class Truhe extends React.Component {
 
 const styles = StyleSheet.create({
     black: {
-        color: 'darkgrey',
+        color: '#212121',
     },
     brown: {
         color: '#A86F3E',
