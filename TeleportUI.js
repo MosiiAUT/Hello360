@@ -11,25 +11,6 @@ import {connect, setStation} from './ClickManager';
 const {MyModule} = NativeModules;
 const {AudioModule} = NativeModules;
 
-// import {VideoPlayer} from 'react-360-common-ui';
-//
-// class VideoTest extends Component {
-//     render() {
-//         return (
-//             <View style={{flex: 1}}>
-//                 <VideoPlayer
-//                     muted={true}
-//                     source={{url: staticResourceURL('path/to/video.mp4')}}
-//                     stereo={'2D'}
-//                     style={{
-//                         width: 600,
-//                         height: 400,
-//                     }}
-//                 />
-//             </View>
-//         );
-//     }
-// }
 class TeleportUI extends React.Component {
     render() {
         return (
