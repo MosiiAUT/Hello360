@@ -28,7 +28,14 @@ class WatchUI extends React.Component {
 class WatchButton extends React.Component {
     state = {
         gazed: false,
+        opacity: 1,
+        id: null
     };
+
+    componentWillUnmount() {
+        clearInterval(this.state.id);
+        this.setState({opacity: 0});
+    }
 
     setGazed = () => {
         if (this.props.isWatched == false) {
@@ -39,6 +46,7 @@ class WatchButton extends React.Component {
         MyModule.openDescription();
         MyModule.closeTeleport();
         MyModule.closeWatchButton();
+
         AudioModule.playOneShot({
             source: asset('click.mp3'),
         });
@@ -53,9 +61,20 @@ class WatchButton extends React.Component {
                     this.setGazed();
                     //this.props.onClick();
                 }}
+                onEnter={()=>{
+                    this.setState({
+                        id: setInterval(()=> {
+                            this.setState({opacity: this.state.opacity - 0.05})
+                        }, 100)})
+                }}
+                onExit={()=>{
+                    clearInterval(this.state.id);
+                    this.setState({opacity: 1});
+
+                }}
                 render={(remainingTime, isGazed) => (
                     <View style={styles.greetingBox}>
-                        <Image style={styles.image} source={asset('circleblau.png')} />
+                        <Image style={[styles.image, {opacity: this.state.opacity}]} source={asset('circleblau.png')} />
                     </View>
                 )}
             />

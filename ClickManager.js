@@ -47,12 +47,10 @@ export function connect(Component) {
 
         componentDidMount() {
             listeners.add(this._listener);
-            console.log("mounted");
         }
 
         componentWillUnmount() {
             listeners.delete(this._listener);
-            console.log("unmounted");
         }
 
         render() {

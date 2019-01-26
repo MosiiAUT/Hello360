@@ -528,7 +528,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(64, 150, 194, 0.6)',
         //justifyContent: 'center',
         alignItems: 'stretch',
-        color: 'rgba(64, 150, 194, 1)',
+        // color: 'rgba(64, 150, 194, 1)',
     },
     greetingBox: {
         width: 50,

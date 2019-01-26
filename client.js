@@ -18,11 +18,6 @@ function init(bundle, parent, options = {}) {
             myLocation.setWorldPosition(x, y, z);
         }
 
-        deleteTitlescreen() {
-            console.log('in delete');
-            r360.detatchRoot("titlescreen");
-        }
-
         ////////TELEPORT UI/////////
         moveTeleport(yaw, pitch) {
             teleportSurface.setAngle(
@@ -72,6 +67,19 @@ function init(bundle, parent, options = {}) {
         openDescription() {
             descriptionSurface.resize(900, 600);
         }
+
+
+        //////ENDSCREEN///////
+        closeEndscreen(){
+            location.reload(true);
+        }
+
+        openEndscreen(){
+            r360.renderToSurface(
+                r360.createRoot('Endscreen'),
+                endscreenSurface,
+            );
+        }
     }
 
     const r360 = new ReactInstance(bundle, parent, {
@@ -86,10 +94,13 @@ function init(bundle, parent, options = {}) {
 
     });
 
-    // r360.renderToSurface(
-    //     r360.createRoot('titlescreen'),
-    //     r360.getDefaultSurface()
-    // );
+
+    const endscreenSurface = new Surface(
+        1000,
+        600,
+        Surface.SurfaceShape.Cylinder,
+    );
+
 
 
     // SimpleRaycaster.

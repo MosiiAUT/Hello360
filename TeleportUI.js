@@ -26,7 +26,9 @@ class TeleportUI extends React.Component {
 class TeleportButton extends React.Component {
     state = {
         gazed: false,
-        station: this.props.station
+        station: this.props.station,
+        opacity: 1,
+        id: null
     };
 
     setGazed = () => {
@@ -37,6 +39,9 @@ class TeleportButton extends React.Component {
 
             //outside
             case 0:
+                //Delete me
+                MyModule.openEndscreen();
+                ////////
                 MyModule.setWorld(60, 0, 170);
                 MyModule.openWatchButton();
                 MyModule.moveWatchButton(-Math.PI / 1.37, 0);
@@ -207,12 +212,12 @@ class TeleportButton extends React.Component {
                 //the end
             case 25:
                 MyModule.closeWatchButton();
+                MyModule.closeTeleport();
                 MyModule.setWorld(-10, -180, 300);
                 MyModule.moveDescription(-Math.PI / 1.35, 0,);
                 MyModule.moveTeleport(Math.PI / 1.2, Math.PI / 8);
+                MyModule.openEndscreen();
                 break;
-
-
         }
 
         setStation(this.state.station + 1);
@@ -229,6 +234,11 @@ class TeleportButton extends React.Component {
         //this.setState({gazed: true,});
     };
 
+    componentWillUnmount() {
+        clearInterval(this.state.id);
+        this.setState({opacity: 0});
+    }
+
     render() {
         const {gazed} = this.state;
         return (
@@ -238,9 +248,20 @@ class TeleportButton extends React.Component {
                     this.setGazed();
                     //this.props.onClick();
                 }}
+                onEnter={()=>{
+                    this.setState({
+                        id: setInterval(()=> {
+                            this.setState({opacity: this.state.opacity - 0.05})
+                        }, 100)})
+                }}
+                onExit={()=>{
+                    clearInterval(this.state.id);
+                    this.setState({opacity: 1});
+
+                }}
                 render={(remainingTime, isGazed) => (
                     <View style={styles.greetingBox}>
-                         <Image style={styles.image} source={asset('circlegelb.png')} />
+                         <Image style={[styles.image, {opacity: this.state.opacity}]} source={asset('circlegelb.png')} />
                     </View>
                 )}
             />
