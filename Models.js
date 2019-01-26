@@ -1432,15 +1432,6 @@ class Terrain extends React.Component {
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/*
-class Scene extends React.Component {
-    render() {
-        return (
-            <Entity style={styles.white} source={{obj: asset('scene.obj')}} lit={true}/>
-        );
-    }
-}
-*/
 
 class Out_fass extends React.Component {
     render() {
