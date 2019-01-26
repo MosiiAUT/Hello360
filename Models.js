@@ -1185,24 +1185,18 @@ class Book_welle_w extends React.Component {
 
     render() {
         if (this.props.isWatched == true && this.props.station == 22) {
-            // animationElement(12, 18, 6, false);
             this.rotation.setValue(0);
             this.translationX.setValue(0);
             this.translationY.setValue(0);
             this.translationZ.setValue(0);
 
             Animated.timing(this.rotation, {toValue: 360, duration: 20000}).start();
-            Animated.timing(this.translationX, {toValue: 4, duration: 5000}).start();
-            Animated.timing(this.translationY, {toValue: 18, duration: 5000}).start();
-            Animated.timing(this.translationZ, {toValue: 2, duration: 5000}).start();
+            Animated.timing(this.translationX, {toValue: 2, duration: 5000}).start();
+            Animated.timing(this.translationY, {toValue: 10, duration: 5000}).start();
+            Animated.timing(this.translationZ, {toValue: -2, duration: 5000}).start();
             this.booli = true;
 
         } else if (this.props.isWatched == false && this.props.station == 22 && this.booli) {
-            this.rotation.setValue(0);
-            this.translationX.setValue(2);
-            this.translationY.setValue(1);
-            this.translationZ.setValue(2);
-
             Animated.timing(this.rotation, {toValue: 0, duration: 5000}).start();
             Animated.timing(this.translationX, {toValue: 0, duration: 5000}).start();
             Animated.timing(this.translationY, {toValue: 0, duration: 5000}).start();
@@ -1235,7 +1229,6 @@ class Haken_triller_w extends React.Component {
 
     render() {
         if (this.props.isWatched == true && this.props.station == 23) {
-            // animationElement(12, 18, 6, false);
             this.rotation.setValue(0);
             this.translationX.setValue(0);
             this.translationY.setValue(0);
@@ -1243,16 +1236,11 @@ class Haken_triller_w extends React.Component {
 
             Animated.timing(this.rotation, {toValue: 360, duration: 20000}).start();
             Animated.timing(this.translationX, {toValue: 4, duration: 5000}).start();
-            Animated.timing(this.translationY, {toValue: 18, duration: 5000}).start();
-            Animated.timing(this.translationZ, {toValue: 2, duration: 5000}).start();
+            Animated.timing(this.translationY, {toValue: 50, duration: 5000}).start();
+            Animated.timing(this.translationZ, {toValue: 5, duration: 5000}).start();
             this.booli = true;
 
         } else if (this.props.isWatched == false && this.props.station == 23 && this.booli) {
-            this.rotation.setValue(0);
-            this.translationX.setValue(2);
-            this.translationY.setValue(1);
-            this.translationZ.setValue(2);
-
             Animated.timing(this.rotation, {toValue: 0, duration: 5000}).start();
             Animated.timing(this.translationX, {toValue: 0, duration: 5000}).start();
             Animated.timing(this.translationY, {toValue: 0, duration: 5000}).start();
@@ -1280,33 +1268,31 @@ class Kanone_w extends React.Component {
     translationX = new Animated.Value(0);
     translationY = new Animated.Value(0);
     translationZ = new Animated.Value(0);
+    scale = new Animated.Value(1);
 
     booli = false;
 
     render() {
         if (this.props.isWatched == true && this.props.station == 24) {
-            // animationElement(12, 18, 6, false);
             this.rotation.setValue(0);
             this.translationX.setValue(0);
             this.translationY.setValue(0);
             this.translationZ.setValue(0);
+            this.scale.setValue(1);
 
             Animated.timing(this.rotation, {toValue: 360, duration: 20000}).start();
-            Animated.timing(this.translationX, {toValue: 4, duration: 5000}).start();
-            Animated.timing(this.translationY, {toValue: 18, duration: 5000}).start();
-            Animated.timing(this.translationZ, {toValue: 2, duration: 5000}).start();
+            Animated.timing(this.translationX, {toValue: 13, duration: 5000}).start();
+            Animated.timing(this.translationY, {toValue: 68, duration: 5000}).start();
+            Animated.timing(this.translationZ, {toValue: -5, duration: 5000}).start();
+            Animated.timing(this.scale, {toValue: 0.5, duration: 5000}).start();
             this.booli = true;
 
         } else if (this.props.isWatched == false && this.props.station == 24 && this.booli) {
-            this.rotation.setValue(0);
-            this.translationX.setValue(2);
-            this.translationY.setValue(1);
-            this.translationZ.setValue(2);
-
             Animated.timing(this.rotation, {toValue: 0, duration: 5000}).start();
             Animated.timing(this.translationX, {toValue: 0, duration: 5000}).start();
             Animated.timing(this.translationY, {toValue: 0, duration: 5000}).start();
             Animated.timing(this.translationZ, {toValue: 0, duration: 5000}).start();
+            Animated.timing(this.scale, {toValue: 1, duration: 5000}).start();
             this.booli = false;
         }
 
@@ -1318,6 +1304,7 @@ class Kanone_w extends React.Component {
                     {translateZ: this.translationZ},
                     {translate: t_kanone},
                     {rotateY: this.rotation},
+                    {scale: this.scale},
                 ]
             },
                 styles.black]} source={{obj: asset('w_kanone.obj')}} lit={true}/>
@@ -1335,24 +1322,18 @@ class Brief_w extends React.Component {
 
     render() {
         if (this.props.isWatched == true && this.props.station == 25) {
-            // animationElement(12, 18, 6, false);
             this.rotation.setValue(0);
             this.translationX.setValue(0);
             this.translationY.setValue(0);
             this.translationZ.setValue(0);
 
             Animated.timing(this.rotation, {toValue: 360, duration: 20000}).start();
-            Animated.timing(this.translationX, {toValue: 4, duration: 5000}).start();
+            Animated.timing(this.translationX, {toValue: 19, duration: 5000}).start();
             Animated.timing(this.translationY, {toValue: 18, duration: 5000}).start();
-            Animated.timing(this.translationZ, {toValue: 2, duration: 5000}).start();
+            Animated.timing(this.translationZ, {toValue: -2, duration: 5000}).start();
             this.booli = true;
 
         } else if (this.props.isWatched == false && this.props.station == 25 && this.booli) {
-            this.rotation.setValue(0);
-            this.translationX.setValue(2);
-            this.translationY.setValue(1);
-            this.translationZ.setValue(2);
-
             Animated.timing(this.rotation, {toValue: 0, duration: 5000}).start();
             Animated.timing(this.translationX, {toValue: 0, duration: 5000}).start();
             Animated.timing(this.translationY, {toValue: 0, duration: 5000}).start();
