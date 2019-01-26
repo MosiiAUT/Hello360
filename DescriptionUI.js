@@ -5,6 +5,7 @@ import {
     View,
     NativeModules,
     asset,
+    Image,
 } from 'react-360';
 
 import GazeButton from "react-360-gaze-button";
@@ -20,7 +21,7 @@ class DescriptionUI extends React.Component {
             case 0:
                 return null;
             case 1:
-                if(this.props.isWatched)
+                if (this.props.isWatched)
                     return (
                         <View style={styles.panel}>
                             <UI isWatched={this.props.isWatched}/>
@@ -40,7 +41,7 @@ class DescriptionUI extends React.Component {
                         </View>
                     );
             case 2:
-                if(this.props.isWatched)
+                if (this.props.isWatched)
                     return (
                         <View style={styles.panel}>
                             <UI isWatched={this.props.isWatched}/>
@@ -59,7 +60,7 @@ class DescriptionUI extends React.Component {
                         </View>
                     );
             case 3:
-                if(this.props.isWatched)
+                if (this.props.isWatched)
                     return (
                         <View style={styles.panel}>
                             <UI isWatched={this.props.isWatched}/>
@@ -77,7 +78,7 @@ class DescriptionUI extends React.Component {
                         </View>
                     );
             case 4:
-                if(this.props.isWatched)
+                if (this.props.isWatched)
                     return (
                         <View style={styles.panel}>
                             <UI isWatched={this.props.isWatched}/>
@@ -100,26 +101,25 @@ class DescriptionUI extends React.Component {
                         </View>
                     );
             case 5:
-                if(this.props.isWatched)
+                if (this.props.isWatched)
                     return (
                         <View style={styles.panel}>
                             <UI isWatched={this.props.isWatched}/>
                             <View>
                                 <Text style={[{fontSize: 38}, styles.text]}>
-                                    Shrimp mit Hut
+                                    Shrimp mit Hut - Öl auf Leinwand (verm. 1643)
                                 </Text>
                                 <Text style={[{fontSize: 26}, styles.text]}>
-                                    Shrimp mit Hut - Öl auf trockener Leinwand (verm. 1643){"\n"}
-                                    {"\n"}
                                     Mysteriöses Gemälde einer wohlbekannten Gaumenfreude{"\n"}
                                     mit frivoler Kopfbedeckung.{"\n"}
                                     Geschenk von Plankenwart dem 13. zur ersten Kaperfahrt.
                                 </Text>
+                                <Image style={styles.shrimphut} source={asset("shrimphut.png")}/>
                             </View>
                         </View>
                     );
             case 6:
-                if(this.props.isWatched)
+                if (this.props.isWatched)
                     return (
                         <View style={styles.panel}>
                             <UI isWatched={this.props.isWatched}/>
@@ -138,7 +138,7 @@ class DescriptionUI extends React.Component {
                         </View>
                     );
             case 7:
-                if(this.props.isWatched)
+                if (this.props.isWatched)
                     return (
                         <View style={styles.panel}>
                             <UI isWatched={this.props.isWatched}/>
@@ -153,7 +153,7 @@ class DescriptionUI extends React.Component {
                         </View>
                     );
             case 8:
-                if(this.props.isWatched)
+                if (this.props.isWatched)
                     return (
                         <View style={styles.panel}>
                             <UI isWatched={this.props.isWatched}/>
@@ -161,14 +161,18 @@ class DescriptionUI extends React.Component {
                                 <Text style={[{fontSize: 38}, styles.text]}>
                                     Plankenwart der 13. Piratenkönig
                                 </Text>
-                                <Text style={[{fontSize: 26}, styles.text]}>
-                                    Ein Bildnis des amtierenden Piratenkönigs
-                                </Text>
+                                <View style={styles.panelTwo}>
+                                    <Text style={[{fontSize: 26, paddingLeft: 15}]}>
+                                        Ein Bildnis des{"\n"}
+                                        amtierenden Piratenkönigs
+                                    </Text>
+                                    <Image style={styles.pirate} source={asset('pirateking.png')}/>
+                                </View>
                             </View>
                         </View>
                     );
             case 9:
-                if(this.props.isWatched)
+                if (this.props.isWatched)
                     return (
                         <View style={styles.panel}>
                             <UI isWatched={this.props.isWatched}/>
@@ -193,7 +197,7 @@ class DescriptionUI extends React.Component {
                         </View>
                     );
             case 10:
-                if(this.props.isWatched)
+                if (this.props.isWatched)
                     return (
                         <View style={styles.panel}>
                             <UI isWatched={this.props.isWatched}/>
@@ -208,7 +212,7 @@ class DescriptionUI extends React.Component {
                         </View>
                     );
             case 11:
-                if(this.props.isWatched)
+                if (this.props.isWatched)
                     return (
                         <View style={styles.panel}>
                             <UI isWatched={this.props.isWatched}/>
@@ -225,7 +229,7 @@ class DescriptionUI extends React.Component {
                         </View>
                     );
             case 12:
-                if(this.props.isWatched)
+                if (this.props.isWatched)
                     return (
                         <View style={styles.panel}>
                             <UI isWatched={this.props.isWatched}/>
@@ -264,7 +268,7 @@ class DescriptionUI extends React.Component {
                         </View>
                     );
             case 13:
-                if(this.props.isWatched)
+                if (this.props.isWatched)
                     return (
                         <View style={styles.panel}>
                             <UI isWatched={this.props.isWatched}/>
@@ -286,7 +290,7 @@ class DescriptionUI extends React.Component {
                         </View>
                     );
             case 14:
-                if(this.props.isWatched)
+                if (this.props.isWatched)
                     return (
                         <View style={styles.panel}>
                             <UI isWatched={this.props.isWatched}/>
@@ -307,7 +311,7 @@ class DescriptionUI extends React.Component {
                         </View>
                     );
             case 15:
-                if(this.props.isWatched)
+                if (this.props.isWatched)
                     return (
                         <View style={styles.panel}>
                             <UI isWatched={this.props.isWatched}/>
@@ -335,7 +339,7 @@ class DescriptionUI extends React.Component {
                         </View>
                     );
             case 16:
-                if(this.props.isWatched)
+                if (this.props.isWatched)
                     return (
                         <View style={styles.panel}>
                             <UI isWatched={this.props.isWatched}/>
@@ -352,7 +356,7 @@ class DescriptionUI extends React.Component {
                         </View>
                     );
             case 17:
-                if(this.props.isWatched)
+                if (this.props.isWatched)
                     return (
                         <View style={styles.panel}>
                             <UI isWatched={this.props.isWatched}/>
@@ -373,7 +377,7 @@ class DescriptionUI extends React.Component {
                         </View>
                     );
             case 18:
-                if(this.props.isWatched)
+                if (this.props.isWatched)
                     return (
                         <View style={styles.panel}>
                             <UI isWatched={this.props.isWatched}/>
@@ -391,7 +395,7 @@ class DescriptionUI extends React.Component {
                         </View>
                     );
             case 19:
-                if(this.props.isWatched)
+                if (this.props.isWatched)
                     return (
                         <View style={styles.panel}>
                             <UI isWatched={this.props.isWatched}/>
@@ -407,7 +411,7 @@ class DescriptionUI extends React.Component {
                         </View>
                     );
             case 20:
-                if(this.props.isWatched)
+                if (this.props.isWatched)
                     return (
                         <View style={styles.panel}>
                             <UI isWatched={this.props.isWatched}/>
@@ -432,7 +436,7 @@ class DescriptionUI extends React.Component {
                         </View>
                     );
             case 21:
-                if(this.props.isWatched)
+                if (this.props.isWatched)
                     return (
                         <View style={styles.panel}>
                             <UI isWatched={this.props.isWatched}/>
@@ -559,7 +563,7 @@ class UI extends React.Component {
 
 
     setGazed = () => {
-        if(this.props.isWatched == true){
+        if (this.props.isWatched == true) {
             setWatched(false);
         }
 
@@ -589,19 +593,21 @@ class UI extends React.Component {
                     this.setGazed();
                     //this.props.onClick();
                 }}
-                onEnter={()=>{
+                onEnter={() => {
                     this.setState({
-                        id: setInterval(()=> {
+                        id: setInterval(() => {
                             this.setState({opacity: this.state.opacity + 0.05})
-                    }, 100)})
+                        }, 100)
+                    })
                 }}
-                onExit={()=>{
+                onExit={() => {
                     clearInterval(this.state.id);
                     this.setState({opacity: 0});
 
                 }}
                 render={(remainingTime, isGazed) => (
-                    <View style={{backgroundColor: 'rgba(255, 255, 255, ' + this.state.opacity  + ')',
+                    <View style={{
+                        backgroundColor: 'rgba(255, 255, 255, ' + this.state.opacity + ')',
                         width: 50,
                         height: 50,
                         borderColor: '#5e5e5e',
@@ -628,6 +634,10 @@ const styles = StyleSheet.create({
         //justifyContent: 'center',
         alignItems: 'stretch',
     },
+    panelTwo: {
+        flexDirection: 'row',
+        justifyContent: 'space-around'
+    },
     greetingBox: {
         width: 50,
         height: 50,
@@ -646,6 +656,15 @@ const styles = StyleSheet.create({
     text: {
         padding: 15,
         alignSelf: 'center'
+    },
+    shrimphut: {
+        alignSelf: 'center',
+        width: 384,
+        height: 288
+    },
+    pirate: {
+        height: 400,
+        width: 300
     }
 });
 

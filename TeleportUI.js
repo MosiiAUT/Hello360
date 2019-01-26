@@ -5,7 +5,6 @@ import {
     NativeModules,
     asset,
 } from 'react-360';
-
 import GazeButton from "react-360-gaze-button";
 import {connect, setStation} from './ClickManager';
 
@@ -148,6 +147,9 @@ class TeleportButton extends React.Component {
 
             //second floor - second room
             case 17:
+                //No//
+                MyModule.openWatchButton();
+                ////////
                 MyModule.setWorld(-30, -58, 590);
                 MyModule.moveWatchButton(Math.PI / 1.05, Math.PI / 6);
                 MyModule.moveDescription(-Math.PI / 1.2, 0,);
