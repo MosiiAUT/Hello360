@@ -25,13 +25,13 @@ class DescriptionUI extends React.Component {
                         <View style={styles.panel}>
                             <UI isWatched={this.props.isWatched}/>
                             <View>
-                                <Text style={[{fontSize: 38}, styles.text]}>
+                                <Text style={[{fontSize: 38},  styles.text]}>
                                     Koralle
                                 </Text>
                                 <Text style={[{fontSize: 26}, styles.text]}>
                                     Korallen können ein bemerkenswertes Alter erreichen!{"\n"}
                                     Diese hier existiert schon seit mehreren tausend Jahren{"\n"}
-                                    und hat keine Absicht vor ihrer Pension{"\n"}
+                                    und hat keine Absicht, vor ihrer Pension{"\n"}
                                     in die ewigen Jagdgründe einzugehen,{"\n"}
                                     also trage deine toxische Sonnencreme anderswo{"\n"}
                                     und schwimm weiter Matrose!
@@ -49,11 +49,11 @@ class DescriptionUI extends React.Component {
                                     Fass
                                 </Text>
                                 <Text style={[{fontSize: 26}, styles.text]}>
-                                    Dieser Gegenstand, im gemeinen Volk ‘Fass’ genannt,{"\n"}
-                                    wurde in Piratenlingo oft als “Shotglas” bezeichnet.{"\n"}
+                                    Dieser Gegenstand, vom gemeinen Volk 'Fass' genannt,{"\n"}
+                                    wurde in Piratenlingo oft als "Shotglas" bezeichnet.{"\n"}
                                     Fässer dienten den Piraten mit ihrem vielseitigen Nutzen.{"\n"}
                                     Hier wurde nicht nur Trank und Trockenfleisch gelagert,{"\n"}
-                                    sondern auch schlafende Piraten wenn zu wenig Platz an Bord war.
+                                    sondern auch schlafende Piraten, wenn zu wenig Platz an Bord war.
                                 </Text>
                             </View>
                         </View>
@@ -68,10 +68,10 @@ class DescriptionUI extends React.Component {
                                     Schatztruhe
                                 </Text>
                                 <Text style={[{fontSize: 26}, styles.text]}>
-                                    Captain Anemie erbte als alleinige Tochter des Piraten Reling{"\n"}
+                                    Captain Anämie erbte als alleinige Tochter des Piraten Reling{"\n"}
                                     all seine bereits verspielten Reichtümer.{"\n"}
                                     Nur das Schiff und alle Schatzkisten blieben übrig,{"\n"}
-                                    welche Anemie als praktikablen Stauraum nutzte.
+                                    welche Anämie als praktikablen Stauraum nutzte.
                                 </Text>
                             </View>
                         </View>
@@ -88,12 +88,12 @@ class DescriptionUI extends React.Component {
                                 <Text style={[{fontSize: 26}, styles.text]}>
                                     Das wohl gängigste Werkzeug in der Haken-Familie.{"\n"}
                                     Da Piraten ständig tranken, bat er eine komfortable Option.{"\n"}
-                                    Der Humpen wurde zusätzlich vom Schiffskoch verwendet{"\n"}
+                                    Der Humpen wurde zusätzlich vom Schiffskoch verwendet,{"\n"}
                                     um Trockenfleisch noch trockener zu klopfen.{"\n"}
                                     Ein guter Schiffskoch war in der Lage ein Stück Trockenfleisch{"\n"}
-                                    vollständig zu Staub klopfen. Sollte dies geschehen,{"\n"}
+                                    vollständig zu Staub zu klopfen. Sollte dies geschehen,{"\n"}
                                     wurde er umgehend bei der nächsten Malzeit hochgepriesen,{"\n"}
-                                    da man zum essen nicht den Haken wechseln musste,{"\n"}
+                                    da man zum Essen nicht den Haken wechseln musste,{"\n"}
                                     sondern den Fleischstaub einfach zum Rum in den Humpen lehren konnte.
                                 </Text>
                             </View>
@@ -147,7 +147,7 @@ class DescriptionUI extends React.Component {
                                     Schuh
                                 </Text>
                                 <Text style={[{fontSize: 26}, styles.text]}>
-                                    Ein Designer Schuh eines französischen Gefangenen.
+                                    Ein luxuriöser Pantoffel und das Heim von drei (3) Einsiedlerkrebsen.
                                 </Text>
                             </View>
                         </View>
@@ -162,7 +162,7 @@ class DescriptionUI extends React.Component {
                                     Plankenwart der 13. Piratenkönig
                                 </Text>
                                 <Text style={[{fontSize: 26}, styles.text]}>
-                                    Ein Bildnis des amtierenden Piratenkönigs
+                                    Ein Bildnis des amtierenden Piratenkönigs (1730)
                                 </Text>
                             </View>
                         </View>
@@ -179,13 +179,13 @@ class DescriptionUI extends React.Component {
                                 <Text style={[{fontSize: 26}, styles.text]}>
                                     Hat es sich ausgeshrimpt?{"\n"}
                                     {"\n"}
-                                    Seid nun fast 2 Jahren bleiben die Netze der Shrimp Fischer{"\n"}
+                                    Seit nun fast 2 Jahren bleiben die Netze der Shrimp Fischer{"\n"}
                                     nahe Tortugas leer wenn Winter herreinbricht und die{"\n"}
                                     Shrimp Jagdzeit beginnt. Die wenigen die gefangen werden sind erkrankt{"\n"}
                                     und ungenießbar. Aus diversen Quellen heißt es nun,{"\n"}
-                                    dass die Shrimp Ernte auch diesen Winter ausfallen soll.{"\n"}
-                                    Die Wissenschaftlern des Königs bezeichnen das Phänomen als “Werk Satans”{"\n"}
-                                    und schlagen einen umgehenden Aderlass bei den verbliebenden{"\n"}
+                                    dass die Shrimp Ernte auch diesen Winter wieder ausfallen soll.{"\n"}
+                                    Die Wissenschaftler des Königs bezeichnen das Phänomen als “Werk Satans”{"\n"}
+                                    und schlagen einen umgehenden Aderlass bei den verbliebenen{"\n"}
                                     erkrankten Shrimps im Aquarium des Königs vor,{"\n"}
                                     in der Hoffnung diese zu gesunden und anschließend zu züchten.
                                 </Text>
@@ -217,8 +217,8 @@ class DescriptionUI extends React.Component {
                                     Der gemeine Haken
                                 </Text>
                                 <Text style={[{fontSize: 26}, styles.text]}>
-                                    Der gemeine Haken war, obwohl das wohl stereotypischste{"\n"}
-                                    Zeichen der Piraterie, ein relativ unbeliebtes Werkzeug,{"\n"}
+                                    Der gemeine Haken war, obwohl er das wohl stereotypischste{"\n"}
+                                    Zeichen der Piraterie war, ein relativ unbeliebtes Werkzeug,{"\n"}
                                     da man damit weder Rum trinken, noch Kameraden verprügeln konnte.
                                 </Text>
                             </View>
@@ -238,17 +238,14 @@ class DescriptionUI extends React.Component {
                                     {"\n"}
                                     Gönnen Sie sich eine Pause von Cholera und billigem Rum{"\n"}
                                     und kommen Sie an Bord der Wellennässe!{"\n"}
-                                    Unsere Exklusive Erholungskur auf hoher See bietet Ihnen{"\n"}
-                                    eine Zwei Wöchige Pause von dem Piratentreiben{"\n"}
-                                    und lässt sie erfrischt in den Arbeitsalltag zurückkehren.{"\n"}
+                                    Unsere exklusive Erholungskur auf hoher See bietet Ihnen{"\n"}
+                                    eine zwei wöchige Pause von dem Piratentreiben{"\n"}
+                                    und lässt Sie erfrischt in den Arbeitsalltag zurückkehren.{"\n"}
                                     Wir bieten Ihnen authentische Schlaf Bretter aus Eichenholz,{"\n"}
-                                    ausgewählte Kurse um Ihre Piraterie zu verbessern{"\n"}
+                                    ausgewählte Kurse, um Ihre Piraterie zu verbessern{"\n"}
                                     und einen Wellnessbereich mit exklusiver Rum Badewanne.{"\n"}
                                     {"\n"}
-                                    Unser mit drei Enterhaken ausgezeichneter Schiffskoch{"\n"}
-                                    bereitet jeden zweiten Sonnenuntergang Algengulasch{"\n"}
-                                    und jeden Morgen Staubiges Trockenfleisch für Sie zu.{"\n"}
-                                    {"\n"}
+
                                     Inkludiert sind:{"\n"}
                                     1x Zahnvergoldung{"\n"}
                                     1x Holzbein polieren (auch andere hölzerne Prothesen werden akzeptiert) {"\n"}
@@ -258,7 +255,7 @@ class DescriptionUI extends React.Component {
                                     1x Reden ohne Zähne (Kurs){"\n"}
                                     {"\n"}
                                     Wir freuen uns auf Sie!{"\n"}
-                                    Ihr Wellenässe Team.
+                                    Ihr Wellennässe Team.
                                 </Text>
                             </View>
                         </View>
@@ -275,12 +272,12 @@ class DescriptionUI extends React.Component {
                                 <Text style={[{fontSize: 26}, styles.text]}>
                                     Dieser Haken wurde unter Piraten der Löffler genannt{"\n"}
                                     und erfreute sich großer Beliebtheit. Mit Gusto wurde{"\n"}
-                                    Rum und Pulverisiertes Trockenfleisch damit konsumiert.{"\n"}
-                                    Oft auch gemischt als bekömmlicher Brei.{"\n"}
+                                    Rum und pulverisiertes Trockenfleisch damit konsumiert,{"\n"}
+                                    oft auch gemischt als bekömmlicher Brei.{"\n"}
                                     Hierarchisch höher gestellte Piraten hatten dazu{"\n"}
                                     noch einen Gabelhaken. Seltener waren die sogenannten{"\n"}
                                     Sushi Haken, eine Spezialität aus dem Osten,{"\n"}
-                                    oder der Trichterhaken, welche gerne bei Festen getragen wurden.
+                                    oder der Trichterhaken, welcher gerne bei Festen getragen wurde.
                                 </Text>
                             </View>
                         </View>
@@ -296,10 +293,10 @@ class DescriptionUI extends React.Component {
                                 </Text>
                                 <Text style={[{fontSize: 26}, styles.text]}>
                                     Eine DNA Analyse des Oberschenkelknochens ergab folgende{"\n"}
-                                    Schlüsse auf die Bestandteile des Ehemaligen Besitzers.{"\n"}
+                                    Schlüsse auf die Bestandteile des ehemaligen Besitzers.{"\n"}
                                     {"\n"}
                                     Keuchhusten 15%{"\n"}
-                                    Flöhe 20% (23 Stück){"\n"}
+                                    Flöhe 20% (43 Stück){"\n"}
                                     Rum 98 %{"\n"}
                                     Vitamin C Mangel 14 %
                                 </Text>
@@ -313,16 +310,16 @@ class DescriptionUI extends React.Component {
                             <UI isWatched={this.props.isWatched}/>
                             <View>
                                 <Text style={[{fontSize: 38}, styles.text]}>
-                                    Gedicht aus der Sammelband von Plankenwart{"\n"}
+                                    Gedicht aus dem Sammelband von Plankenwart{"\n"}
                                     dem 13. Piratenkönig
                                 </Text>
                                 <Text style={[{fontSize: 26}, styles.text]}>
                                     Eine Liebe in Rosa{"\n"}
-                                    Rosa, zart und stets am schwimmen,{"\n"}
-                                    Nur du, ach kannst mein Herz gewinnen.{"\n"}
+                                    Rosa, zart und stets am schwimmen{"\n"}
+                                    Nur du, ach kannst mein Herz gewinnen{"\n"}
                                     Im Wasser ziehst du deine Runden{"\n"}
                                     In meinem Herzen tiefe Wunden{"\n"}
-                                    Deine Schwarzen Äuglein, so tot und doch doch so allerliebst,{"\n"}
+                                    Deine Schwarzen Äuglein, so tot und doch so allerliebst{"\n"}
                                     Mein Herz wundert wo du nur verbliebst{"\n"}
                                     Seit 5 Jahren schon kein Blick von dir{"\n"}
                                     Du bist wie ausgestorben hier{"\n"}
@@ -346,7 +343,9 @@ class DescriptionUI extends React.Component {
                                 <Text style={[{fontSize: 26}, styles.text]}>
                                     Ein Haken unbekannter Herkunft.{"\n"}
                                     Gerüchte munkeln von anderen Welten{"\n"}
-                                    und einem furchtlosen galaktischen Piraten
+                                    und einem furchtlosen galaktischen Piraten.{"\n"}
+                                    Manche behaupten das dieser Fund das{"\n"}
+                                    Verschwinden der Shrimps einherleitete.
                                 </Text>
                             </View>
                         </View>
@@ -362,11 +361,11 @@ class DescriptionUI extends React.Component {
                                 </Text>
                                 <Text style={[{fontSize: 26}, styles.text]}>
                                     Eine DNA Analyse diese Knochen aus dem Kleinen Zeh{"\n"}
-                                    ergab folgende Schlüsse auf die Beziehungsstatus{"\n"}
-                                    des Ehemaligen Besitzers.{"\n"}
+                                    ergab folgende Schlüsse auf den Beziehungsstatus{"\n"}
+                                    des ehemaligen Besitzers.{"\n"}
                                     {"\n"}
-                                    12 % Es ist Kompliziert{"\n"}
-                                    50% Alle Hoffnung kommt zu spät{"\n"}
+                                    12 % Es ist kompliziert{"\n"}
+                                    50% Verheiratet mit Trockenfleisch{"\n"}
                                     40% Vermisse meine Frau, die an Cholera gestorben ist
                                 </Text>
                             </View>
@@ -382,9 +381,9 @@ class DescriptionUI extends React.Component {
                                     Augenklappe
                                 </Text>
                                 <Text style={[{fontSize: 26}, styles.text]}>
-                                    Auch wenn beide Ihrer Augen funktionierten, hatte{"\n"}
+                                    Obwohl beide ihrer Augen funktionierten, hatte{"\n"}
                                     Captain Anämie doch immer eine Augenklappe in ihren Kammern,{"\n"}
-                                    für den Fall, dass sie Adlige auf einem{"\n"}
+                                    für den Fall, dass sie Adelige auf einem{"\n"}
                                     gekenterten Schiff einschüchtern wollte.
                                 </Text>
                             </View>
@@ -401,7 +400,7 @@ class DescriptionUI extends React.Component {
                                 </Text>
                                 <Text style={[{fontSize: 26}, styles.text]}>
                                     Die Kopfbedeckung von Captain Anämie, welche sie{"\n"}
-                                    von den Sonnenstrahlen und Gottes zornigen Blicken schützen sollte.
+                                    vor den Sonnenstrahlen und Gottes zornigen Blicken schützen sollte.
                                 </Text>
                             </View>
                         </View>
@@ -417,7 +416,7 @@ class DescriptionUI extends React.Component {
                                 </Text>
                                 <Text style={[{fontSize: 26}, styles.text]}>
                                     Liebes Tagebuch,{"\n"}
-                                    Heute habe ich meine 30. Lebensjahr erreicht.{"\n"}
+                                    Heute habe ich mein 30. Lebensjahr erreicht.{"\n"}
                                     Jedoch ist mein Gemüt getrübt, und selbst{"\n"}
                                     nachdem ich mich von meiner Crew hochleben ließ,{"\n"}
                                     kam kein Bestreben nach dem Foltern von Adeligen{"\n"}
@@ -425,7 +424,7 @@ class DescriptionUI extends React.Component {
                                     Mein Verstand ist nimmermüde und ich sehe die Krone{"\n"}
                                     des Piratenkönigs in meiner Hand.{"\n"}
                                     Nichts möchte ich nun mehr verspüren als diese Macht.{"\n"}
-                                    Koste es alles was ich besitze,{"\n"}
+                                    Koste es Alles was ich besitze,{"\n"}
                                     ich werde als nächstes über unsere Zunft herrschen!
                                 </Text>
                             </View>
@@ -441,7 +440,104 @@ class DescriptionUI extends React.Component {
                                     Snackteller
                                 </Text>
                                 <Text style={[{fontSize: 26}, styles.text]}>
-                                    Ein paar Getrocknete Sardellen helfen den Hirnzellen
+                                    Ein paar getrocknete Sardellen helfen den Hirnzellen
+                                </Text>
+                            </View>
+                        </View>
+                    );
+            case 22:
+                if(this.props.isWatched)
+                    return (
+                        <View style={styles.panel}>
+                            <UI isWatched={this.props.isWatched}/>
+                            <View>
+                                <Text style={[{fontSize: 38}, styles.text]}>
+                                    Die schnelle Welle,  23. Dezember 1732
+                                </Text>
+                                <Text style={[{fontSize: 26}, styles.text]}>
+                                    Plankenwart wartet ungern und ist nicht shrimperlich{"\n"}
+                                    {"\n"}
+                                    Keine Shrimps auch diese Jahr. Eine fatale Neuigkeit{"\n"}
+                                    für Shrimpfischer, doch auch Seefahrer leiden unter den{"\n"}
+                                    nun verstärkten Angriffen von Piratenkönig Plankenwart.{"\n"}
+                                    Dieser identifiziert sich bis vor zwei Jahren als Mitglied{"\n"}
+                                    der Garnelen, einer Bevölkerungsgruppe,{"\n"}
+                                    welche sich ausschließlich von den kleinen Krebsen ernährten{"\n"}
+                                    und fungiert als Shrimp Experte in der AEF{"\n"}
+                                    (Association of Everything Fishy). Man nimmt nun an,{"\n"}
+                                    dass seine Angriffe und das Verschwinden der Shrimps zusammenhängen.
+                                </Text>
+                            </View>
+                        </View>
+                    );
+            case 23:
+                if(this.props.isWatched)
+                    return (
+                        <View style={styles.panel}>
+                            <UI isWatched={this.props.isWatched}/>
+                            <View>
+                                <Text style={[{fontSize: 38}, styles.text]}>
+                                    Trillerhaken
+                                </Text>
+                                <Text style={[{fontSize: 26}, styles.text]}>
+                                    Der Trillerhaken war ein häufig eingesetztes Werkzeug{"\n"}
+                                    im Alltag der Crew. Vorerst wurde er zum Kiel holen benutzt.{"\n"}
+                                    Kiel war ein Pirat, welcher berüchtigt dafür war,{"\n"}
+                                    immer und überall einzuschlafen und auch mit größter Mühe{"\n"}
+                                    nicht zu wecken war. Benötigte man seine Anwesenheit,{"\n"}
+                                    musst man nur in den Trillerhaken blasen.{"\n"}
+                                    Nur diese hochfrequente Töne konnten ihn aus seinem Schlummer reißen.
+                                </Text>
+                            </View>
+                        </View>
+                    );
+            case 24:
+                if(this.props.isWatched)
+                    return (
+                        <View style={styles.panel}>
+                            <UI isWatched={this.props.isWatched}/>
+                            <View>
+                                <Text style={[{fontSize: 38}, styles.text]}>
+                                    Kanone
+                                </Text>
+                                <Text style={[{fontSize: 26}, styles.text]}>
+                                    Diese Kanonen wurden nie gefüllt sondern dienten{"\n"}
+                                    alleinig als Abschreckung. Die Crew leistete sich bei ihrem{"\n"}
+                                    letzten Besuch an Land statt Munition lieber einen tanzenden{"\n"}
+                                    Affen, welcher allerdings sofort an Seekrankheit verstarb.
+                                </Text>
+                            </View>
+                        </View>
+                    );
+            case 25:
+                if(this.props.isWatched)
+                    return (
+                        <View style={styles.panel}>
+                            <UI isWatched={this.props.isWatched}/>
+                            <View>
+                                <Text style={[{fontSize: 38}, styles.text]}>
+                                    Brief
+                                </Text>
+                                <Text style={[{fontSize: 26}, styles.text]}>
+                                    Vom Federführer unserer Zahnlosigkeit, Plankenwart dem 13.{"\n"}
+                                    {"\n"}
+                                    Der Piratenkönig hat ausgerufen! Er hat ungesunde 24 Jahre regiert{"\n"}
+                                    und will nun im hohem Alter von 40 in Pension gehen.{"\n"}
+                                    Er sieht seine Aufgabe als erfüllt an und möchte sich nunfort nur noch{"\n"}
+                                    auf sein voranschreitendes Skorbut und das Foltern von Adeligen fokussieren.{"\n"}
+                                    Aus diesem Grunde bittet er alle offiziell gemeldeten Seeräuber {"\n"}
+                                    (Kopfgeld Ausruf von 1000 Gulden oder höher - Siehe PGB P. 35 §10),{"\n"}
+                                    sich auf die Suche nach einem Schatz für Ihn zu begeben{"\n"}
+                                    und diesen in 100 Sonnenaufgängen in Tortuga zu präsentieren.{"\n"}
+                                    Die Beteiligten sind gebeten sich mit einem fehlenden Körperteil{"\n"}
+                                    (Bein, Arm, Auge, etc.) als Pirat auszuweisen. Es wird um Verständnis gebeten,{"\n"}
+                                    dass fehlende Zähne oder Haare nicht als Ausweis gültig sind,{"\n"}
+                                    da auch der gemeine Bürger häufig über diese verfügt.{"\n"}
+                                    Der oder diejenige, die es schafft, den Piratenkönig zu beindrucken,{"\n"}
+                                    möge den Trohn als nächstes besteigen und außerdem das Holzbein{"\n"}
+                                    der hohen Unehre und Rums übergeben bekommen.{"\n"}
+                                    {"\n"}
+                                    Feste Briese, Kameraden!
                                 </Text>
                             </View>
                         </View>

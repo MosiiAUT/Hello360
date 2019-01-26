@@ -4,8 +4,8 @@ import {
     View,
     NativeModules,
     asset,
+    Image
 } from 'react-360';
-
 import GazeButton from "react-360-gaze-button";
 import {connect, setStation} from './ClickManager';
 
@@ -26,7 +26,9 @@ class TeleportUI extends React.Component {
 class TeleportButton extends React.Component {
     state = {
         gazed: false,
-        station: this.props.station
+        station: this.props.station,
+        opacity: 1,
+        id: null
     };
 
     setGazed = () => {
@@ -37,6 +39,9 @@ class TeleportButton extends React.Component {
 
             //outside
             case 0:
+                //Delete me
+                MyModule.openEndscreen();
+                ////////
                 MyModule.setWorld(60, 0, 170);
                 MyModule.openWatchButton();
                 MyModule.moveWatchButton(-Math.PI / 1.37, 0);
@@ -139,10 +144,9 @@ class TeleportButton extends React.Component {
                 break;
 
                 //outside
-                //still some work
             case 16:
                 MyModule.setWorld(140, -55, 570);
-                MyModule.moveWatchButton(Math.PI / 3, -Math.PI / 3.5);
+                MyModule.moveWatchButton(Math.PI / 4, -Math.PI / 4.5);
                 MyModule.moveDescription(0, 0,);
                 MyModule.moveTeleport(Math.PI / 2.2, -Math.PI / 25);
                 break;
@@ -157,7 +161,7 @@ class TeleportButton extends React.Component {
 
             case 18:
                 MyModule.setWorld(-45, -70, 570);
-                MyModule.moveWatchButton(Math.PI / 1.2, Math.PI / 8);
+                MyModule.moveWatchButton(Math.PI / 1.15, Math.PI / 12);
                 MyModule.moveDescription(-Math.PI / 1.2, 0,);
                 MyModule.moveTeleport(Math.PI / 1.9, -Math.PI / 8);
                 break;
@@ -175,6 +179,45 @@ class TeleportButton extends React.Component {
                 MyModule.moveDescription(-Math.PI / 3, 0,);
                 MyModule.moveTeleport(-Math.PI / 2, -Math.PI / 20);
                 break;
+
+            //outside
+            case 21:
+                MyModule.setWorld(10, -65, 570);
+                MyModule.moveWatchButton(-Math.PI / 1.25, -Math.PI / 10);
+                MyModule.moveDescription(-Math.PI / 1.8, 0,);
+                MyModule.moveTeleport(-Math.PI / 2.5, 0);
+                break;
+
+            case 22:
+                MyModule.setWorld(180, -100, 630);
+                MyModule.moveWatchButton(-Math.PI / 2.5, -Math.PI / 3.5);
+                MyModule.moveDescription(-Math.PI / 1.6, 0,);
+                MyModule.moveTeleport(-Math.PI / 1.3, Math.PI / 20);
+                break;
+
+            case 23:
+                MyModule.setWorld(200, -115, 590);
+                MyModule.moveWatchButton(-Math.PI / 1.9, -Math.PI / 5.5);
+                MyModule.moveDescription(-Math.PI / 1.2, 0,);
+                MyModule.moveTeleport(-Math.PI / 3, -Math.PI / 7);
+                break;
+
+            case 24:
+                MyModule.setWorld(220, -105, 619);
+                MyModule.moveWatchButton(-Math.PI / 1.9, -Math.PI / 10);
+                MyModule.moveDescription(-Math.PI / 1.35, 0,);
+                MyModule.moveTeleport(Math.PI / 1.2, Math.PI / 8);
+                break;
+
+                //the end
+            case 25:
+                MyModule.closeWatchButton();
+                MyModule.closeTeleport();
+                MyModule.setWorld(-10, -180, 300);
+                MyModule.moveDescription(-Math.PI / 1.35, 0,);
+                MyModule.moveTeleport(Math.PI / 1.2, Math.PI / 8);
+                MyModule.openEndscreen();
+                break;
         }
 
         setStation(this.state.station + 1);
@@ -191,6 +234,11 @@ class TeleportButton extends React.Component {
         //this.setState({gazed: true,});
     };
 
+    componentWillUnmount() {
+        clearInterval(this.state.id);
+        this.setState({opacity: 0});
+    }
+
     render() {
         const {gazed} = this.state;
         return (
@@ -200,8 +248,20 @@ class TeleportButton extends React.Component {
                     this.setGazed();
                     //this.props.onClick();
                 }}
+                onEnter={()=>{
+                    this.setState({
+                        id: setInterval(()=> {
+                            this.setState({opacity: this.state.opacity - 0.05})
+                        }, 100)})
+                }}
+                onExit={()=>{
+                    clearInterval(this.state.id);
+                    this.setState({opacity: 1});
+
+                }}
                 render={(remainingTime, isGazed) => (
                     <View style={styles.greetingBox}>
+                         <Image style={[styles.image, {opacity: this.state.opacity}]} source={asset('circlegelb.png')} />
                     </View>
                 )}
             />
@@ -220,13 +280,19 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     greetingBox: {
-        width: 200,
-        height: 200,
-        borderColor: '#efea01',
-        borderWidth: 2,
+        
+
+        padding: 20,
+       
+        
+        borderWidth: 0,
     },
     greeting: {
         fontSize: 30,
+    },
+    image: {
+        width: 200,
+        height: 200,
     },
 });
 
