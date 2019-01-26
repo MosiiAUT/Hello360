@@ -51,21 +51,22 @@ let t_brief = [-279, 0, -613];
 class Models extends React.Component {
     render() {
         let elements;
+        let defaultelements;
 
         switch (this.props.station) {
 
             // outside
             case 0:
-                elements = [<Koralle_w/>, <Fass_w/>, <Truhe_w/>, <Haken_mug_w/>, <Bild_shrimp_w/>];
+                elements = [<Koralle_w/>, <Fass_w/>, <Truhe_w/>, <Haken_mug_w/>, <Bild_shrimp_w/>, <Kanone_w/>];
                 break;
             case 1:
                 elements = [<Koralle_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>,
-                    <Fass_w/>, <Truhe_w/>, <Haken_mug_w/>, <Bild_shrimp_w/>];
+                    <Fass_w/>, <Truhe_w/>, <Haken_mug_w/>, <Bild_shrimp_w/>, <Kanone_w/>];
                 break;
             case 2:
                 elements = [<Koralle_w/>,
                     <Fass_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>, <Truhe_w/>,
-                    <Haken_mug_w/>, <Bild_shrimp_w/>];
+                    <Haken_mug_w/>, <Bild_shrimp_w/>, <Kanone_w/>];
                 break;
             case 3:
                 elements = [<Koralle_w/>, <Fass_w/>,
@@ -88,57 +89,57 @@ class Models extends React.Component {
             case 6:
                 elements = [<Koralle_w/>, <Fass_w/>, <Truhe_w/>, <Haken_mug_w/>, <Bild_shrimp_w/>,
                     <Bett_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>, <Schuh_w/>,
-                    <Bild_plankenwart_w/>, <Book_see_w/>, <Shrimpstatue_w/>, <Haken_gemein_w/>, <Wellness_w/>];
+                    <Bild_plankenwart_w/>, <Book_see_w/>, <Shrimpstatue_w/>, <Haken_gemein_w/>, <Wellness_w/>, <Haken_laser_w/>];
                 break;
             case 7:
                 elements = [<Koralle_w/>, <Fass_w/>, <Truhe_w/>, <Haken_mug_w/>, <Bild_shrimp_w/>, <Bett_w/>,
                     <Schuh_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>,
-                    <Bild_plankenwart_w/>, <Book_see_w/>, <Shrimpstatue_w/>, <Haken_gemein_w/>, <Wellness_w/>];
+                    <Bild_plankenwart_w/>, <Book_see_w/>, <Shrimpstatue_w/>, <Haken_gemein_w/>, <Wellness_w/>, <Haken_laser_w/>];
                 break;
             case 8:
                 elements = [<Bett_w/>, <Schuh_w/>,
                     <Bild_plankenwart_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>,
-                    <Book_see_w/>, <Shrimpstatue_w/>, <Haken_gemein_w/>, <Wellness_w/>];
+                    <Book_see_w/>, <Shrimpstatue_w/>, <Haken_gemein_w/>, <Wellness_w/>, <Haken_laser_w/>];
                 break;
             case 9:
                 elements = [<Bett_w/>, <Schuh_w/>, <Bild_plankenwart_w/>,
                     <Book_see_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>,
-                    <Shrimpstatue_w/>, <Haken_gemein_w/>, <Wellness_w/>];
+                    <Shrimpstatue_w/>, <Haken_gemein_w/>, <Wellness_w/>, <Haken_laser_w/>];
                 break;
             case 10:
                 elements = [<Bett_w/>, <Schuh_w/>, <Bild_plankenwart_w/>, <Book_see_w/>,
                     <Shrimpstatue_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>,
-                    <Haken_gemein_w/>, <Wellness_w/>];
+                    <Haken_gemein_w/>, <Wellness_w/>, <Haken_laser_w/>];
                 break;
             case 11:
                 elements = [<Bett_w/>, <Schuh_w/>, <Bild_plankenwart_w/>, <Book_see_w/>, <Shrimpstatue_w/>,
                     <Haken_gemein_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>,
-                    <Wellness_w/>];
+                    <Wellness_w/>, <Haken_laser_w/>];
                 break;
             case 12:
                 elements = [<Bett_w/>, <Schuh_w/>, <Bild_plankenwart_w/>, <Book_see_w/>, <Shrimpstatue_w/>,
                     <Haken_gemein_w/>,
-                    <Wellness_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>];
+                    <Wellness_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>, <Haken_laser_w/>];
                 break;
 
             //second floor room one
             case 13:
                 elements = [<Haken_loeffler_w isWatched={this.props.isWatched} station={this.props.station}
-                                              lit={true}/>, <Knochen_body_w/>, <Gedicht_w/>, <Haken_laser_w/>];
+                                              lit={true}/>, <Knochen_body_w/>, <Gedicht_w/>, <Haken_laser_w/>, <Book_welle_w/>];
                 break;
             case 14:
                 elements = [<Haken_loeffler_w/>,
                     <Knochen_body_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>,
-                    <Gedicht_w/>, <Haken_laser_w/>];
+                    <Gedicht_w/>, <Haken_laser_w/>, <Book_welle_w/>];
                 break;
             case 15:
                 elements = [<Haken_loeffler_w/>, <Knochen_body_w/>,
                     <Gedicht_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>,
-                    <Haken_laser_w/>];
+                    <Haken_laser_w/>, <Book_welle_w/>];
                 break;
             case 16:
                 elements = [<Haken_loeffler_w/>, <Knochen_body_w/>, <Gedicht_w/>,
-                    <Haken_laser_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>];
+                    <Haken_laser_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>, <Book_welle_w/>];
                 break;
 
             //knochen outside
@@ -164,7 +165,7 @@ class Models extends React.Component {
 
             case 21:
                 elements = [<Augenklappe_w/>, <Hut_w/>, <Book_tagebuch_w/>,
-                    <Teller_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>];
+                    <Teller_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>, <Knochen_feelings_w/>,<Book_welle_w/>];
                 break;
 
 
@@ -184,32 +185,88 @@ class Models extends React.Component {
 
                 //the end
             case 26:
-                elements = [<Knochen_feelings_w/>,<Book_welle_w/>,<Haken_triller_w />,<Kanone_w/>,<Brief_w isWatched={this.props.isWatched} station={this.props.station} lit={true}/>];
+                elements = [<Koralle_w/>, <Fass_w/>, <Truhe_w/>, <Haken_mug_w/>, <Bild_shrimp_w/>, <Kanone_w/>, <Kanone_w/>, <Bett_w/>];
+                break;
+        }
+
+        switch (this.props.station) {
+
+            // outside
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+                defaultelements = [<Out_fass/>, <Out_geschirr/>, <Out_koralle_green/>, <Out_koralle_big/>, <Out_koralle_lila/>, <Out_koralle_pink/>, <Out_koralle_rot/>, <Out_pflanzen/>, <Out_schatzkiste/>, <Out_seegras/>, <Out_shoe/>, <Out_stones/>];
+                break;
+            case 5:
+                defaultelements = [<Out_fass/>, <Out_geschirr/>, <Out_koralle_green/>, <Out_koralle_big/>, <Out_koralle_lila/>, <Out_koralle_pink/>, <Out_koralle_rot/>, <Out_pflanzen/>, <Out_schatzkiste/>, <Out_seegras/>, <Out_shoe/>, <Out_stones/>, <One_bett/>, <One_shoe/>, <One_stuhl/>, <One_tisch/>];
+                break;
+
+            //first floor
+            case 6:
+            case 7:
+            case 8:
+                defaultelements = [<Out_fass/>, <Out_geschirr/>, <Out_koralle_green/>, <Out_koralle_big/>, <Out_koralle_lila/>, <Out_koralle_pink/>, <Out_koralle_rot/>, <Out_pflanzen/>, <Out_schatzkiste/>, <Out_seegras/>, <Out_shoe/>, <Out_stones/>, <One_bett/>, <One_shoe/>, <One_stuhl/>, <One_tisch/>, <Two_bild/>, <Two_fass/>, <Two_knochen/>, <Two_kommode/>, <Two_koralle_green/>, <Two_koralle_pink/>, <Two_pflanzen/>, <Two_schatzkiste/>, <Two_schrank/>, <Two_stuhl/>, <Two_tisch/>];
+                break;
+            case 9:
+            case 10:
+            case 11:
+            case 12:
+                defaultelements = [<One_bett/>, <One_shoe/>, <One_stuhl/>, <One_tisch/>, <Two_bild/>, <Two_fass/>, <Two_knochen/>, <Two_kommode/>, <Two_koralle_green/>, <Two_koralle_pink/>, <Two_pflanzen/>, <Two_schatzkiste/>, <Two_schrank/>, <Two_stuhl/>, <Two_tisch/>];
+                break;
+
+            //second floor room one
+            case 13:
+            case 14:
+            case 15:
+            case 16:
+                defaultelements = [<One_bett/>, <One_shoe/>, <One_stuhl/>, <One_tisch/>, <Two_bild/>, <Two_fass/>, <Two_knochen/>, <Two_kommode/>, <Two_koralle_green/>, <Two_koralle_pink/>, <Two_pflanzen/>, <Two_schatzkiste/>, <Two_schrank/>, <Two_stuhl/>, <Two_tisch/>, <Top_knochen/>, <Top_koralle/>, <Three_bett/>, <Three_fass/>, <Three_geschirr/>, <Three_kerze/>, <Three_kommode/>, <Three_schatzkiste/>, <Three_schrank/>, <Three_stuhl/>, <Three_tisch/>];
+                break;
+
+            //knochen outside
+            case 17:
+                defaultelements = [<Top_knochen/>, <Top_koralle/>, <Two_bild/>, <Two_fass/>, <Two_knochen/>, <Two_kommode/>, <Two_koralle_green/>, <Two_koralle_pink/>, <Two_pflanzen/>, <Two_schatzkiste/>, <Two_schrank/>, <Two_stuhl/>, <Two_tisch/>, <Three_bett/>, <Three_fass/>, <Three_geschirr/>, <Three_kerze/>, <Three_kommode/>, <Three_schatzkiste/>, <Three_schrank/>, <Three_stuhl/>, <Three_tisch/>];
+                break;
+
+            //second floor room two
+            case 18:
+            case 19:
+            case 20:
+                defaultelements = [<Three_bett/>, <Three_fass/>, <Three_geschirr/>, <Three_kerze/>, <Three_kommode/>, <Three_schatzkiste/>, <Three_schrank/>, <Three_stuhl/>, <Three_tisch/>];
+                break;
+            case 21:
+                defaultelements = [<Top_knochen/>, <Top_koralle/>, <Two_bild/>, <Two_fass/>, <Two_knochen/>, <Two_kommode/>, <Two_koralle_green/>, <Two_koralle_pink/>, <Two_pflanzen/>, <Two_schatzkiste/>, <Two_schrank/>, <Two_stuhl/>, <Two_tisch/>, <Three_bett/>, <Three_fass/>, <Three_geschirr/>, <Three_kerze/>, <Three_kommode/>, <Three_schatzkiste/>, <Three_schrank/>, <Three_stuhl/>, <Three_tisch/>];
+                break;
+
+            //outside
+            case 22:
+                defaultelements = [<Top_knochen/>, <Top_koralle/>, <Two_bild/>, <Two_fass/>, <Two_knochen/>, <Two_kommode/>, <Two_koralle_green/>, <Two_koralle_pink/>, <Two_pflanzen/>, <Two_schatzkiste/>, <Two_schrank/>, <Two_stuhl/>, <Two_tisch/>];
+                break;
+            case 23:
+            case 24:
+                defaultelements = [<Top_knochen/>, <Top_koralle/>];
+                break;
+            case 25:
+                defaultelements = [<Top_knochen/>, <Top_koralle/>, <Out_fass/>, <Out_geschirr/>, <Out_koralle_green/>, <Out_koralle_big/>, <Out_koralle_lila/>, <Out_koralle_pink/>, <Out_koralle_rot/>, <Out_pflanzen/>, <Out_schatzkiste/>, <Out_seegras/>, <Out_shoe/>, <Out_stones/>];
+                break;
+
+            //the end
+            case 26:
+                defaultelements = [<One_bett/>, <One_shoe/>, <One_stuhl/>, <One_tisch/>, <Out_fass/>, <Out_geschirr/>, <Out_koralle_green/>, <Out_koralle_big/>, <Out_koralle_lila/>, <Out_koralle_pink/>, <Out_koralle_rot/>, <Out_pflanzen/>, <Out_schatzkiste/>, <Out_seegras/>, <Out_shoe/>, <Out_stones/>];
                 break;
         }
 
         return (
             <View>
-                {/*<PointLight intensity={0.5} style={{color:'white', transform:[{translate:[0,50,0]}]}}/>*/}
                 <DirectionalLight intensity={0.4}/>
                 <AmbientLight intensity={0.3}/>
-                <Scene/>
 
                 <Ship/>
                 <Terrain/>
-                {/*
-                <Fass/>
-                <Geschirr/>
-                <GPflanze/>
-                <Koralle/>
-                <Lilapflanze/>
-                <Pflanze/>
-                <Rosakoralle/>
-                <Schuh/>
-                <Stein/>
-                <Truhe/>
-                */}
+
                 {elements}
+                {defaultelements}
             </View>
         );
 
@@ -1356,6 +1413,8 @@ class Brief_w extends React.Component {
     }
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 class Ship extends React.Component {
     render() {
         return (
@@ -1372,91 +1431,283 @@ class Terrain extends React.Component {
     }
 }
 
-class Scene extends React.Component {
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+class Out_fass extends React.Component {
     render() {
         return (
-            <Entity style={styles.white} source={{obj: asset('scene.obj')}} lit={true}/>
+            <Entity style={styles.brown} source={{obj: asset('scene/outside_fass.obj')}} lit={true}/>
+        );
+    }
+}
+class Out_geschirr extends React.Component {
+    render() {
+        return (
+            <Entity style={styles.white} source={{obj: asset('scene/outside_geschirr.obj')}} lit={true}/>
+        );
+    }
+}
+class Out_koralle_green extends React.Component {
+    render() {
+        return (
+            <Entity style={styles.lightgreen} source={{obj: asset('scene/outside_koralle_green.obj')}} lit={true}/>
+        );
+    }
+}
+class Out_koralle_big extends React.Component {
+    render() {
+        return (
+            <Entity style={styles.sand} source={{obj: asset('scene/outside_koralle_groß.obj')}} lit={true}/>
+        );
+    }
+}
+class Out_koralle_lila extends React.Component {
+    render() {
+        return (
+            <Entity style={styles.purple} source={{obj: asset('scene/outside_koralle_lila.obj')}} lit={true}/>
+        );
+    }
+}
+class Out_koralle_pink extends React.Component {
+    render() {
+        return (
+            <Entity style={styles.pink} source={{obj: asset('scene/outside_koralle_pink.obj')}} lit={true}/>
+        );
+    }
+}
+class Out_koralle_rot extends React.Component {
+    render() {
+        return (
+            <Entity style={styles.red} source={{obj: asset('scene/outside_koralle_rot.obj')}} lit={true}/>
+        );
+    }
+}
+class Out_pflanzen extends React.Component {
+    render() {
+        return (
+            <Entity style={styles.green} source={{obj: asset('scene/outside_pflanzen.obj')}} lit={true}/>
+        );
+    }
+}
+class Out_schatzkiste extends React.Component {
+    render() {
+        return (
+            <Entity style={styles.brown} source={{obj: asset('scene/outside_schatzkiste.obj')}} lit={true}/>
+        );
+    }
+}
+class Out_seegras extends React.Component {
+    render() {
+        return (
+            <Entity style={styles.green} source={{obj: asset('scene/outside_seegras.obj')}} lit={true}/>
+        );
+    }
+}
+class Out_shoe extends React.Component {
+    render() {
+        return (
+            <Entity style={styles.black} source={{obj: asset('scene/outside_shoe.obj')}} lit={true}/>
+        );
+    }
+}
+class Out_stones extends React.Component {
+    render() {
+        return (
+            <Entity style={styles.grey} source={{obj: asset('scene/outside_stones.obj')}} lit={true}/>
         );
     }
 }
 
-class Fass extends React.Component {
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+class One_bett extends React.Component {
     render() {
         return (
-            <Entity style={styles.brown} source={{obj: asset('fass.obj')}} lit={true}/>
+            <Entity style={styles.brown} source={{obj: asset('scene/one_bett.obj')}} lit={true}/>
+        );
+    }
+}
+class One_shoe extends React.Component {
+    render() {
+        return (
+            <Entity style={styles.black} source={{obj: asset('scene/one_shoe.obj')}} lit={true}/>
+        );
+    }
+}
+class One_stuhl extends React.Component {
+    render() {
+        return (
+            <Entity style={styles.brown} source={{obj: asset('scene/one_stuhl.obj')}} lit={true}/>
+        );
+    }
+}
+class One_tisch extends React.Component {
+    render() {
+        return (
+            <Entity style={styles.brown} source={{obj: asset('scene/one_tisch.obj')}} lit={true}/>
         );
     }
 }
 
-class Geschirr extends React.Component {
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+class Two_bild extends React.Component {
     render() {
         return (
-            <Entity style={styles.white} source={{obj: asset('geschirr.obj')}} lit={true}/>
+            <Entity style={styles.brown} source={{obj: asset('scene/two_bild.obj')}} lit={true}/>
+        );
+    }
+}
+class Two_fass extends React.Component {
+    render() {
+        return (
+            <Entity style={styles.brown} source={{obj: asset('scene/two_fass.obj')}} lit={true}/>
+        );
+    }
+}
+class Two_knochen extends React.Component {
+    render() {
+        return (
+            <Entity style={styles.white} source={{obj: asset('scene/two_knochen.obj')}} lit={true}/>
+        );
+    }
+}
+class Two_kommode extends React.Component {
+    render() {
+        return (
+            <Entity style={styles.brown} source={{obj: asset('scene/two_kommode.obj')}} lit={true}/>
+        );
+    }
+}
+class Two_koralle_green extends React.Component {
+    render() {
+        return (
+            <Entity style={styles.lightgreen} source={{obj: asset('scene/two_koralle_green.obj')}} lit={true}/>
+        );
+    }
+}
+class Two_koralle_pink extends React.Component {
+    render() {
+        return (
+            <Entity style={styles.pink} source={{obj: asset('scene/two_koralle_pink.obj')}} lit={true}/>
+        );
+    }
+}
+class Two_pflanzen extends React.Component {
+    render() {
+        return (
+            <Entity style={styles.green} source={{obj: asset('scene/two_pflanzen.obj')}} lit={true}/>
+        );
+    }
+}
+class Two_schatzkiste extends React.Component {
+    render() {
+        return (
+            <Entity style={styles.brown} source={{obj: asset('scene/two_schatzkiste.obj')}} lit={true}/>
+        );
+    }
+}
+class Two_schrank extends React.Component {
+    render() {
+        return (
+            <Entity style={styles.brown} source={{obj: asset('scene/two_schrank.obj')}} lit={true}/>
+        );
+    }
+}
+class Two_stuhl extends React.Component {
+    render() {
+        return (
+            <Entity style={styles.brown} source={{obj: asset('scene/two_stuhl.obj')}} lit={true}/>
+        );
+    }
+}
+class Two_tisch extends React.Component {
+    render() {
+        return (
+            <Entity style={styles.brown} source={{obj: asset('scene/two_tisch.obj')}} lit={true}/>
         );
     }
 }
 
-class GPflanze extends React.Component {
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+class Three_bett extends React.Component {
     render() {
         return (
-            <Entity style={styles.lightgreen} source={{obj: asset('gpflanze.obj')}}
-                    lit={true}/>
+            <Entity style={styles.brown} source={{obj: asset('scene/three_bett.obj')}} lit={true}/>
+        );
+    }
+}
+class Three_fass extends React.Component {
+    render() {
+        return (
+            <Entity style={styles.brown} source={{obj: asset('scene/three_fass.obj')}} lit={true}/>
+        );
+    }
+}
+class Three_geschirr extends React.Component {
+    render() {
+        return (
+            <Entity style={styles.white} source={{obj: asset('scene/three_geschirr.obj')}} lit={true}/>
+        );
+    }
+}
+class Three_kerze extends React.Component {
+    render() {
+        return (
+            <Entity style={styles.white} source={{obj: asset('scene/three_kerze.obj')}} lit={true}/>
+        );
+    }
+}
+class Three_kommode extends React.Component {
+    render() {
+        return (
+            <Entity style={styles.brown} source={{obj: asset('scene/three_kommode.obj')}} lit={true}/>
+        );
+    }
+}
+class Three_schatzkiste extends React.Component {
+    render() {
+        return (
+            <Entity style={styles.brown} source={{obj: asset('scene/three_bett.obj')}} lit={true}/>
+        );
+    }
+}
+class Three_schrank extends React.Component {
+    render() {
+        return (
+            <Entity style={styles.brown} source={{obj: asset('scene/three_schrank.obj')}} lit={true}/>
+        );
+    }
+}
+class Three_stuhl extends React.Component {
+    render() {
+        return (
+            <Entity style={styles.brown} source={{obj: asset('scene/three_stuhl.obj')}} lit={true}/>
+        );
+    }
+}
+class Three_tisch extends React.Component {
+    render() {
+        return (
+            <Entity style={styles.brown} source={{obj: asset('scene/three_tisch.obj')}} lit={true}/>
         );
     }
 }
 
-class Pflanze extends React.Component {
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+class Top_knochen extends React.Component {
     render() {
         return (
-            <Entity style={styles.green} source={{obj: asset('pflanze.obj')}} lit={true}/>
+            <Entity style={styles.white} source={{obj: asset('scene/top_knochen.obj')}} lit={true}/>
         );
     }
 }
-
-class Koralle extends React.Component {
+class Top_koralle extends React.Component {
     render() {
         return (
-            <Entity style={styles.red} source={{obj: asset('koralle.obj')}} lit={true}/>
-        );
-    }
-}
-
-class Lilapflanze extends React.Component {
-    render() {
-        return (
-            <Entity style={styles.purple} source={{obj: asset('lilapflanze.obj')}} lit={true}/>
-        );
-    }
-}
-
-class Rosakoralle extends React.Component {
-    render() {
-        return (
-            <Entity style={styles.pink} source={{obj: asset('rosakoralle.obj')}} lit={true}/>
-        );
-    }
-}
-
-class Schuh extends React.Component {
-    render() {
-        return (
-            <Entity style={styles.black} source={{obj: asset('schuh.obj')}} lit={true}/>
-        );
-    }
-}
-
-class Stein extends React.Component {
-    render() {
-        return (
-            <Entity style={styles.grey} source={{obj: asset('stein.obj')}} lit={true}/>
-        );
-    }
-}
-
-class Truhe extends React.Component {
-    render() {
-        return (
-            <Entity style={styles.brown} source={{obj: asset('truhe.obj')}} lit={true}/>
+            <Entity style={styles.red} source={{obj: asset('scene/top_koralle_rot.obj')}} lit={true}/>
         );
     }
 }
