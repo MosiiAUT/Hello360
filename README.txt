@@ -1,3 +1,5 @@
-Hallo Menschen
-Test nummer 2
-Test 3
+This is a React360 Project made by:
+
+Julia Gruber
+Irina Mittermayr
+Andreas Moser
