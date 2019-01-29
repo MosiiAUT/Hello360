@@ -35,7 +35,7 @@ class DescriptionUI extends React.Component {
                                     und hat keine Absicht, vor ihrer Pension{"\n"}
                                     in die ewigen Jagdgründe einzugehen,{"\n"}
                                     also trage deine toxische Sonnencreme anderswo{"\n"}
-                                    und schwimm weiter Matrose!*/
+                                    und schwimm weiter Matrose!
                                 </Text>
                             </View>
                         </View>
