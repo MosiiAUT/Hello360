@@ -434,8 +434,6 @@ class DescriptionUI extends React.Component {
                                     Schlacht ziehen gegen das Rieseschrimp. Unser Überleben ist{"\n"}
                                     in den Händen der Seegeister, doch viel muss geopfert werden{"\n"}
                                     um großes zu erreichen.{"\n"}
-/*
-
                                 </Text>
                             </View>
                         </View>
@@ -670,5 +668,4 @@ const styles = StyleSheet.create({
 });
 
 const ConnectedDescriptionUI = connect(DescriptionUI);
-
 export default ConnectedDescriptionUI;
