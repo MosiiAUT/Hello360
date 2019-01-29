@@ -727,7 +727,7 @@ class Shrimpstatue_w extends React.Component {
                     {rotateY: this.rotation},
                 ]
             },
-                styles.grey]} source={{obj: asset('w_shrimpstatue.obj')}} lit={true}/>
+                styles.white]} source={{obj: asset('w_shrimpstatue.obj')}} lit={true}/>
         );
     }
 }
@@ -1418,7 +1418,7 @@ class Brief_w extends React.Component {
 class Ship extends React.Component {
     render() {
         return (
-            <Entity lit={true} style={styles.darkbrown} source={{obj: asset('ship.obj')}}/>
+            <Entity lit={true} style={styles.darkbrownlighter} source={{obj: asset('ship.obj')}}/>
         );
     }
 }
@@ -1436,7 +1436,7 @@ class Terrain extends React.Component {
 class Out_fass extends React.Component {
     render() {
         return (
-            <Entity style={styles.brown} source={{obj: asset('scene/outside_fass.obj')}} lit={true}/>
+            <Entity style={styles.darkbrownlighter} source={{obj: asset('scene/outside_fass.obj')}} lit={true}/>
         );
     }
 }
@@ -1457,7 +1457,7 @@ class Out_koralle_green extends React.Component {
 class Out_koralle_big extends React.Component {
     render() {
         return (
-            <Entity style={styles.sand} source={{obj: asset('scene/outside_koralle_groß.obj')}} lit={true}/>
+            <Entity style={styles.redlight} source={{obj: asset('scene/outside_koralle_groß.obj')}} lit={true}/>
         );
     }
 }
@@ -1492,7 +1492,7 @@ class Out_pflanzen extends React.Component {
 class Out_schatzkiste extends React.Component {
     render() {
         return (
-            <Entity style={styles.brown} source={{obj: asset('scene/outside_schatzkiste.obj')}} lit={true}/>
+            <Entity style={styles.darkbrowndarker} source={{obj: asset('scene/outside_schatzkiste.obj')}} lit={true}/>
         );
     }
 }
@@ -1513,7 +1513,7 @@ class Out_shoe extends React.Component {
 class Out_stones extends React.Component {
     render() {
         return (
-            <Entity style={styles.grey} source={{obj: asset('scene/outside_stones.obj')}} lit={true}/>
+            <Entity style={styles.stonegrey} source={{obj: asset('scene/outside_stones.obj')}} lit={true}/>
         );
     }
 }
@@ -1537,14 +1537,14 @@ class One_shoe extends React.Component {
 class One_stuhl extends React.Component {
     render() {
         return (
-            <Entity style={styles.brown} source={{obj: asset('scene/one_stuhl.obj')}} lit={true}/>
+            <Entity style={styles.darkbrown} source={{obj: asset('scene/one_stuhl.obj')}} lit={true}/>
         );
     }
 }
 class One_tisch extends React.Component {
     render() {
         return (
-            <Entity style={styles.brown} source={{obj: asset('scene/one_tisch.obj')}} lit={true}/>
+            <Entity style={styles.darkbrownlighter} source={{obj: asset('scene/one_tisch.obj')}} lit={true}/>
         );
     }
 }
@@ -1554,7 +1554,7 @@ class One_tisch extends React.Component {
 class Two_bild extends React.Component {
     render() {
         return (
-            <Entity style={styles.brown} source={{obj: asset('scene/two_bild.obj')}} lit={true}/>
+            <Entity style={styles.darkbrowndarker} source={{obj: asset('scene/two_bild.obj')}} lit={true}/>
         );
     }
 }
@@ -1575,7 +1575,7 @@ class Two_knochen extends React.Component {
 class Two_kommode extends React.Component {
     render() {
         return (
-            <Entity style={styles.brown} source={{obj: asset('scene/two_kommode.obj')}} lit={true}/>
+            <Entity style={styles.darkbrowndarker} source={{obj: asset('scene/two_kommode.obj')}} lit={true}/>
         );
     }
 }
@@ -1603,7 +1603,7 @@ class Two_pflanzen extends React.Component {
 class Two_schatzkiste extends React.Component {
     render() {
         return (
-            <Entity style={styles.brown} source={{obj: asset('scene/two_schatzkiste.obj')}} lit={true}/>
+            <Entity style={styles.darkbrown} source={{obj: asset('scene/two_schatzkiste.obj')}} lit={true}/>
         );
     }
 }
@@ -1617,14 +1617,14 @@ class Two_schrank extends React.Component {
 class Two_stuhl extends React.Component {
     render() {
         return (
-            <Entity style={styles.brown} source={{obj: asset('scene/two_stuhl.obj')}} lit={true}/>
+            <Entity style={styles.darkbrownlighter} source={{obj: asset('scene/two_stuhl.obj')}} lit={true}/>
         );
     }
 }
 class Two_tisch extends React.Component {
     render() {
         return (
-            <Entity style={styles.brown} source={{obj: asset('scene/two_tisch.obj')}} lit={true}/>
+            <Entity style={styles.darkbrowndarker} source={{obj: asset('scene/two_tisch.obj')}} lit={true}/>
         );
     }
 }
@@ -1634,14 +1634,14 @@ class Two_tisch extends React.Component {
 class Three_bett extends React.Component {
     render() {
         return (
-            <Entity style={styles.brown} source={{obj: asset('scene/three_bett.obj')}} lit={true}/>
+            <Entity style={styles.darkbrownlighter} source={{obj: asset('scene/three_bett.obj')}} lit={true}/>
         );
     }
 }
 class Three_fass extends React.Component {
     render() {
         return (
-            <Entity style={styles.brown} source={{obj: asset('scene/three_fass.obj')}} lit={true}/>
+            <Entity style={styles.darkbrown} source={{obj: asset('scene/three_fass.obj')}} lit={true}/>
         );
     }
 }
@@ -1669,28 +1669,28 @@ class Three_kommode extends React.Component {
 class Three_schatzkiste extends React.Component {
     render() {
         return (
-            <Entity style={styles.brown} source={{obj: asset('scene/three_bett.obj')}} lit={true}/>
+            <Entity style={styles.darkbrownlighter} source={{obj: asset('scene/three_bett.obj')}} lit={true}/>
         );
     }
 }
 class Three_schrank extends React.Component {
     render() {
         return (
-            <Entity style={styles.brown} source={{obj: asset('scene/three_schrank.obj')}} lit={true}/>
+            <Entity style={styles.darkbrown} source={{obj: asset('scene/three_schrank.obj')}} lit={true}/>
         );
     }
 }
 class Three_stuhl extends React.Component {
     render() {
         return (
-            <Entity style={styles.brown} source={{obj: asset('scene/three_stuhl.obj')}} lit={true}/>
+            <Entity style={styles.darkbrown} source={{obj: asset('scene/three_stuhl.obj')}} lit={true}/>
         );
     }
 }
 class Three_tisch extends React.Component {
     render() {
         return (
-            <Entity style={styles.brown} source={{obj: asset('scene/three_tisch.obj')}} lit={true}/>
+            <Entity style={styles.darkbrowndarker} source={{obj: asset('scene/three_tisch.obj')}} lit={true}/>
         );
     }
 }
@@ -1717,16 +1717,22 @@ const styles = StyleSheet.create({
         color: '#212121',
     },
     brown: {
-        color: '#A86F3E',
+        color: '#916035',
     },
     darkbrown: {
         color: '#663D1A',
+    },
+    darkbrowndarker: {
+        color: '#7a4f28',
+    },
+    darkbrownlighter: {
+        color: '#7e5a27',
     },
     green: {
         color: '#1E9949',
     },
     grey: {
-        color: '#a76261',
+        color: '#a79e98',
     },
     lightgreen: {
         color: '#49C675',
@@ -1740,11 +1746,17 @@ const styles = StyleSheet.create({
     red: {
         color: '#C93250',
     },
+    redlight: {
+        color: '#b49fff',
+    },
     sand: {
         color: '#FCF8C7',
     },
     white: {
-        color: 'white',
+        color: '#937e6e',
+    },
+    stonegrey: {
+        color: '#b7a18d',
     },
 });
 
