@@ -35,7 +35,7 @@ class DescriptionUI extends React.Component {
                                     und hat keine Absicht, vor ihrer Pension{"\n"}
                                     in die ewigen Jagdgründe einzugehen,{"\n"}
                                     also trage deine toxische Sonnencreme anderswo{"\n"}
-                                    und schwimm weiter Matrose!
+                                    und schwimm weiter Matrose!*/
                                 </Text>
                             </View>
                         </View>
@@ -206,7 +206,13 @@ class DescriptionUI extends React.Component {
                                     Shrimp Statue
                                 </Text>
                                 <Text style={[{fontSize: 26}, styles.text]}>
-                                    Eine in Stein verewigte Schönheit. Erbeutet 1729.
+                                    Eine Statue des legendären Riesenschrimp von Algaston.{"\n"}
+                                    Gerüchte behaupten es sei so groß wie 30 Pferde{"\n"}
+                                    übereinander und konsumierte Handelsschiffe{"\n"}
+                                    zum Frühstück. Bis heute bleibt es ungesichtet,{"\n"}
+                                    dennoch gibt es viele die hinter dieser Legende{"\n"}
+                                    die Ursache des akuten Shchrimpsterben des Jahres{"\n"}
+                                    1732 sehen.{"\n"}
                                 </Text>
                             </View>
                         </View>
@@ -412,17 +418,24 @@ class DescriptionUI extends React.Component {
                                     Tagebucheintrag von Anämie, 27 Jänner 1733.
                                 </Text>
                                 <Text style={[{fontSize: 26}, styles.text]}>
-                                    Liebes Tagebuch,{"\n"}
+                                    Liebes Tagebuch, {"\n"}
                                     Heute habe ich mein 30. Lebensjahr erreicht.{"\n"}
                                     Jedoch ist mein Gemüt getrübt, und selbst{"\n"}
-                                    nachdem ich mich von meiner Crew hochleben ließ,{"\n"}
+                                    nachdem ich mich von meiner Crew mit Rum begießen ließ,{"\n"}
                                     kam kein Bestreben nach dem Foltern von Adeligen{"\n"}
-                                    zu mir und mein Verlangen nach Rum blieb gestillt.{"\n"}
-                                    Mein Verstand ist nimmermüde und ich sehe die Krone{"\n"}
+                                    zu mir. Mein Verstand ist nimmermüde und ich sehe die Krone{"\n"}
                                     des Piratenkönigs in meiner Hand.{"\n"}
-                                    Nichts möchte ich nun mehr verspüren als diese Macht.{"\n"}
-                                    Koste es Alles was ich besitze,{"\n"}
-                                    ich werde als nächstes über unsere Zunft herrschen!
+                                    Der Weg dorthin ist nicht mehr weit, ich spüre es.{"\n"}
+                                    Ich habe nun mein Ziel erreicht, ich habe das legendäre{"\n"}
+                                    Riesenschrimp von Algaston aufgespürt und nun werde ich{"\n"}
+                                    versuchen es zu schlachten. Nur diesse Geschenk wird{"\n"}
+                                    Plankenwart den 13 genug beeindrucken.{"\n"}
+                                    Auch wenn unsere Kanonen ungeladen sind werden wir in die{"\n"}
+                                    Schlacht ziehen gegen das Rieseschrimp. Unser Überleben ist{"\n"}
+                                    in den Händen der Seegeister, doch viel muss geopfert werden{"\n"}
+                                    um großes zu erreichen.{"\n"}
+/*
+
                                 </Text>
                             </View>
                         </View>
