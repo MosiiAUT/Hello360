@@ -363,7 +363,7 @@ class DescriptionUI extends React.Component {
                                     Zehen-Knochen
                                 </Text>
                                 <Text style={[{fontSize: 26}, styles.text]}>
-                                    Eine DNA Analyse diese Knochen aus dem Kleinen Zeh{"\n"}
+                                    Eine DNA Analyse dieses Knochens aus dem Kleinen Zeh{"\n"}
                                     ergab folgende Schlüsse auf den Beziehungsstatus{"\n"}
                                     des ehemaligen Besitzers.{"\n"}
                                     {"\n"}
@@ -434,8 +434,6 @@ class DescriptionUI extends React.Component {
                                     Schlacht ziehen gegen das Rieseschrimp. Unser Überleben ist{"\n"}
                                     in den Händen der Seegeister, doch viel muss geopfert werden{"\n"}
                                     um großes zu erreichen.{"\n"}
-/*
-
                                 </Text>
                             </View>
                         </View>
@@ -467,7 +465,7 @@ class DescriptionUI extends React.Component {
                                 <Text style={[{fontSize: 26}, styles.text]}>
                                     Plankenwart wartet ungern und ist nicht shrimperlich{"\n"}
                                     {"\n"}
-                                    Keine Shrimps auch diese Jahr. Eine fatale Neuigkeit{"\n"}
+                                    Keine Shrimps auch dieses Jahr. Eine fatale Neuigkeit{"\n"}
                                     für Shrimpfischer, doch auch Seefahrer leiden unter den{"\n"}
                                     nun verstärkten Angriffen von Piratenkönig Plankenwart.{"\n"}
                                     Dieser identifiziert sich bis vor zwei Jahren als Mitglied{"\n"}
@@ -670,5 +668,4 @@ const styles = StyleSheet.create({
 });
 
 const ConnectedDescriptionUI = connect(DescriptionUI);
-
 export default ConnectedDescriptionUI;

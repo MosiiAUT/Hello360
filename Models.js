@@ -1020,7 +1020,7 @@ class Knochen_feelings_w extends React.Component {
 
             Animated.timing(this.rotation, {toValue: 360, duration: 20000}).start();
             Animated.timing(this.translationX, {toValue: 2, duration: 5000}).start();
-            Animated.timing(this.translationY, {toValue: 1, duration: 5000}).start();
+            Animated.timing(this.translationY, {toValue: 30, duration: 5000}).start();
             Animated.timing(this.translationZ, {toValue: 2, duration: 5000}).start();
             this.booli = true;
 

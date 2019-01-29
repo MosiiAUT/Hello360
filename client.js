@@ -184,6 +184,7 @@ function init(bundle, parent, options = {}) {
 
 
 
+
     /*
     let dotSystem = new THREE.Group();
 
@@ -267,10 +268,10 @@ function init(bundle, parent, options = {}) {
 
 
     drawDotSystem();
-    */
 
 
-    /*
+
+
     animate();
 
     function animate() {
@@ -286,6 +287,7 @@ function init(bundle, parent, options = {}) {
 
         r360.compositor._renderer.render(scene, camera);
     }
+
     */
 }
 window.React360 = {init};
