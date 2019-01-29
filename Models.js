@@ -1726,7 +1726,7 @@ const styles = StyleSheet.create({
         color: '#1E9949',
     },
     grey: {
-        color: 'lightgrey',
+        color: '#a76261',
     },
     lightgreen: {
         color: '#49C675',
