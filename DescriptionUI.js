@@ -238,8 +238,7 @@ class DescriptionUI extends React.Component {
                                     Wellness Broschüre
                                 </Text>
                                 <Text style={[{fontSize: 26}, styles.text]}>
-                                    Ahoi Kameraden!{"\n"}
-                                    {"\n"}
+                                    Ahoi Kameraden! {"\n"}
                                     Gönnen Sie sich eine Pause von Cholera und billigem Rum{"\n"}
                                     und kommen Sie an Bord der Wellennässe!{"\n"}
                                     Unsere exklusive Erholungskur auf hoher See bietet Ihnen{"\n"}
@@ -247,19 +246,13 @@ class DescriptionUI extends React.Component {
                                     und lässt Sie erfrischt in den Arbeitsalltag zurückkehren.{"\n"}
                                     Wir bieten Ihnen authentische Schlaf Bretter aus Eichenholz,{"\n"}
                                     ausgewählte Kurse, um Ihre Piraterie zu verbessern{"\n"}
-                                    und einen Wellnessbereich mit exklusiver Rum Badewanne.{"\n"}
-                                    {"\n"}
-
+                                    und einen Wellnessbereich mit exklusiver Rum Badewanne. {"\n"}
                                     Inkludiert sind:{"\n"}
                                     1x Zahnvergoldung{"\n"}
-                                    1x Holzbein polieren (auch andere hölzerne Prothesen werden akzeptiert) {"\n"}
                                     5x Seemanslied nach Wahl{"\n"}
                                     2x Bartflechten{"\n"}
                                     1x Enterhaken werfen für Anfänger (Kurs){"\n"}
-                                    1x Reden ohne Zähne (Kurs){"\n"}
-                                    {"\n"}
-                                    Wir freuen uns auf Sie!{"\n"}
-                                    Ihr Wellennässe Team.
+                                    1x Reden ohne Zähne (Kurs) {"\n"}
                                 </Text>
                             </View>
                         </View>
@@ -523,25 +516,21 @@ class DescriptionUI extends React.Component {
                                     Brief
                                 </Text>
                                 <Text style={[{fontSize: 26}, styles.text]}>
-                                    Vom Federführer unserer Zahnlosigkeit, Plankenwart dem 13.{"\n"}
-                                    {"\n"}
+                                    Vom Federführer unserer Zahnlosigkeit, Plankenwart dem 13. {"\n"}
                                     Der Piratenkönig hat ausgerufen! Er hat ungesunde 24 Jahre regiert{"\n"}
                                     und will nun im hohem Alter von 40 in Pension gehen.{"\n"}
                                     Er sieht seine Aufgabe als erfüllt an und möchte sich nunfort nur noch{"\n"}
                                     auf sein voranschreitendes Skorbut und das Foltern von Adeligen fokussieren.{"\n"}
-                                    Aus diesem Grunde bittet er alle offiziell gemeldeten Seeräuber {"\n"}
-                                    (Kopfgeld Ausruf von 1000 Gulden oder höher - Siehe PGB P. 35 §10),{"\n"}
+                                    Aus diesem Grunde bittet er alle offiziell gemeldeten Seeräuber{"\n"}
                                     sich auf die Suche nach einem Schatz für Ihn zu begeben{"\n"}
                                     und diesen in 100 Sonnenaufgängen in Tortuga zu präsentieren.{"\n"}
                                     Die Beteiligten sind gebeten sich mit einem fehlenden Körperteil{"\n"}
-                                    (Bein, Arm, Auge, etc.) als Pirat auszuweisen. Es wird um Verständnis gebeten,{"\n"}
-                                    dass fehlende Zähne oder Haare nicht als Ausweis gültig sind,{"\n"}
-                                    da auch der gemeine Bürger häufig über diese verfügt.{"\n"}
-                                    Der oder diejenige, die es schafft, den Piratenkönig zu beindrucken,{"\n"}
+                                    (Bein, Arm, Auge, etc.) als Pirat auszuweisen. Es wird um Verständnis{"\n"}
+                                    gebeten, dass fehlende Zähne oder Haare nicht als Ausweis gültig sind{"\n"}
+                                    Der oder diejenige, die es schafft, den Piratenkönig zu beeindrucken,{"\n"}
                                     möge den Trohn als nächstes besteigen und außerdem das Holzbein{"\n"}
-                                    der hohen Unehre und Rums übergeben bekommen.{"\n"}
-                                    {"\n"}
-                                    Feste Briese, Kameraden!
+                                    der hohen Unehre und Rums übergeben bekommen. {"\n"}
+                                    Feste Briese, Kameraden!{"\n"}
                                 </Text>
                             </View>
                         </View>

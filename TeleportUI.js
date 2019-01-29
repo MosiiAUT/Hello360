@@ -40,7 +40,7 @@ class TeleportButton extends React.Component {
             //outside
             case 0:
                 //Delete me
-                MyModule.openEndscreen();
+                //MyModule.openEndscreen();
                 ////////
                 MyModule.setWorld(60, 0, 170);
                 MyModule.openWatchButton();
